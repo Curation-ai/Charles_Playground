@@ -145,6 +145,56 @@ ENRICHED_STOCKS = {
     "Schroders": {"SDR", "Asset Management", "UK", "Finance"},
     "Nokia": {"NOK", "Telecom", "5G", "Networks", "Finland"},
     "DBV Technologies": {"DBVT", "Biotech", "Allergies", "Peanut", "Viaskin"},
+
+    # Additional Healthcare / Pharma
+    "Merck": {"MRK", "Pharma", "Keytruda", "Oncology", "Immunotherapy"},
+    "Roche": {"ROG", "RHHBY", "Pharma", "Diagnostics", "Oncology", "Sequencing"},
+
+    # Additional Consumer / Retail
+    "Chipotle": {"CMG", "Fast Casual", "Restaurants", "Consumer", "Brian Niccol"},
+    "Shake Shack": {"SHAK", "Restaurants", "Fast Casual", "Consumer", "Burgers"},
+    "Foot Locker": {"FL", "Retail", "Footwear", "Sneakers", "Consumer"},
+    "Kraft Heinz": {"KHC", "Food", "Consumer Staples", "CPG"},
+    "British American Tobacco": {"BTI", "BATS", "Tobacco", "Consumer Staples", "Dividend"},
+    "Herbalife": {"HLF", "MLM", "Nutrition", "Consumer", "Controversy"},
+
+    # Additional China / Emerging Markets
+    "TAL Education": {"TAL", "China", "Education", "Tutoring", "Consumer"},
+    "KWEB China Internet ETF": {"KWEB", "China", "ETF", "Internet", "Tech"},
+
+    # Additional UK Stocks
+    "abrdn": {"ABDN", "Asset Management", "UK", "Finance", "Aberdeen"},
+    "St. James's Place": {"SJP", "Wealth Management", "UK", "Finance"},
+    "Hargreaves Lansdown": {"HL", "Platform", "UK", "Finance", "Retail Investing"},
+    "Burford Capital": {"BUR", "Litigation Finance", "Legal", "UK", "Muddy Waters"},
+    "Kistos": {"KIST", "Oil & Gas", "North Sea", "UK", "Energy"},
+    "Rockhopper": {"RKH", "Oil & Gas", "Exploration", "UK", "Falklands"},
+    "Jersey Oil & Gas": {"JOG", "Oil & Gas", "North Sea", "UK", "Energy"},
+    "Henderson Euro Trust": {"HNE", "Investment Trust", "Europe", "UK", "Small Caps"},
+    "Intelligent Ultrasound": {"IUG", "Medical Devices", "AI", "UK", "Healthcare"},
+
+    # Additional Fintech / Finance
+    "Visa": {"V", "Payments", "Fintech", "Credit Cards", "Global"},
+    "Icahn Enterprises": {"IEP", "Conglomerate", "Activist", "Carl Icahn"},
+    "Partners Group": {"PGHN", "Private Equity", "Switzerland", "Asset Management"},
+    "ICG": {"ICP", "Private Credit", "Asset Management", "UK", "Alternative Assets"},
+
+    # Additional EV / Auto
+    "Nikola": {"NKLA", "EV", "Hydrogen", "Trucks", "Hindenburg"},
+    "Carvana": {"CVNA", "Used Cars", "E-commerce", "Auto", "Hindenburg"},
+    "Luckin Coffee": {"LKNCY", "Coffee", "China", "Muddy Waters", "Consumer"},
+
+    # Additional Tech / Data
+    "Super Micro Computer": {"SMCI", "Servers", "Data Centers", "AI Infrastructure", "Short Attack"},
+    "Netflix": {"NFLX", "Streaming", "Entertainment", "Subscription", "Content"},
+    "Uber": {"UBER", "Rideshare", "Delivery", "Mobility", "Gig Economy"},
+
+    # Additional Asset Managers
+    "BlackRock": {"BLK", "Asset Management", "ETF", "iShares", "Larry Fink"},
+    "Goldman Sachs": {"GS", "Investment Bank", "Trading", "Asset Management"},
+    "JPMorgan": {"JPM", "Banking", "Investment Bank", "Asset Management", "Jamie Dimon"},
+    "Morgan Stanley": {"MS", "Investment Bank", "Wealth Management", "Trading"},
+    "T. Rowe Price": {"TROW", "Asset Management", "Mutual Funds", "Active Management"},
 }
 
 
