@@ -7,99 +7,144 @@ Extracts unique stocks and enriches with ticker + related keywords.
 # Format: {Company: {ticker, keywords...}}
 
 ENRICHED_STOCKS = {
+    # Big Tech / Mag 7
     "Amazon": {"AMZN", "0R1O", "AWS", "Amazon Web Services", "AI", "AI chips", "Tranium 2", "Cloud", "Retail", "E-commerce", "Prime", "ReInvent"},
+    "Tesla": {"TSLA", "EV", "Electric Vehicles", "Robotaxi", "Robotics", "Humanoid", "Optimus", "Elon Musk", "Energy Storage", "Batteries", "xAI", "Autonomous Driving"},
+    "Nvidia": {"NVDA", "Chips", "AI", "GPU", "Data Centers", "HBM4", "Jensen Huang", "Semiconductors", "Blackwell"},
+    "Microsoft": {"MSFT", "Azure", "Cloud", "AI", "Quantum", "Majorana 1", "OpenAI", "Software", "Copilot"},
+    "Alphabet": {"GOOGL", "GOOG", "Google", "Search", "YouTube", "Cloud", "AI", "DeepMind", "Waymo", "Quantum Computing"},
+    "Apple": {"AAPL", "iPhone", "Services", "Hardware", "Ecosystem", "AI", "Vision Pro"},
+    "Meta": {"META", "Facebook", "Instagram", "WhatsApp", "Metaverse", "AI", "Social Media", "Advertising"},
 
-    "Tesla": {"TSLA", "EV", "Electric Vehicles", "Robotaxi", "Robotics", "Humanoid", "Optimus", "Elon Musk", "Energy Storage", "Batteries", "xAI"},
-
+    # Uranium / Nuclear
     "ASP Isotopes": {"ASPI", "Uranium", "Nuclear", "HALEU", "Green Energy", "Industrial Isotopes", "Minor Metals", "QLE", "TerraPower", "Enrichment"},
-
-    "Nvidia": {"NVDA", "Chips", "AI", "GPU", "Data Centers", "HBM4", "Jensen Huang", "Semiconductors"},
-
-    "Peloton": {"PTON", "Fitness", "GLP-1", "Healthcare", "Longevity", "Sport", "Subscription", "Connected Fitness"},
-
-    "Palantir": {"PLTR", "Peter Thiel", "Big Data", "Ontology", "AI", "Defence Tech", "Government", "SaaS", "Edge Computing"},
-
-    "Oxford Nanopore": {"ONT", "Healthcare", "NHS", "Science", "Sequencing", "Genetics", "NGS", "Long-read", "Larry Ellison", "Roche"},
-
-    "Boeing": {"BA", "Travel", "Aviation", "Space & Security", "Defence", "Aerospace", "Manufacturing"},
-
-    "Evolv": {"EVLV", "Weapons Detection", "AI Screening", "AI", "SaaS", "Defence", "Safety", "Stadium", "Security"},
-
-    "MeiraGTx": {"MGTX", "Riboswitch", "Parkinson's Disease", "J&J", "Johnson & Johnson", "Sanofi", "Gene Therapy", "AAV-GAD", "Eli Lilly", "Blindness", "Ophthalmology"},
-
-    "Microsoft": {"MSFT", "Azure", "Cloud", "AI", "Quantum", "Majorana 1", "OpenAI", "Software"},
-
-    "Alibaba": {"BABA", "China", "E-commerce", "Cloud", "AI", "Fintech", "Ant Group"},
-
-    "UnitedHealth": {"UNH", "Healthcare", "Insurance", "Medicare Advantage", "Value Based Care"},
-
-    "Novo Nordisk": {"NVO", "NOVO", "GLP-1", "Obesity", "Diabetes", "Ozempic", "Wegovy", "Pharma"},
-
-    "Lightbridge": {"LTBR", "Nuclear", "Fuel", "Uranium", "Advanced Fuel", "SMR"},
-
+    "Lightbridge": {"LTBR", "Nuclear", "Fuel", "Uranium", "Advanced Fuel", "SMR", "Metal Fuel Rods"},
     "NuScale Power": {"SMR", "Nuclear", "Small Modular Reactors", "Clean Energy"},
-
     "Centrus Energy": {"LEU", "Uranium", "Nuclear", "Enrichment", "HALEU"},
-
     "Oklo": {"OKLO", "Nuclear", "SMR", "Clean Energy", "Sam Altman"},
-
     "Cameco": {"CCJ", "Uranium", "Mining", "Nuclear", "Canada"},
-
     "Yellow Cake": {"YCA", "Uranium", "Physical", "Commodity", "Trust"},
-
-    "Newmont": {"NEM", "Gold", "Mining", "Precious Metals"},
-
-    "Barrick Gold": {"GOLD", "Gold", "Mining", "Precious Metals"},
-
-    "Allied Gold": {"AAUC", "Gold", "Mining", "Africa", "Kurmuk"},
-
-    "Baidu": {"BIDU", "China", "Search", "AI", "Autonomous Driving", "Cloud"},
-
-    "JD.com": {"JD", "China", "E-commerce", "Logistics", "Retail"},
-
-    "Tencent": {"TCEHY", "0700", "China", "Gaming", "Social Media", "WeChat", "Fintech"},
-
-    "Pioneer Power Solutions": {"PPSI", "EV Charging", "Mobile Chargers", "Infrastructure", "Micro Cap"},
-
-    "Vestas": {"VWS", "Wind", "Renewables", "Green Energy", "Turbines"},
-
-    "Ceres Power": {"CWR", "Hydrogen", "Fuel Cells", "Bosch", "Clean Energy"},
-
-    "Lloyds Bank": {"LLOY", "Banking", "UK", "Financial Services"},
-
-    "Planet Fitness": {"PLNT", "Fitness", "Gym", "GLP-1", "Consumer"},
-
-    "Technogym": {"TGYM", "Fitness", "Equipment", "Treadmills", "Consumer"},
-
     "Silex": {"SLX", "Uranium", "Enrichment", "Australia", "Nuclear"},
+    "UEC": {"UEC", "Uranium", "Mining", "Nuclear", "USA"},
+    "Sprott Physical Uranium": {"SPUT", "U.U", "Uranium", "Physical", "Trust", "ETF"},
+    "Ur-Energy": {"URG", "Uranium", "Mining", "USA", "ISR"},
+    "enCore Energy": {"EU", "Uranium", "Mining", "USA"},
+    "Peninsula Energy": {"PENMF", "Uranium", "Mining", "Wyoming"},
 
-    "Seraphim Space": {"SSIT", "Space", "Investing", "Satellites", "NAV Discount"},
-
+    # Healthcare / Pharma / Biotech
+    "Oxford Nanopore": {"ONT", "Healthcare", "NHS", "Science", "Sequencing", "Genetics", "NGS", "Long-read", "Larry Ellison", "Roche", "Epigenetics"},
+    "MeiraGTx": {"MGTX", "Riboswitch", "Parkinson's Disease", "J&J", "Johnson & Johnson", "Sanofi", "Gene Therapy", "AAV-GAD", "Eli Lilly", "Blindness", "Ophthalmology"},
+    "UnitedHealth": {"UNH", "Healthcare", "Insurance", "Medicare Advantage", "Value Based Care", "Optum"},
+    "Novo Nordisk": {"NVO", "NOVO", "GLP-1", "Obesity", "Diabetes", "Ozempic", "Wegovy", "Pharma", "CagriSema"},
+    "Eli Lilly": {"LLY", "GLP-1", "Obesity", "Diabetes", "Zepbound", "Mounjaro", "Pharma"},
     "Illumina": {"ILMN", "Sequencing", "Genomics", "Healthcare", "Diagnostics"},
+    "Immutep": {"IMM", "Biotech", "Cancer", "Immunotherapy", "Keytruda", "LAG-3"},
+    "Implantica": {"IMP", "Medical Devices", "RefluxStop", "NHS", "GI"},
 
-    "GameStop": {"GME", "Retail", "Meme Stock", "Bitcoin", "Ryan Cohen"},
-
-    "HSBC": {"HSBA", "Banking", "Asia", "Financial Services"},
-
+    # Defence / Security
+    "Boeing": {"BA", "Travel", "Aviation", "Space & Security", "Defence", "Aerospace", "Manufacturing"},
+    "Evolv": {"EVLV", "Weapons Detection", "AI Screening", "AI", "SaaS", "Defence", "Safety", "Stadium", "Security"},
+    "OSI Systems": {"OSIS", "Security", "Inspection", "Screening", "Defence", "Border", "Rapiscan"},
     "Indra Sistemas": {"IDR", "Defence", "European Defence", "Spain", "Technology"},
-
     "Renk": {"RENK", "Defence", "European Defence", "Germany", "Tanks"},
-
     "Avio": {"AVIO", "Defence", "European Defence", "Space", "Italy", "NATO"},
+    "Palantir": {"PLTR", "Peter Thiel", "Big Data", "Ontology", "AI", "Defence Tech", "Government", "SaaS", "Edge Computing"},
+    "Smiths Group": {"SMIN", "Detection", "Security", "Industrial", "Spin-off"},
+    "Axon": {"AXON", "Taser", "Police", "Body Cameras", "Law Enforcement"},
+    "ZenaTech": {"ZENA", "Drones", "Agriculture", "Defence", "Military"},
 
-    "OSI Systems": {"OSIS", "Security", "Inspection", "Screening", "Defence"},
+    # Fitness / Consumer
+    "Peloton": {"PTON", "Fitness", "GLP-1", "Healthcare", "Longevity", "Sport", "Subscription", "Connected Fitness"},
+    "Planet Fitness": {"PLNT", "Fitness", "Gym", "GLP-1", "Consumer"},
+    "Technogym": {"TGYM", "Fitness", "Equipment", "Treadmills", "Consumer"},
+    "Nike": {"NKE", "Sportswear", "Footwear", "Apparel", "Consumer", "Retail"},
+    "On Holding": {"ONON", "Running", "Shoes", "Federer", "Sportswear", "Zendaya"},
+    "Starbucks": {"SBUX", "Coffee", "Consumer", "Retail", "Brian Niccol", "Footfall"},
+    "Lululemon": {"LULU", "Athleisure", "Apparel", "Consumer"},
 
-    "ArcelorMittal": {"MT", "Steel", "Mining", "Commodities", "Infrastructure"},
-
-    "Turkcell": {"TKC", "Turkey", "Telecom", "Emerging Markets"},
-
+    # China Tech
+    "Alibaba": {"BABA", "China", "E-commerce", "Cloud", "AI", "Fintech", "Ant Group"},
+    "Baidu": {"BIDU", "China", "Search", "AI", "Autonomous Driving", "Cloud"},
+    "JD.com": {"JD", "China", "E-commerce", "Logistics", "Retail"},
+    "Tencent": {"TCEHY", "0700", "China", "Gaming", "Social Media", "WeChat", "Fintech"},
     "BYD": {"BYDDY", "1211", "China", "EV", "Electric Vehicles", "Batteries"},
 
-    "Raspberry Pi": {"RPI", "Technology", "Hardware", "Robotics", "IoT"},
+    # Gold / Mining
+    "Newmont": {"NEM", "Gold", "Mining", "Precious Metals"},
+    "Barrick Gold": {"GOLD", "Gold", "Mining", "Precious Metals"},
+    "Allied Gold": {"AAUC", "Gold", "Mining", "Africa", "Kurmuk"},
 
+    # Crypto / Fintech
+    "Coinbase": {"COIN", "Crypto", "Exchange", "Bitcoin", "Digital Assets"},
+    "MicroStrategy": {"MSTR", "Bitcoin", "BTC", "Michael Saylor", "Treasury"},
+    "Robinhood": {"HOOD", "Trading", "Retail", "Crypto", "Commission-free"},
+    "Lemonade": {"LMND", "Insurance", "AI", "Insurtech", "Disruption"},
+
+    # Semiconductors
+    "TSMC": {"TSM", "Semiconductors", "Foundry", "Chips", "AI", "Taiwan"},
+    "ASML": {"ASML", "Lithography", "EUV", "Semiconductors", "Equipment", "Monopoly"},
+    "Intel": {"INTC", "Semiconductors", "Foundry", "Chips", "USA"},
+    "AMD": {"AMD", "Semiconductors", "GPU", "CPU", "AI"},
+    "Samsung": {"005930", "SSNLF", "Memory", "HBM", "Semiconductors", "Korea"},
+    "Micron": {"MU", "Memory", "DRAM", "NAND", "Semiconductors"},
+    "SK Hynix": {"000660", "Memory", "HBM", "Semiconductors", "Korea"},
+    "Astera Labs": {"ALAB", "Connectivity", "Data Centers", "Semiconductors"},
+    "Ouster": {"OUST", "LiDAR", "Sensors", "Autonomous", "Robotics"},
+
+    # Energy / Commodities
+    "Vestas": {"VWS", "Wind", "Renewables", "Green Energy", "Turbines"},
+    "Ceres Power": {"CWR", "Hydrogen", "Fuel Cells", "Bosch", "Clean Energy"},
+    "Golar LNG": {"GLNG", "LNG", "Natural Gas", "Shipping", "Energy"},
+    "Flex LNG": {"FLNG", "LNG", "Shipping", "Natural Gas", "Tankers"},
+    "Prysmian": {"PRY", "Cables", "High Voltage", "Data Centers", "Offshore Wind"},
+    "Cadiz": {"CDZI", "Water", "California", "Infrastructure", "Aquifer"},
+
+    # UK Stocks
+    "IP Group": {"IPO", "Venture Capital", "Universities", "Spin-outs", "UK"},
+    "Seraphim Space": {"SSIT", "Space", "Investing", "Satellites", "NAV Discount"},
+    "Trustpilot": {"TRST", "Reviews", "Consumer", "SaaS", "UK"},
+    "Fever-Tree": {"FEVR", "Beverages", "Tonic", "Premium Mixers", "Molson Coors"},
+    "Raspberry Pi": {"RPI", "Technology", "Hardware", "Robotics", "IoT", "UK"},
+    "Beazley": {"BEZ", "Insurance", "Specialty", "Lloyd's", "UK"},
+    "Admiral": {"ADM", "Insurance", "Motor", "UK"},
+    "LSEG": {"LSEG", "Exchange", "Data", "AI", "Microsoft", "Financial Services"},
+    "Lloyds Bank": {"LLOY", "Banking", "UK", "Financial Services"},
+    "HSBC": {"HSBA", "Banking", "Asia", "Financial Services"},
+    "Direct Line": {"DLG", "Insurance", "Motor", "Aviva", "M&A"},
+    "Aviva": {"AV", "Insurance", "UK", "Consolidation"},
+    "Renewi": {"RWI", "Waste", "Recycling", "UK", "Netherlands"},
+    "Kneat": {"KSI", "Software", "Validation", "Life Sciences", "SaaS"},
+    "Herald Investment Trust": {"HRI", "Technology", "Investment Trust", "UK"},
+
+    # Space
+    "SpaceX": {"SPACE", "Rockets", "Starlink", "Elon Musk", "Private"},
+
+    # Software / Cloud
+    "Spotify": {"SPOT", "Music", "Streaming", "Podcasts", "Subscription"},
+    "Zoom": {"ZM", "Video", "Conferencing", "SaaS", "Remote Work"},
+    "Salesforce": {"CRM", "CRM", "Cloud", "SaaS", "Enterprise"},
+    "Block": {"SQ", "Payments", "Square", "Cash App", "Fintech"},
+    "Snowflake": {"SNOW", "Data", "Cloud", "Analytics", "AI"},
+
+    # EV / Auto
+    "Rivian": {"RIVN", "EV", "Electric Trucks", "Amazon", "Startup"},
+    "Lucid": {"LCID", "EV", "Luxury", "Saudi", "Startup"},
+    "Ferrari": {"RACE", "Luxury", "Auto", "F80", "Sports Cars"},
+    "Wayve": {"WAYVE", "Autonomous", "AI", "UK", "Private"},
+
+    # Other
+    "Pioneer Power Solutions": {"PPSI", "EV Charging", "Mobile Chargers", "Infrastructure", "Micro Cap"},
+    "GameStop": {"GME", "Retail", "Meme Stock", "Bitcoin", "Ryan Cohen"},
+    "Soho House": {"SHCO", "Hospitality", "Membership", "Lifestyle", "Private Clubs"},
+    "Helium": {"HNT", "Crypto", "IoT", "5G", "DePIN", "Telecom"},
+    "ArcelorMittal": {"MT", "Steel", "Mining", "Commodities", "Infrastructure"},
+    "Turkcell": {"TKC", "Turkey", "Telecom", "Emerging Markets"},
     "Symbotic": {"SYM", "Robotics", "Automation", "Walmart", "Warehouse"},
-
-    "UEC": {"UEC", "Uranium", "Mining", "Nuclear", "USA"},
+    "PB Fintech": {"POLICYBZR", "India", "Insurance", "Fintech", "PolicyBazaar"},
+    "Power Nickel": {"PNPN", "Nickel", "Mining", "Canada", "Battery Metals"},
+    "Schroders": {"SDR", "Asset Management", "UK", "Finance"},
+    "Nokia": {"NOK", "Telecom", "5G", "Networks", "Finland"},
+    "DBV Technologies": {"DBVT", "Biotech", "Allergies", "Peanut", "Viaskin"},
 }
 
 
