@@ -39,7 +39,7 @@ ENRICHED_STOCKS = {
     "Eli Lilly": {"LLY", "GLP-1", "Obesity", "Diabetes", "Zepbound", "Mounjaro", "Pharma"},
     "Illumina": {"ILMN", "Sequencing", "Genomics", "Healthcare", "Diagnostics"},
     "Immutep": {"IMM", "Biotech", "Cancer", "Immunotherapy", "Keytruda", "LAG-3"},
-    "Implantica": {"IMP", "Medical Devices", "RefluxStop", "NHS", "GI"},
+    "Implantica": {"IMP-A-SDB", "Medical Devices", "RefluxStop", "NHS", "GI"},
 
     # Defence / Security
     "Boeing": {"BA", "Travel", "Aviation", "Space & Security", "Defence", "Aerospace", "Manufacturing"},
