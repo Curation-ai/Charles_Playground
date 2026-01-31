@@ -1,0 +1,9 @@
+# Core dependencies (standard library only for parsing)
+# No external dependencies required for basic functionality
+
+# Optional: For actual ChromaDB usage
+chromadb>=0.4.0
+
+# Optional: For enhanced text processing
+# nltk>=3.8
+# spacy>=3.0

@@ -1,0 +1,15 @@
+[06/06/2025, 09:15:00] ~ {Charles}: Good morning! Looking at AMZN pre-market, AWS revenue looking strong
+[06/06/2025, 09:18:23] ~ {Sarah}: Tesla's Robotaxi announcement next week, TSLA could breakout
+[06/06/2025, 09:22:45] ~ {Mike}: NVDA hitting ATH again, AI chip demand is insane. Blackwell sales through the roof
+[06/06/2025, 09:30:00] ~ {Charles}: Anyone looking at AAPL? Vision Pro getting mixed reviews
+[06/06/2025, 09:35:12] ~ {Lisa}: Microsoft Copilot integration across Office is bullish for MSFT
+[06/06/2025, 09:40:30] ~ {Sarah}: Palantir PLTR getting more government contracts, Alex Karp interview was good
+[06/06/2025, 09:45:00] ~ {Mike}: Google's Gemini update is impressive, GOOGL undervalued vs Meta
+[06/06/2025, 10:00:00] ~ {Charles}: Amazon's Trainium 2 chips could challenge NVDA in the long term
+[06/06/2025, 10:15:00] ~ {Lisa}: Elon Musk tweeted about Optimus again, Tesla robotics is the future
+[06/06/2025, 10:30:00] ~ {Sarah}: Coinbase COIN up 5% on Bitcoin rally, ETF flows strong
+[06/06/2025, 10:45:00] ~ {Mike}: Just bought some more NVDA calls, H100 demand isn't slowing down
+[06/06/2025, 11:00:00] ~ {Charles}: AWS AI services are expanding fast, Bedrock could be huge for AMZN
+[06/06/2025, 11:15:00] ~ {Lisa}: Apple Intelligence features coming with iOS 18, could boost iPhone sales
+[06/06/2025, 11:30:00] ~ {Sarah}: TSLA Cybertruck deliveries ramping up, margins improving
+[06/06/2025, 11:45:00] ~ {Mike}: AMD MI300 competing with NVDA in AI, but still behind on software stack
