@@ -344,6 +344,113 @@ ENRICHED_STOCKS = {
 
     # Funds / Investment vehicles
     "Pershing Square Holdings": {"PSH", "Hedge Fund", "Bill Ackman", "Activism", "Concentrated"},
+
+    # ===== NEW STOCKS FROM stock_symbols.json =====
+
+    # Telecoms
+    "Vodafone": {"VOD", "Telecoms", "UK", "Mobile", "5G", "Europe"},
+
+    # Investment Trusts
+    "Geiger Counter Ltd": {"GCL", "Investment Trust", "Uranium", "Nuclear", "Closed-End Fund"},
+    "Syncona": {"SYNC", "Investment Trust", "Biotech", "Life Sciences", "UK"},
+    "Seraphim Space Investment Trust": {"SSIT", "Investment Trust", "Space", "VC", "UK"},
+    "RIT Capital Partners": {"RCP", "Investment Trust", "Rothschild", "Multi-Asset", "UK"},
+    "IP Group": {"IPO", "Investment Trust", "Tech", "Universities", "Spin-outs", "UK"},
+    "International Public Partnerships": {"INPP", "Infrastructure", "Investment Trust", "PPP", "UK"},
+
+    # Financial Services
+    "Marex": {"MRX", "Derivatives", "Commodities", "Broker", "Trading"},
+    "Lancashire": {"LRE", "Insurance", "Specialty", "Reinsurance", "Lloyds"},
+    "Fidelis Insurance": {"FIHL", "Insurance", "Specialty", "Bermuda", "Reinsurance"},
+    "Bank of Cyprus": {"BOCH", "Banking", "Cyprus", "Europe", "Mediterranean"},
+    "London Stock Exchange": {"LSEG", "Exchange", "FTSE Russell", "Refinitiv", "Data"},
+    "Brookfield Corp": {"BN", "Asset Management", "Infrastructure", "Real Estate", "Canada"},
+
+    # Mining / Resources (new)
+    "The Metals Company": {"TMC", "Deep Sea Mining", "Polymetallic Nodules", "Nickel", "Cobalt", "Manganese"},
+    "Ecora Royalties": {"ECOR", "Royalties", "Streaming", "Mining", "Diversified"},
+    "Focus Graphite": {"FMS", "Graphite", "Mining", "Canada", "EV", "Batteries"},
+    "Pan Global Resources": {"PGZ", "Copper", "Exploration", "Spain", "Mining"},
+    "Power Metallic": {"PNPN", "Mining", "Nickel", "Copper", "Canada"},
+    "Black Swan Graphene": {"SWAN", "Graphene", "Materials", "Canada", "Technology"},
+    "Giga Metals": {"GIGA", "Nickel", "Cobalt", "Mining", "Canada", "EV"},
+    "Barrick Gold": {"GOLD", "Gold", "Mining", "Copper", "Nevada", "Africa"},
+    "A-Mark Precious Metals": {"AMRK", "Precious Metals", "Bullion", "Trading", "Coins"},
+    "Harbour Energy": {"HBR", "Oil", "Gas", "UK", "North Sea", "E&P"},
+    "Glencore": {"GLEN", "Commodities", "Mining", "Trading", "Copper", "Cobalt", "Zinc"},
+    "RHI Magnesita": {"RHIM", "Refractories", "Steel", "Mining", "Magnesite"},
+
+    # Construction / Infrastructure
+    "Balfour Beatty": {"BBY", "Construction", "Infrastructure", "UK", "US", "Rail"},
+
+    # Entertainment / Media
+    "All Things Considered": {"ATC", "Music", "Artists", "Platform", "Direct-to-Fan"},
+    "LBG Media": {"LBG", "LADbible", "Digital Media", "Social", "Gen Z", "UK"},
+    "Disney": {"DIS", "Entertainment", "Streaming", "Theme Parks", "Marvel", "Star Wars", "ESPN"},
+
+    # Airlines / Travel
+    "easyJet": {"EZJ", "Airlines", "Low Cost", "UK", "Europe", "Travel"},
+
+    # Energy / Utilities
+    "Ormat Technologies": {"ORA", "Geothermal", "Renewable Energy", "Clean Energy", "USA"},
+    "Hasi": {"HASI", "Clean Energy", "Infrastructure", "Green Bonds", "ESG"},
+
+    # Consumer / Retail (new)
+    "The Gym Group": {"GYM", "Fitness", "UK", "Low Cost", "Health"},
+    "Topps Tiles": {"TPT", "Retail", "Tiles", "UK", "Home Improvement"},
+    "Whitbread": {"WTB", "Hospitality", "Premier Inn", "Hotels", "UK"},
+    "Watches of Switzerland": {"WOSG", "Luxury", "Watches", "Rolex", "Retail", "UK"},
+    "Marks Electrical": {"MRK", "Retail", "Electrical", "UK", "E-commerce"},
+
+    # Real Estate
+    "International Workplace Group": {"IWG", "Office Space", "Coworking", "Regus", "Flexible"},
+    "Segro": {"SGRO", "Industrial", "REIT", "Warehouses", "Logistics", "UK"},
+    "CoStar Group": {"CSGP", "Real Estate", "Data", "Analytics", "Commercial Property"},
+
+    # Healthcare / Pharma (new)
+    "Haleon": {"HLN", "Consumer Health", "OTC", "GSK Spin-off", "Sensodyne", "Advil"},
+    "PB Fintech": {"POLICYBZR", "India", "Fintech", "Insurance", "PolicyBazaar", "Paisabazaar"},
+    "Xvivo Perfusion": {"XVIVO", "Organ Perfusion", "Transplant", "Medical Devices", "Sweden"},
+    "Stryker": {"SYK", "Medical Devices", "Orthopedics", "Surgery", "Robotics"},
+    "Veeva Systems": {"VEEV", "Life Sciences", "Cloud", "Pharma", "SaaS", "CRM"},
+    "Danaher": {"DHR", "Life Sciences", "Diagnostics", "Biotechnology", "Medical"},
+    "Doximity": {"DOCS", "Healthcare", "Physicians", "Network", "Telemedicine"},
+    "e-therapeutics": {"ETX", "Biotech", "AI", "Drug Discovery", "UK"},
+    "Galderma": {"GALD", "Dermatology", "Aesthetics", "Botox", "Skincare", "Switzerland"},
+    "GSK": {"GSK", "Pharma", "Vaccines", "UK", "Shingrix", "HIV"},
+    "UnitedHealth Group": {"UNH", "Healthcare", "Insurance", "Optum", "USA", "Managed Care"},
+    "Genus": {"GNS", "Animal Genetics", "Agriculture", "Livestock", "UK"},
+
+    # Logistics / Transport
+    "Old Dominion Freight Line": {"ODFL", "Trucking", "LTL", "Logistics", "USA"},
+    "GXO Logistics": {"GXO", "Logistics", "Warehousing", "E-commerce", "3PL"},
+    "Renewi": {"RWI", "Waste Management", "Recycling", "Netherlands", "UK"},
+
+    # Industrials (new)
+    "Black Diamond Group": {"BDI", "Modular", "Workforce Housing", "Canada", "Oil Services"},
+    "Masterbrand": {"MBC", "Cabinets", "Home", "Manufacturing", "USA"},
+    "Safran": {"SAF", "Aerospace", "Defence", "France", "Engines", "LEAP"},
+    "Pioneer Power Solutions": {"PPSI", "Power", "Electrical", "Infrastructure", "Grid"},
+    "Smurfit Westrock": {"SW", "Packaging", "Paper", "Corrugated", "Sustainable"},
+    "Sherwin Williams": {"SHW", "Paints", "Coatings", "Home Improvement", "USA"},
+    "ABB": {"ABBN", "Industrial", "Automation", "Robotics", "Electrification", "Switzerland"},
+
+    # Offshore (new)
+    "Archer Limited": {"ARCH", "Offshore", "Drilling", "Norway", "Oil Services", "Platform"},
+
+    # Consumer Tech / Apps
+    "Bumble": {"BMBL", "Dating", "App", "Social", "Women-First", "Badoo"},
+    "TrustPilot": {"TRST", "Reviews", "Platform", "Consumer Trust", "Denmark"},
+
+    # Beauty / Personal Care
+    "Loreal": {"OR", "Beauty", "Cosmetics", "France", "Skincare", "Luxury"},
+
+    # Automotive (new)
+    "Vinfast": {"VFS", "EV", "Vietnam", "Electric Vehicles", "Emerging Markets"},
+
+    # Software / Tech (new)
+    "Kneat Solutions": {"KSI", "Validation", "Software", "Pharma", "Quality", "SaaS"},
+    "MIPS": {"MIPS", "Helmet Safety", "Technology", "Sweden", "Protection"},
 }
 
 
