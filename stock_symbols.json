@@ -1,0 +1,697 @@
+{
+  "metadata": {
+    "total_stocks": 134,
+    "unique_exchanges": 16,
+    "exchanges": [
+      "AQX",
+      "CVE",
+      "EPA",
+      "ETR",
+      "FRA",
+      "LON",
+      "NASDAQ",
+      "NSE",
+      "NYSE",
+      "NYSEAMERICAN",
+      "OL",
+      "OTCMKTS",
+      "STO",
+      "SWX",
+      "TSE",
+      "VIE"
+    ],
+    "description": "Stock symbols dataset with company titles, exchanges, and ticker symbols"
+  },
+  "stocks": [
+    {
+      "title": "Evolv",
+      "exchange": "NASDAQ",
+      "symbol": "EVLV"
+    },
+    {
+      "title": "Burford Capital",
+      "exchange": "LON",
+      "symbol": "BUR"
+    },
+    {
+      "title": "Nestlé",
+      "exchange": "SWX",
+      "symbol": "NESN"
+    },
+    {
+      "title": "Vodafone",
+      "exchange": "LON",
+      "symbol": "VOD"
+    },
+    {
+      "title": "Fresnillo",
+      "exchange": "LON",
+      "symbol": "FRES"
+    },
+    {
+      "title": "Apple",
+      "exchange": "NASDAQ",
+      "symbol": "AAPL"
+    },
+    {
+      "title": "ArcelorMittal",
+      "exchange": "NYSE",
+      "symbol": "MT"
+    },
+    {
+      "title": "Geiger Counter Ltd",
+      "exchange": "LON",
+      "symbol": "GCL"
+    },
+    {
+      "title": "Marex",
+      "exchange": "NASDAQ",
+      "symbol": "MRX"
+    },
+    {
+      "title": "The Metals Company",
+      "exchange": "NASDAQ",
+      "symbol": "TMC"
+    },
+    {
+      "title": "Ecora Royalties",
+      "exchange": "LON",
+      "symbol": "ECOR"
+    },
+    {
+      "title": "Tesla",
+      "exchange": "NASDAQ",
+      "symbol": "TSLA"
+    },
+    {
+      "title": "Newmont Corp",
+      "exchange": "NYSE",
+      "symbol": "NEM"
+    },
+    {
+      "title": "Nestlé",
+      "exchange": "SWX",
+      "symbol": "NESN"
+    },
+    {
+      "title": "Balfour Beatty",
+      "exchange": "LON",
+      "symbol": "BBY"
+    },
+    {
+      "title": "Focus Graphite",
+      "exchange": "CVE",
+      "symbol": "FMS"
+    },
+    {
+      "title": "Pan Global Resources",
+      "exchange": "CVE",
+      "symbol": "PGZ"
+    },
+    {
+      "title": "Spotify",
+      "exchange": "NYSE",
+      "symbol": "SPOT"
+    },
+    {
+      "title": "Glass House Brands",
+      "exchange": "OTCMKTS",
+      "symbol": "GLASF"
+    },
+    {
+      "title": "All Things Considered",
+      "exchange": "AQX",
+      "symbol": "ATC"
+    },
+    {
+      "title": "Cameco",
+      "exchange": "NYSE",
+      "symbol": "CCJ"
+    },
+    {
+      "title": "easyJet",
+      "exchange": "LON",
+      "symbol": "EZJ"
+    },
+    {
+      "title": "MeiraGTx",
+      "exchange": "NASDAQ",
+      "symbol": "MGTX"
+    },
+    {
+      "title": "Newmont Corp",
+      "exchange": "NYSE",
+      "symbol": "NEM"
+    },
+    {
+      "title": "Skyharbour Resources",
+      "exchange": "CVE",
+      "symbol": "SYH"
+    },
+    {
+      "title": "Oklo Inc",
+      "exchange": "NYSE",
+      "symbol": "OKLO"
+    },
+    {
+      "title": "Atome",
+      "exchange": "LON",
+      "symbol": "ATOM"
+    },
+    {
+      "title": "Syncona",
+      "exchange": "LON",
+      "symbol": "SYNC"
+    },
+    {
+      "title": "Ormat Technologies",
+      "exchange": "NYSE",
+      "symbol": "ORA"
+    },
+    {
+      "title": "The Gym Group",
+      "exchange": "LON",
+      "symbol": "GYM"
+    },
+    {
+      "title": "Deere & Co",
+      "exchange": "NYSE",
+      "symbol": "DE"
+    },
+    {
+      "title": "Evolv",
+      "exchange": "NASDAQ",
+      "symbol": "EVLV"
+    },
+    {
+      "title": "Alphabet",
+      "exchange": "NASDAQ",
+      "symbol": "GOOG"
+    },
+    {
+      "title": "Lancashire",
+      "exchange": "LON",
+      "symbol": "LRE"
+    },
+    {
+      "title": "Babcock",
+      "exchange": "LON",
+      "symbol": "BAB"
+    },
+    {
+      "title": "Geiger Counter Ltd",
+      "exchange": "LON",
+      "symbol": "GCL"
+    },
+    {
+      "title": "Oxford Nanopore Technologies",
+      "exchange": "LON",
+      "symbol": "ONT"
+    },
+    {
+      "title": "International Workplace Group",
+      "exchange": "LON",
+      "symbol": "IWG"
+    },
+    {
+      "title": "NYSE america",
+      "exchange": "NYSE",
+      "symbol": "SPOT"
+    },
+    {
+      "title": "Rainbow Rare Earths",
+      "exchange": "LON",
+      "symbol": "RBW"
+    },
+    {
+      "title": "Bank of Cyprus",
+      "exchange": "FRA",
+      "symbol": "318"
+    },
+    {
+      "title": "Nvidia",
+      "exchange": "NASDAQ",
+      "symbol": "NVDA"
+    },
+    {
+      "title": "Power Metallic",
+      "exchange": "CVE",
+      "symbol": "PNPN"
+    },
+    {
+      "title": "Haleon",
+      "exchange": "LON",
+      "symbol": "HLN"
+    },
+    {
+      "title": "Barclays",
+      "exchange": "LON",
+      "symbol": "BARC"
+    },
+    {
+      "title": "Seraphim Space Investment Trust",
+      "exchange": "LON",
+      "symbol": "SSIT"
+    },
+    {
+      "title": "ArcelorMittal",
+      "exchange": "NYSE",
+      "symbol": "MT"
+    },
+    {
+      "title": "PB Fintech",
+      "exchange": "NSE",
+      "symbol": "POLICYBZR"
+    },
+    {
+      "title": "Xvivo Perfusion AB",
+      "exchange": "STO",
+      "symbol": "XVIVO"
+    },
+    {
+      "title": "Syncona",
+      "exchange": "LON",
+      "symbol": "SYNC"
+    },
+    {
+      "title": "Segro",
+      "exchange": "LON",
+      "symbol": "SGRO"
+    },
+    {
+      "title": "Dension Mines",
+      "exchange": "TSE",
+      "symbol": "DML"
+    },
+    {
+      "title": "Microsoft",
+      "exchange": "NASDAQ",
+      "symbol": "MSFT"
+    },
+    {
+      "title": "Haleon",
+      "exchange": "LON",
+      "symbol": "HLN"
+    },
+    {
+      "title": "IP Group",
+      "exchange": "LON",
+      "symbol": "IPO"
+    },
+    {
+      "title": "Deere & Co",
+      "exchange": "NYSE",
+      "symbol": "DE"
+    },
+    {
+      "title": "Coinbase",
+      "exchange": "NASDAQ",
+      "symbol": "COIN"
+    },
+    {
+      "title": "Fidelis Insurance Holdings",
+      "exchange": "NYSE",
+      "symbol": "FIHL"
+    },
+    {
+      "title": "BAWAG Group",
+      "exchange": "VIE",
+      "symbol": "BG"
+    },
+    {
+      "title": "Denison Mines",
+      "exchange": "TSE",
+      "symbol": "DML"
+    },
+    {
+      "title": "Fresnillo",
+      "exchange": "LON",
+      "symbol": "FRES"
+    },
+    {
+      "title": "Topps Tiles Plc",
+      "exchange": "LON",
+      "symbol": "TPT"
+    },
+    {
+      "title": "Oklo Inc",
+      "exchange": "NYSE",
+      "symbol": "OKLO"
+    },
+    {
+      "title": "Black Diamond Group",
+      "exchange": "TSE",
+      "symbol": "BDI"
+    },
+    {
+      "title": "Sprott",
+      "exchange": "TSE",
+      "symbol": "U.U"
+    },
+    {
+      "title": "Whitbread",
+      "exchange": "LON",
+      "symbol": "WTB"
+    },
+    {
+      "title": "Brookfield Corp",
+      "exchange": "TSE",
+      "symbol": "BN"
+    },
+    {
+      "title": "Stryker",
+      "exchange": "NYSE",
+      "symbol": "SYK"
+    },
+    {
+      "title": "Segro",
+      "exchange": "LON",
+      "symbol": "SGRO"
+    },
+    {
+      "title": "Bumble",
+      "exchange": "NASDAQ",
+      "symbol": "BMBL"
+    },
+    {
+      "title": "International Public Partnerships",
+      "exchange": "LON",
+      "symbol": "INPP"
+    },
+    {
+      "title": "Disney",
+      "exchange": "NYSE",
+      "symbol": "DIS"
+    },
+    {
+      "title": "Veeva Systems",
+      "exchange": "NYSE",
+      "symbol": "VEEV"
+    },
+    {
+      "title": "Lightbridge Corporation",
+      "exchange": "NASDAQ",
+      "symbol": "LTBR"
+    },
+    {
+      "title": "Old Dominion Freight Line",
+      "exchange": "NASDAQ",
+      "symbol": "ODFL"
+    },
+    {
+      "title": "Renewi",
+      "exchange": "LON",
+      "symbol": "RWI"
+    },
+    {
+      "title": "Fission Uranium Corp.",
+      "exchange": "TSE",
+      "symbol": "FCU"
+    },
+    {
+      "title": "Gold",
+      "exchange": "LON",
+      "symbol": "ENT"
+    },
+    {
+      "title": "NYSE america",
+      "exchange": "SWX",
+      "symbol": "ABBN"
+    },
+    {
+      "title": "Old Dominion Freight Line",
+      "exchange": "NASDAQ",
+      "symbol": "ODFL"
+    },
+    {
+      "title": "UnitedHealth Group",
+      "exchange": "NYSE",
+      "symbol": "UNH"
+    },
+    {
+      "title": "RIT Capital Partners PLC",
+      "exchange": "LON",
+      "symbol": "RCP"
+    },
+    {
+      "title": "Uranium Energy Corp",
+      "exchange": "NYSEAMERICAN",
+      "symbol": "UEC"
+    },
+    {
+      "title": "Gold",
+      "exchange": "NYSE",
+      "symbol": "GOLD"
+    },
+    {
+      "title": "A-Mark Precious Metals",
+      "exchange": "NASDAQ",
+      "symbol": "AMRK"
+    },
+    {
+      "title": "Archer Limited",
+      "exchange": "OL",
+      "symbol": "ARCH"
+    },
+    {
+      "title": "Danaher",
+      "exchange": "NYSE",
+      "symbol": "DHR"
+    },
+    {
+      "title": "enCore Energy",
+      "exchange": "NASDAQ",
+      "symbol": "EU"
+    },
+    {
+      "title": "Babcock",
+      "exchange": "LON",
+      "symbol": "BAB"
+    },
+    {
+      "title": "Masterbrand",
+      "exchange": "NYSE",
+      "symbol": "MBC"
+    },
+    {
+      "title": "Safran",
+      "exchange": "NYSE",
+      "symbol": "SPOT"
+    },
+    {
+      "title": "Cybin",
+      "exchange": "NYSEAMERICAN",
+      "symbol": "CYBN"
+    },
+    {
+      "title": "CoStar Group",
+      "exchange": "NASDAQ",
+      "symbol": "CSGP"
+    },
+    {
+      "title": "Black Swan Graphene",
+      "exchange": "CVE",
+      "symbol": "SWAN"
+    },
+    {
+      "title": "GXO Logistics",
+      "exchange": "NYSE",
+      "symbol": "GXO"
+    },
+    {
+      "title": "Hasi",
+      "exchange": "NYSE",
+      "symbol": "HASI"
+    },
+    {
+      "title": "Barclays",
+      "exchange": "LON",
+      "symbol": "BARC"
+    },
+    {
+      "title": "Coinbase",
+      "exchange": "NASDAQ",
+      "symbol": "COIN"
+    },
+    {
+      "title": "OSI Systems",
+      "exchange": "NASDAQ",
+      "symbol": "OSIS"
+    },
+    {
+      "title": "NexGen Energy Ltd",
+      "exchange": "TSE",
+      "symbol": "NXE"
+    },
+    {
+      "title": "Black Swan Graphene",
+      "exchange": "CVE",
+      "symbol": "SWAN"
+    },
+    {
+      "title": "All Things Considered",
+      "exchange": "AQX",
+      "symbol": "ATC"
+    },
+    {
+      "title": "Pioneer Power Solutions",
+      "exchange": "NASDAQ",
+      "symbol": "PPSI"
+    },
+    {
+      "title": "Burberry Group Plc",
+      "exchange": "LON",
+      "symbol": "BRBY"
+    },
+    {
+      "title": "Doximity",
+      "exchange": "NYSE",
+      "symbol": "DOCS"
+    },
+    {
+      "title": "e-therapeutics",
+      "exchange": "NYSE",
+      "symbol": "ETX"
+    },
+    {
+      "title": "LBG Media",
+      "exchange": "LON",
+      "symbol": "LBG"
+    },
+    {
+      "title": "Smurfit Westrock",
+      "exchange": "NYSE",
+      "symbol": "SW"
+    },
+    {
+      "title": "Renewi",
+      "exchange": "LON",
+      "symbol": "RWI"
+    },
+    {
+      "title": "London Stock Exchange",
+      "exchange": "LON",
+      "symbol": "LSEG"
+    },
+    {
+      "title": "Giga Metals",
+      "exchange": "CVE",
+      "symbol": "GIGA"
+    },
+    {
+      "title": "TrustPilot",
+      "exchange": "LON",
+      "symbol": "TRST"
+    },
+    {
+      "title": "Xvivo Perfusion AB",
+      "exchange": "STO",
+      "symbol": "XVIVO"
+    },
+    {
+      "title": "Galderma",
+      "exchange": "SWX",
+      "symbol": "GALD"
+    },
+    {
+      "title": "Watches of Switzerland Group",
+      "exchange": "LON",
+      "symbol": "WOSG"
+    },
+    {
+      "title": "GSK",
+      "exchange": "LON",
+      "symbol": "GSK"
+    },
+    {
+      "title": "Loréal",
+      "exchange": "EPA",
+      "symbol": "OR"
+    },
+    {
+      "title": "Loréal",
+      "exchange": "EPA",
+      "symbol": "OR"
+    },
+    {
+      "title": "LBG Media",
+      "exchange": "LON",
+      "symbol": "LBG"
+    },
+    {
+      "title": "Vinfast",
+      "exchange": "NASDAQ",
+      "symbol": "VFS"
+    },
+    {
+      "title": "International Workplace Group",
+      "exchange": "LON",
+      "symbol": "IWG"
+    },
+    {
+      "title": "Genus",
+      "exchange": "LON",
+      "symbol": "GNS"
+    },
+    {
+      "title": "Kneat Solutions",
+      "exchange": "TSE",
+      "symbol": "KSI"
+    },
+    {
+      "title": "MIPS",
+      "exchange": "STO",
+      "symbol": "MIPS"
+    },
+    {
+      "title": "Harbour Energy",
+      "exchange": "LON",
+      "symbol": "HBR"
+    },
+    {
+      "title": "Sherwin Williams",
+      "exchange": "NYSE",
+      "symbol": "SHW"
+    },
+    {
+      "title": "Kneat Solutions",
+      "exchange": "TSE",
+      "symbol": "KSI"
+    },
+    {
+      "title": "ASPI - NEW",
+      "exchange": "NASDAQ",
+      "symbol": "ASPI"
+    },
+    {
+      "title": "RHI Magnesita",
+      "exchange": "LON",
+      "symbol": "RHIM"
+    },
+    {
+      "title": "Northern Data",
+      "exchange": "ETR",
+      "symbol": "NB2"
+    },
+    {
+      "title": "Bumble",
+      "exchange": "NASDAQ",
+      "symbol": "BMBL"
+    },
+    {
+      "title": "Marks Electrical",
+      "exchange": "LON",
+      "symbol": "MRK"
+    },
+    {
+      "title": "Indra Sistemas S.A.",
+      "exchange": "LON",
+      "symbol": "GLEN"
+    },
+    {
+      "title": "ASP Isotopes",
+      "exchange": "NASDAQ",
+      "symbol": "ASPI"
+    }
+  ]
+}
