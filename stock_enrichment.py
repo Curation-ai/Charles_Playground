@@ -47,7 +47,7 @@ ENRICHED_STOCKS = {
     "OSI Systems": {"OSIS", "Security", "Inspection", "Screening", "Defence", "Border", "Rapiscan"},
     "Indra Sistemas": {"IDR", "Defence", "European Defence", "Spain", "Technology"},
     "Renk": {"RENK", "Defence", "European Defence", "Germany", "Tanks"},
-    "Avio": {"AVIO", "Defence", "European Defence", "Space", "Italy", "NATO"},
+    "Avio": {"AVIO", "Defence", "European Defence", "Space", "Italy", "NATO", "Rockets", "Vega"},
     "Palantir": {"PLTR", "Peter Thiel", "Big Data", "Ontology", "AI", "Defence Tech", "Government", "SaaS", "Edge Computing"},
     "Smiths Group": {"SMIN", "Detection", "Security", "Industrial", "Spin-off"},
     "Axon": {"AXON", "Taser", "Police", "Body Cameras", "Law Enforcement"},
@@ -249,6 +249,101 @@ ENRICHED_STOCKS = {
 
     # Additional Defence / Security
     "Motorola Solutions": {"MSI", "Security", "Communications", "Police", "First Responders"},
+
+    # Stocks added from chat analysis - European Defence
+    "Leonardo": {"LDO", "Defence", "European Defence", "Italy", "Helicopters", "Aerospace"},
+    "Babcock": {"BAB", "Defence", "UK", "Naval", "Marine", "Engineering"},
+    "BAE Systems": {"BA.", "BAESY", "Defence", "UK", "Aerospace", "Naval"},
+    "Rheinmetall": {"RHM", "Defence", "European Defence", "Germany", "Tanks", "Ammunition"},
+    "Dassault Aviation": {"AM", "Defence", "France", "Rafale", "Fighter Jets", "Aerospace"},
+    "MilDef": {"MILDEF", "Defence", "European Defence", "Sweden", "Rugged IT"},
+    "Anduril": {"ANDURIL", "Defence Tech", "AI", "Drones", "Palmer Luckey", "Private"},
+
+    # Space / Satellites
+    "Eutelsat": {"ETL", "Satellites", "Telecom", "Space", "Broadband", "OneWeb"},
+
+    # Biotech / Healthcare additions
+    "Compass Pathways": {"CMPS", "Psychedelics", "Depression", "Biotech", "Mental Health", "Psilocybin"},
+    "Innovent Biologics": {"1801", "China", "Biotech", "GLP-1", "Obesity", "Mazdutide"},
+
+    # Crypto / Digital Assets
+    "Marathon Digital": {"MARA", "Bitcoin", "Mining", "Crypto", "BTC"},
+    "Riot Platforms": {"RIOT", "Bitcoin", "Mining", "Crypto", "BTC"},
+    "CoinShares": {"CS", "Crypto", "Asset Management", "ETF", "Digital Assets"},
+    "Bitcoin Group SE": {"ADE", "Crypto", "Bitcoin", "Germany", "Treasury", "Bank"},
+    "Northern Data": {"NB2", "Data Centers", "AI", "Bitcoin Mining", "Germany"},
+
+    # Building Materials / Infrastructure
+    "Heidelberg Materials": {"HEI", "Building Materials", "Cement", "Germany", "Infrastructure"},
+    "Holcim": {"HOLN", "Building Materials", "Cement", "Switzerland", "Infrastructure"},
+    "CRH": {"CRH", "Building Materials", "Cement", "Ireland", "Infrastructure"},
+    "ThyssenKrupp": {"TKA", "Steel", "Germany", "Industrial", "Engineering"},
+
+    # Mining / Commodities additions
+    "Fresnillo": {"FRES", "Silver", "Gold", "Mining", "Mexico", "Precious Metals"},
+    "MP Materials": {"MP", "Rare Earths", "Mining", "USA", "Magnets", "EV"},
+    "Rainbow Rare Earths": {"RBW", "Rare Earths", "Mining", "Recycling", "Critical Minerals"},
+    "Alphamin": {"AFM", "Tin", "Mining", "DRC", "Critical Minerals"},
+    "Tungsten West": {"TUN", "Tungsten", "Mining", "UK", "Critical Minerals", "Defence"},
+    "Deep Yellow": {"DYL", "Uranium", "Mining", "Australia", "Namibia"},
+    "Paladin Energy": {"PDN", "Uranium", "Mining", "Australia", "Nuclear"},
+    "Fission Uranium": {"FCU", "Uranium", "Mining", "Canada", "Athabasca"},
+    "Skyharbour Resources": {"SYH", "Uranium", "Mining", "Canada", "Athabasca", "Junior"},
+    "Valterra": {"VAL", "PGM", "Platinum", "Mining", "South Africa", "Anglo"},
+
+    # Offshore / Energy Services
+    "Valaris": {"VAL", "Offshore", "Drilling", "Oil Services", "Deepwater"},
+    "Seadrill": {"SDRL", "Offshore", "Drilling", "Oil Services", "Deepwater"},
+    "Noble Corporation": {"NE", "Offshore", "Drilling", "Oil Services", "Deepwater"},
+    "Saipem": {"SPM", "Offshore", "Engineering", "Oil Services", "Italy"},
+    "Viridien": {"VIRI", "Seismic", "Oil Services", "Data", "Geoscience"},
+
+    # Technology / Software additions
+    "Vertiv": {"VRT", "Data Centers", "Infrastructure", "Cooling", "Power"},
+    "Roblox": {"RBLX", "Gaming", "Metaverse", "Kids", "Platform", "UGC"},
+    "Unity Software": {"U", "Gaming", "Engine", "3D", "Metaverse", "Developers"},
+
+    # Live Events / Entertainment
+    "Sphere Entertainment": {"SPHR", "Live Events", "Las Vegas", "Entertainment", "MSG"},
+    "Live Nation": {"LYV", "Live Events", "Concerts", "Ticketmaster", "Entertainment"},
+    "Eventbrite": {"EB", "Ticketing", "Events", "Platform", "SaaS"},
+    "IMAX": {"IMAX", "Cinema", "Entertainment", "Technology", "Premium"},
+    "Manchester United": {"MANU", "Sports", "Football", "UK", "Media"},
+    "CTS Eventim": {"EVD", "Ticketing", "Events", "Germany", "Entertainment"},
+
+    # Prisons / Real Assets
+    "GEO Group": {"GEO", "Prisons", "REIT", "Immigration", "Corrections"},
+
+    # Fintech additions
+    "Marqeta": {"MQ", "Fintech", "Payments", "Cards", "API", "BaaS"},
+
+    # Banking additions
+    "BAWAG": {"BG", "Banking", "Austria", "Europe", "Cerberus"},
+
+    # Industrials / Robotics
+    "Fanuc": {"6954", "Robotics", "Japan", "Automation", "CNC", "Industrial"},
+    "John Deere": {"DE", "Agriculture", "Tractors", "Robotics", "Automation", "Farming"},
+    "SMC Corporation": {"6273", "Pneumatics", "Japan", "Automation", "Industrial"},
+    "Schneider Electric": {"SU", "Industrial", "Energy Management", "Automation", "Data Centers"},
+
+    # Aviation
+    "Embraer": {"ERJ", "Aviation", "Brazil", "Regional Jets", "Defence", "Aerospace"},
+    "Archer Aviation": {"ACHR", "eVTOL", "Flying Taxis", "Urban Air Mobility", "Anduril"},
+
+    # Cannabis
+    "Glass House Brands": {"GLASF", "Cannabis", "California", "Greenhouse", "USA"},
+
+    # Social Media
+    "Pinterest": {"PINS", "Social Media", "Visual Search", "E-commerce", "Advertising"},
+
+    # Clean Energy
+    "Atome Energy": {"ATOM", "Hydrogen", "Green Energy", "Iceland", "Paraguay", "Ammonia"},
+
+    # Asset Management
+    "Sprott Inc": {"SII", "Asset Management", "Commodities", "Gold", "Uranium", "ETF"},
+
+    # Funds / Investment vehicles
+    "Pershing Square Holdings": {"PSH", "Hedge Fund", "Bill Ackman", "Activism", "Concentrated"},
 }
 
 
