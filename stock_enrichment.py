@@ -195,6 +195,60 @@ ENRICHED_STOCKS = {
     "JPMorgan": {"JPM", "Banking", "Investment Bank", "Asset Management", "Jamie Dimon"},
     "Morgan Stanley": {"MS", "Investment Bank", "Wealth Management", "Trading"},
     "T. Rowe Price": {"TROW", "Asset Management", "Mutual Funds", "Active Management"},
+
+    # Space / Aerospace
+    "Rocket Lab": {"RKLB", "Space", "Rockets", "Satellites", "Launch Services", "Peter Beck"},
+
+    # Luxury / Fashion
+    "LVMH": {"MC", "LVMUY", "Luxury", "Fashion", "Louis Vuitton", "Bernard Arnault"},
+    "Richemont": {"CFR", "Luxury", "Watches", "Cartier", "YNAP", "Jewellery"},
+    "MyTheresa": {"MYTE", "Luxury", "E-commerce", "Fashion", "YNAP"},
+
+    # UK Fashion / E-commerce
+    "ASOS": {"ASC", "Fashion", "E-commerce", "UK", "Online Retail"},
+    "Boohoo": {"BOO", "Fashion", "E-commerce", "UK", "Fast Fashion"},
+
+    # Additional Biotech / Healthcare
+    "Cybin": {"CYBN", "Psychedelics", "Depression", "Biotech", "Mental Health", "RFK"},
+    "Bristol-Myers Squibb": {"BMY", "Pharma", "Oncology", "Immunology", "Karuna"},
+    "CRISPR Therapeutics": {"CRSP", "Gene Editing", "Biotech", "CRISPR", "RFK"},
+    "INmune Bio": {"INMB", "Biotech", "Inflammation", "Cancer", "Neurodegeneration"},
+    "Cardiol Therapeutics": {"CRDL", "Biotech", "Cardiology", "Heart Disease"},
+    "Oxford Biomedica": {"OXB", "Gene Therapy", "Viral Vectors", "UK", "Biotech"},
+    "Tempus AI": {"TEM", "Healthcare AI", "Diagnostics", "Precision Medicine", "Pelosi"},
+
+    # Additional Fintech
+    "SoFi": {"SOFI", "Fintech", "Banking", "Lending", "Student Loans"},
+    "Coupang": {"CPNG", "E-commerce", "Korea", "Delivery", "Farfetch"},
+
+    # Coal / Energy
+    "Arch Resources": {"ARCH", "Coal", "Metallurgical", "Energy", "Mining"},
+    "CONSOL Energy": {"CEIX", "Coal", "Energy", "Mining", "Pennsylvania"},
+
+    # Additional Uranium
+    "Kazatomprom": {"KAP", "Uranium", "Kazakhstan", "Mining", "Nuclear"},
+
+    # Streaming / Media
+    "Roku": {"ROKU", "Streaming", "Connected TV", "Advertising", "Platform"},
+
+    # Conglomerates
+    "Berkshire Hathaway": {"BRK.A", "BRK.B", "Conglomerate", "Warren Buffett", "Insurance", "Value"},
+
+    # Additional UK
+    "Barclays": {"BARC", "Banking", "UK", "Investment Bank", "Credit Cards"},
+    "Phoenix Digital Assets": {"PNIX", "Crypto", "UK", "Digital Assets", "Bitcoin"},
+
+    # Additional Auto
+    "Volkswagen": {"VOW3", "VWAGY", "Auto", "EV", "Germany", "Europe"},
+
+    # Additional Semiconductors / China
+    "SMIC": {"0981", "Semiconductors", "China", "Foundry", "Chips"},
+
+    # Additional Retail
+    "Costco": {"COST", "Retail", "Warehouse", "Membership", "Gold Bars"},
+
+    # Additional Defence / Security
+    "Motorola Solutions": {"MSI", "Security", "Communications", "Police", "First Responders"},
 }
 
 
