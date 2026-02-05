@@ -1,0 +1,41 @@
+{
+  "sources": {
+    "stock_enrichment.py": {
+      "name": "Main Enrichment File",
+      "location": "../stock_enrichment.py",
+      "type": "python_dict",
+      "record_count": 346,
+      "description": "Primary enriched stock data with tags, keywords, and categories",
+      "last_synced": "2026-02-05",
+      "format": "ENRICHED_STOCKS dictionary"
+    },
+    "stock_symbols.json": {
+      "name": "Curated Stock List",
+      "location": "../stock_symbols.json",
+      "type": "json",
+      "record_count": 134,
+      "description": "Subset of curated stocks with exchange and market data",
+      "last_synced": "2026-02-05",
+      "format": "JSON array"
+    }
+  },
+  "import_sources": {
+    "platform": {
+      "name": "External Platform",
+      "description": "Stocks imported from external platforms",
+      "status": "pending_import",
+      "location": "raw/platform_symbols.json"
+    },
+    "chat_analysis": {
+      "name": "Chat Analysis",
+      "description": "Stocks extracted from chat-based curation and analysis",
+      "status": "pending_import",
+      "location": "raw/chat_extracted.json"
+    }
+  },
+  "metadata": {
+    "created": "2026-02-05",
+    "last_updated": "2026-02-05",
+    "notes": "Track all data sources and their integration status"
+  }
+}

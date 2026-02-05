@@ -1,0 +1,84 @@
+{
+  "categories": {
+    "technology": {
+      "name": "Technology",
+      "description": "Technology sector stocks",
+      "tags": ["AI", "Cloud", "Semiconductors", "GPU", "Software", "Cybersecurity", "Networking"]
+    },
+    "energy": {
+      "name": "Energy",
+      "description": "Energy and utilities sector",
+      "tags": ["Nuclear", "Uranium", "Oil & Gas", "Renewable", "Solar", "Wind"]
+    },
+    "healthcare": {
+      "name": "Healthcare & Pharma",
+      "description": "Healthcare, pharmaceutical, and biotech stocks",
+      "tags": ["Pharma", "Biotech", "Medical Devices", "Healthcare Services", "Diagnostics"]
+    },
+    "defence": {
+      "name": "Defence & Aerospace",
+      "description": "Defence, aerospace, and military-related stocks",
+      "tags": ["Defence", "Aerospace", "Military", "European Defence"]
+    },
+    "automotive": {
+      "name": "Automotive & Transportation",
+      "description": "Vehicle and transportation sector",
+      "tags": ["EV", "Auto", "Electric Vehicles", "Traditional Auto"]
+    },
+    "financial": {
+      "name": "Financial Services",
+      "description": "Financial and fintech sector",
+      "tags": ["Fintech", "Banking", "Insurance", "Payments", "Blockchain"]
+    },
+    "materials": {
+      "name": "Materials & Mining",
+      "description": "Raw materials, mining, and commodities",
+      "tags": ["Mining", "Metals", "Rare Earths", "Lithium", "Commodities"]
+    },
+    "industrial": {
+      "name": "Industrial & Manufacturing",
+      "description": "Industrial, manufacturing, and equipment",
+      "tags": ["Manufacturing", "Heavy Equipment", "Industrial", "Robotics"]
+    },
+    "consumer": {
+      "name": "Consumer & Retail",
+      "description": "Consumer goods, retail, and e-commerce",
+      "tags": ["Retail", "E-commerce", "Consumer Goods", "Food & Beverage"]
+    },
+    "media": {
+      "name": "Media & Entertainment",
+      "description": "Media, entertainment, and content",
+      "tags": ["Streaming", "Content", "Broadcasting", "Gaming", "Social Media"]
+    },
+    "real_estate": {
+      "name": "Real Estate",
+      "description": "Real estate and property sector",
+      "tags": ["Real Estate", "REIT", "Property"]
+    },
+    "space": {
+      "name": "Space & Satellite",
+      "description": "Space exploration and satellite technology",
+      "tags": ["Space", "Satellite", "Space Launch", "Space Tech"]
+    }
+  },
+  "geographic": {
+    "name": "Geographic Tags",
+    "description": "Geographic regions and countries",
+    "tags": {
+      "USA": "United States based companies",
+      "UK": "United Kingdom based companies",
+      "China": "China based companies",
+      "Europe": "European companies",
+      "Japan": "Japan based companies",
+      "Australia": "Australia based companies",
+      "Canada": "Canada based companies",
+      "Rest of World": "Other geographic regions"
+    }
+  },
+  "metadata": {
+    "created": "2026-02-05",
+    "last_updated": "2026-02-05",
+    "total_categories": 12,
+    "notes": "Categories reflect the existing taxonomy in stock_enrichment.py"
+  }
+}
