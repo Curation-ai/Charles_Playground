@@ -1,0 +1,56 @@
+{
+  "stock_schema": {
+    "title": "Stock Schema",
+    "description": "Structure for stock data in the enriched database",
+    "type": "object",
+    "properties": {
+      "company_name": {
+        "type": "string",
+        "description": "Full company name"
+      },
+      "ticker": {
+        "type": "string",
+        "description": "Stock ticker symbol (e.g., AAPL)"
+      },
+      "exchange": {
+        "type": "string",
+        "description": "Stock exchange (e.g., NASDAQ, NYSE, LON)"
+      },
+      "tags": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Thematic tags categorizing the stock (e.g., AI, Cloud, Uranium, Defence)"
+      },
+      "keywords": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Additional keywords for search and categorization"
+      },
+      "categories": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Primary business categories"
+      },
+      "description": {
+        "type": "string",
+        "description": "Brief description of the company and its business"
+      },
+      "source": {
+        "type": "string",
+        "description": "Data source (e.g., platform, chat_analysis, manual)"
+      },
+      "last_updated": {
+        "type": "string",
+        "format": "date-time",
+        "description": "When this record was last updated"
+      }
+    },
+    "required": ["company_name", "ticker", "tags"]
+  }
+}
