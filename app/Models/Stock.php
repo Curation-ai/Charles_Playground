@@ -210,7 +210,7 @@ class Stock extends Model
      *
      * @example Stock::recent()->limit(10)->get()
      */
-    public function scopeRecent(Builder $query, int $limit = null): Builder
+    public function scopeRecent(Builder $query, ?int $limit = null): Builder
     {
         $query = $query->orderByDesc('date_mentioned');
 
