@@ -21,3 +21,26 @@
 #5 /home/user/Charles_Playground/artisan(36): Illuminate\\Foundation\\Console\\Kernel->handle()
 #6 {main}
 "} 
+[2026-02-13 18:30:28] local.ERROR: PHP Parse error: Syntax error, unexpected '=' on line 3 {"exception":"[object] (Psy\\Exception\\ParseErrorException(code: 0): PHP Parse error: Syntax error, unexpected '=' on line 3 at /home/user/Charles_Playground/vendor/psy/psysh/src/Exception/ParseErrorException.php:44)
+[stacktrace]
+#0 /home/user/Charles_Playground/vendor/psy/psysh/src/CodeCleaner.php(488): Psy\\Exception\\ParseErrorException::fromParseError()
+#1 /home/user/Charles_Playground/vendor/psy/psysh/src/CodeCleaner.php(269): Psy\\CodeCleaner->parse()
+#2 /home/user/Charles_Playground/vendor/psy/psysh/src/Shell.php(1059): Psy\\CodeCleaner->clean()
+#3 /home/user/Charles_Playground/vendor/psy/psysh/src/Shell.php(1092): Psy\\Shell->addCode()
+#4 /home/user/Charles_Playground/vendor/psy/psysh/src/Shell.php(1640): Psy\\Shell->setCode()
+#5 /home/user/Charles_Playground/vendor/laravel/tinker/src/Console/TinkerCommand.php(77): Psy\\Shell->execute()
+#6 /home/user/Charles_Playground/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(36): Laravel\\Tinker\\Console\\TinkerCommand->handle()
+#7 /home/user/Charles_Playground/vendor/laravel/framework/src/Illuminate/Container/Util.php(43): Illuminate\\Container\\BoundMethod::{closure:Illuminate\\Container\\BoundMethod::call():35}()
+#8 /home/user/Charles_Playground/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(95): Illuminate\\Container\\Util::unwrapIfClosure()
+#9 /home/user/Charles_Playground/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(35): Illuminate\\Container\\BoundMethod::callBoundMethod()
+#10 /home/user/Charles_Playground/vendor/laravel/framework/src/Illuminate/Container/Container.php(696): Illuminate\\Container\\BoundMethod::call()
+#11 /home/user/Charles_Playground/vendor/laravel/framework/src/Illuminate/Console/Command.php(213): Illuminate\\Container\\Container->call()
+#12 /home/user/Charles_Playground/vendor/symfony/console/Command/Command.php(341): Illuminate\\Console\\Command->execute()
+#13 /home/user/Charles_Playground/vendor/laravel/framework/src/Illuminate/Console/Command.php(182): Symfony\\Component\\Console\\Command\\Command->run()
+#14 /home/user/Charles_Playground/vendor/symfony/console/Application.php(1102): Illuminate\\Console\\Command->run()
+#15 /home/user/Charles_Playground/vendor/symfony/console/Application.php(356): Symfony\\Component\\Console\\Application->doRunCommand()
+#16 /home/user/Charles_Playground/vendor/symfony/console/Application.php(195): Symfony\\Component\\Console\\Application->doRun()
+#17 /home/user/Charles_Playground/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(198): Symfony\\Component\\Console\\Application->run()
+#18 /home/user/Charles_Playground/artisan(36): Illuminate\\Foundation\\Console\\Kernel->handle()
+#19 {main}
+"} 
