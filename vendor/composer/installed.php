@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-claude/create-new-folder-KSnsL',
         'version' => 'dev-claude/create-new-folder-KSnsL',
-        'reference' => '9fc8707167973021c0de059ebcf64079cddd2f07',
+        'reference' => '5a11edec0b09dcb4d793f9afdf9e2ac4bd47e45c',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -361,6 +361,15 @@
                 0 => 'v11.48.0',
             ),
         ),
+        'inertiajs/inertia-laravel' => array(
+            'pretty_version' => 'v2.0.20',
+            'version' => '2.0.20.0',
+            'reference' => '02a719d1120378aed68053b5b2d35157140df50e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../inertiajs/inertia-laravel',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -379,7 +388,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-claude/create-new-folder-KSnsL',
             'version' => 'dev-claude/create-new-folder-KSnsL',
-            'reference' => '9fc8707167973021c0de059ebcf64079cddd2f07',
+            'reference' => '5a11edec0b09dcb4d793f9afdf9e2ac4bd47e45c',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
