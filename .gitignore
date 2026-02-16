@@ -6,6 +6,7 @@ __pycache__/
 .DS_Store
 *.log
 /storage/logs/
+/storage/framework/
 /bootstrap/cache/
 public/hot
 .vite/
