@@ -43,6 +43,10 @@ $app->singleton(
     App\Exceptions\Handler::class
 );
 
+// Register service providers
+$app->register(App\Providers\RouteServiceProvider::class);
+$app->register(App\Providers\InertiaServiceProvider::class);
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

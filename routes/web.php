@@ -15,6 +15,9 @@ use Inertia\Inertia;
 |
 */
 
+// Test route
+Route::get('/test', fn () => response()->json(['message' => 'Server is working!']));
+
 // Welcome page
 Route::get('/', fn () => Inertia::render('Welcome'))->name('welcome');
 
