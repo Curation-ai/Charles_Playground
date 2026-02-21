@@ -1,8 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Stock, PaginatedResponse, SearchResult, SearchMode, ValuationView } from "@/types/stock";
 import { getStocks, deleteStock, bulkUpdate, searchStocks, generateEmbeddings } from "@/lib/api";
 import StockModal from "@/components/StockModal";
@@ -51,21 +51,43 @@ function ValuationPill({ value }: { value: ValuationView | null }) {
 
 const VALUATION_FILTER_OPTIONS: Array<ValuationView | "All"> = ["All", "Undervalued", "Fair Value", "Overvalued", "Unknown"];
 
-// ── Page ───────────────────────────────────────────────────────────────────
+// ── Suspense wrapper ───────────────────────────────────────────────────────
+// useSearchParams() requires a Suspense boundary in Next.js App Router.
 
 export default function StocksPage() {
-  const router = useRouter();
+  return (
+    <Suspense fallback={
+      <div className="flex min-h-screen items-center justify-center bg-zinc-50 dark:bg-zinc-950">
+        <p className="text-zinc-500">Loading…</p>
+      </div>
+    }>
+      <StocksPageContent />
+    </Suspense>
+  );
+}
+
+// ── Page content ───────────────────────────────────────────────────────────
+
+function StocksPageContent() {
+  const router       = useRouter();
+  const searchParams = useSearchParams();
 
   // ── Browse state ──────────────────────────────────────────────────────────
+  // All stateful values are initialised directly from URL params so that a
+  // page refresh or shared link restores the exact same view.
   const [data, setData]                 = useState<PaginatedResponse<Stock> | null>(null);
-  const [browseSearch, setBrowseSearch] = useState("");
-  const [page, setPage]                 = useState(1);
+  const [browseSearch, setBrowseSearch] = useState(searchParams.get("search") ?? "");
+  const [page, setPage]                 = useState(parseInt(searchParams.get("page") ?? "1", 10));
   const [loading, setLoading]           = useState(true);
   const [error, setError]               = useState<string | null>(null);
 
   // Filters
-  const [valuationFilter, setValuationFilter] = useState<ValuationView | "All">("All");
-  const [thesisFilter, setThesisFilter]       = useState<"All" | "Yes" | "No">("All");
+  const [valuationFilter, setValuationFilter] = useState<ValuationView | "All">(
+    (searchParams.get("valuation") ?? "All") as ValuationView | "All"
+  );
+  const [thesisFilter, setThesisFilter] = useState<"All" | "Yes" | "No">(
+    (searchParams.get("hasThesis") ?? "All") as "All" | "Yes" | "No"
+  );
 
   // Modal
   const [modalOpen, setModalOpen]       = useState(false);
@@ -79,21 +101,21 @@ export default function StocksPage() {
   const [selectedIds, setSelectedIds] = useState<Set<number>>(new Set());
 
   // Bulk edit modal
-  const [bulkEditOpen, setBulkEditOpen]       = useState(false);
-  const [bulkValuation, setBulkValuation]     = useState<string>("");
+  const [bulkEditOpen, setBulkEditOpen]         = useState(false);
+  const [bulkValuation, setBulkValuation]       = useState<string>("");
   const [bulkOriginatedBy, setBulkOriginatedBy] = useState("");
-  const [bulkEditSaving, setBulkEditSaving]   = useState(false);
-  const [bulkEditError, setBulkEditError]     = useState<string | null>(null);
+  const [bulkEditSaving, setBulkEditSaving]     = useState(false);
+  const [bulkEditError, setBulkEditError]       = useState<string | null>(null);
   const [bulkRegenLoading, setBulkRegenLoading] = useState(false);
-  const [bulkRegenDone, setBulkRegenDone]     = useState(false);
+  const [bulkRegenDone, setBulkRegenDone]       = useState(false);
 
   // ── AI Search state ───────────────────────────────────────────────────────
-  const [aiQuery, setAiQuery]         = useState("");
-  const [aiMode, setAiMode]           = useState<SearchMode>("hybrid");
-  const [compareMode, setCompareMode] = useState(false);
-  const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null);
-  const [searchLoading, setSearchLoading] = useState(false);
-  const [searchError, setSearchError]     = useState<string | null>(null);
+  const [aiQuery, setAiQuery]         = useState(searchParams.get("q") ?? "");
+  const [aiMode, setAiMode]           = useState<SearchMode>((searchParams.get("mode") ?? "hybrid") as SearchMode);
+  const [compareMode, setCompareMode] = useState(searchParams.get("compare") === "1");
+  const [searchResults, setSearchResults]   = useState<SearchResult[] | null>(null);
+  const [searchLoading, setSearchLoading]   = useState(false);
+  const [searchError, setSearchError]       = useState<string | null>(null);
   const [compareResults, setCompareResults] = useState<{
     keyword: SearchResult[];
     semantic: SearchResult[];
@@ -102,23 +124,98 @@ export default function StocksPage() {
 
   const searchActive = searchResults !== null || compareResults !== null;
 
-  // ── URL state: read on mount ──────────────────────────────────────────────
-  const didMountSearch = useRef(false);
-  useEffect(() => {
-    if (didMountSearch.current) return;
-    didMountSearch.current = true;
-    const params  = new URLSearchParams(window.location.search);
-    const q       = params.get("q");
-    const m       = params.get("mode") as SearchMode | null;
-    const compare = params.get("compare") === "1";
-    if (q) {
-      setAiQuery(q);
-      if (m && (["keyword", "semantic", "hybrid"] as string[]).includes(m)) setAiMode(m);
-      if (compare) setCompareMode(true);
-      setTimeout(() => triggerSearch(q, m ?? "hybrid", compare), 0);
+  // Tracks the last query that was actually fetched — prevents a double-fire
+  // when filter changes call updateURL (which updates searchParams) while q
+  // hasn't changed.
+  const lastSearchedRef = useRef<string | null>(null);
+
+  // ── URL update helper ─────────────────────────────────────────────────────
+  // Reads window.location.search each time it runs so debounced callbacks and
+  // async functions always work with the freshest params (no stale closure).
+  // Uses router.replace — filter changes don't add entries to the history stack,
+  // keeping the browser back button clean for actual page navigations.
+  const updateURL = useCallback((updates: {
+    search?:   string;
+    page?:     number;
+    valuation?: string;
+    hasThesis?: string;
+    q?:        string;
+    mode?:     string;
+    compare?:  boolean;
+    expanded?: number | null;
+  }) => {
+    const params = new URLSearchParams(window.location.search);
+
+    if (updates.search !== undefined) {
+      updates.search ? params.set("search", updates.search) : params.delete("search");
     }
+    if (updates.page !== undefined) {
+      updates.page > 1 ? params.set("page", String(updates.page)) : params.delete("page");
+    }
+    if (updates.valuation !== undefined) {
+      updates.valuation && updates.valuation !== "All"
+        ? params.set("valuation", updates.valuation)
+        : params.delete("valuation");
+    }
+    if (updates.hasThesis !== undefined) {
+      updates.hasThesis && updates.hasThesis !== "All"
+        ? params.set("hasThesis", updates.hasThesis)
+        : params.delete("hasThesis");
+    }
+    if (updates.q !== undefined) {
+      updates.q ? params.set("q", updates.q) : params.delete("q");
+    }
+    if (updates.mode !== undefined) {
+      updates.mode && updates.mode !== "hybrid"
+        ? params.set("mode", updates.mode)
+        : params.delete("mode");
+    }
+    if (updates.compare !== undefined) {
+      updates.compare ? params.set("compare", "1") : params.delete("compare");
+    }
+    if (updates.expanded !== undefined) {
+      updates.expanded != null
+        ? params.set("expanded", String(updates.expanded))
+        : params.delete("expanded");
+    }
+
+    const qs = params.toString();
+    router.replace(`/stocks${qs ? `?${qs}` : ""}`);
+  }, [router]);
+
+  // ── Sync state from URL (browser back / forward) ──────────────────────────
+  // Next.js updates searchParams whenever the URL changes. We mirror those
+  // changes back into React state so the UI stays in sync. We also re-trigger
+  // search when q changes (e.g. back-button into a previous search).
+  useEffect(() => {
+    const q       = searchParams.get("q") ?? "";
+    const mode    = (searchParams.get("mode") ?? "hybrid") as SearchMode;
+    const compare = searchParams.get("compare") === "1";
+
+    setBrowseSearch(searchParams.get("search") ?? "");
+    setPage(parseInt(searchParams.get("page") ?? "1", 10));
+    setValuationFilter((searchParams.get("valuation") ?? "All") as ValuationView | "All");
+    setThesisFilter((searchParams.get("hasThesis") ?? "All") as "All" | "Yes" | "No");
+    setAiQuery(q);
+    setAiMode(mode);
+    setCompareMode(compare);
+
+    // q changed (or first load with q in URL) — run the search
+    if (q && q !== lastSearchedRef.current) {
+      // Pass updateUrl=false: the URL already has the correct state
+      runSearch(q, mode, compare, false);
+    }
+
+    // q was removed (e.g. back-button past a Clear action)
+    if (!q && lastSearchedRef.current) {
+      lastSearchedRef.current = null;
+      setSearchResults(null);
+      setCompareResults(null);
+      setSearchError(null);
+    }
+  // runSearch is defined below — stable function ref, safe to omit
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [searchParams]);
 
   // ── Browse data fetch ─────────────────────────────────────────────────────
   const fetchStocks = useCallback(async () => {
@@ -142,7 +239,12 @@ export default function StocksPage() {
   function handleBrowseSearchChange(value: string) {
     setBrowseSearch(value);
     if (debounceRef.current) clearTimeout(debounceRef.current);
-    debounceRef.current = setTimeout(() => setPage(1), 300);
+    // Debounce both the page reset and the URL write so we don't spam
+    // router.replace on every keystroke
+    debounceRef.current = setTimeout(() => {
+      setPage(1);
+      updateURL({ search: value, page: 1 });
+    }, 300);
   }
 
   useEffect(() => {
@@ -159,15 +261,17 @@ export default function StocksPage() {
   });
 
   // ── AI Search ─────────────────────────────────────────────────────────────
-  async function triggerSearch(q: string, mode: SearchMode, compare: boolean) {
+
+  // Core executor. Set updateUrl=false when the URL already reflects the
+  // desired state (e.g. triggered by the searchParams effect on back/forward).
+  async function runSearch(q: string, mode: SearchMode, compare: boolean, updateUrl = true) {
+    lastSearchedRef.current = q;
     setSearchLoading(true);
     setSearchError(null);
     setSearchResults(null);
     setCompareResults(null);
 
-    const params = new URLSearchParams({ q, mode });
-    if (compare) params.set("compare", "1");
-    window.history.pushState({}, "", `?${params}`);
+    if (updateUrl) updateURL({ q, mode, compare });
 
     try {
       if (compare) {
@@ -191,19 +295,50 @@ export default function StocksPage() {
   async function handleSearch() {
     const q = aiQuery.trim();
     if (!q) return;
-    await triggerSearch(q, aiMode, compareMode);
+    await runSearch(q, aiMode, compareMode);
   }
 
   function handleClearSearch() {
+    lastSearchedRef.current = null;
     setAiQuery("");
     setSearchResults(null);
     setCompareResults(null);
     setSearchError(null);
-    window.history.pushState({}, "", window.location.pathname);
+    updateURL({ q: "", compare: false });
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     if (e.key === "Enter") handleSearch();
+  }
+
+  // ── Filter change handlers ─────────────────────────────────────────────────
+  // Each handler keeps React state and URL in sync.
+
+  function handleValuationChange(value: ValuationView | "All") {
+    setValuationFilter(value);
+    setPage(1);
+    updateURL({ valuation: value, page: 1 });
+  }
+
+  function handleThesisChange(value: "All" | "Yes" | "No") {
+    setThesisFilter(value);
+    setPage(1);
+    updateURL({ hasThesis: value, page: 1 });
+  }
+
+  function handlePageChange(newPage: number) {
+    setPage(newPage);
+    updateURL({ page: newPage });
+  }
+
+  function handleModeChange(mode: SearchMode) {
+    setAiMode(mode);
+    updateURL({ mode });
+  }
+
+  function handleCompareModeChange(compare: boolean) {
+    setCompareMode(compare);
+    updateURL({ compare });
   }
 
   // ── Delete ────────────────────────────────────────────────────────────────
@@ -222,7 +357,7 @@ export default function StocksPage() {
   }
 
   // ── Selection helpers ─────────────────────────────────────────────────────
-  const allIds = filteredStocks.map((s) => s.id);
+  const allIds      = filteredStocks.map((s) => s.id);
   const allSelected = allIds.length > 0 && allIds.every((id) => selectedIds.has(id));
 
   function toggleAll(e: React.MouseEvent) {
@@ -253,8 +388,8 @@ export default function StocksPage() {
     setBulkEditError(null);
     setBulkEditSaving(true);
     const updates: Record<string, string> = {};
-    if (bulkValuation.trim())     updates.valuation_view = bulkValuation.trim();
-    if (bulkOriginatedBy.trim())  updates.originated_by  = bulkOriginatedBy.trim();
+    if (bulkValuation.trim())    updates.valuation_view = bulkValuation.trim();
+    if (bulkOriginatedBy.trim()) updates.originated_by  = bulkOriginatedBy.trim();
     try {
       await bulkUpdate(Array.from(selectedIds), updates);
       setBulkEditOpen(false);
@@ -344,7 +479,7 @@ export default function StocksPage() {
                 <button
                   key={m}
                   type="button"
-                  onClick={() => setAiMode(m)}
+                  onClick={() => handleModeChange(m)}
                   disabled={compareMode}
                   className={`px-3 py-2 text-xs font-medium capitalize transition-colors disabled:cursor-not-allowed ${
                     aiMode === m && !compareMode
@@ -361,7 +496,7 @@ export default function StocksPage() {
               <input
                 type="checkbox"
                 checked={compareMode}
-                onChange={(e) => setCompareMode(e.target.checked)}
+                onChange={(e) => handleCompareModeChange(e.target.checked)}
                 className="rounded border-zinc-300"
               />
               Compare modes
@@ -405,7 +540,7 @@ export default function StocksPage() {
               <label className="text-sm font-medium text-zinc-600 dark:text-zinc-400">Valuation:</label>
               <select
                 value={valuationFilter}
-                onChange={(e) => setValuationFilter(e.target.value as ValuationView | "All")}
+                onChange={(e) => handleValuationChange(e.target.value as ValuationView | "All")}
                 className="rounded border border-zinc-300 px-2.5 py-1.5 text-sm text-zinc-900 focus:border-blue-500 focus:outline-none dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
               >
                 {VALUATION_FILTER_OPTIONS.map((v) => <option key={v} value={v}>{v}</option>)}
@@ -415,7 +550,7 @@ export default function StocksPage() {
               <label className="text-sm font-medium text-zinc-600 dark:text-zinc-400">Has Thesis:</label>
               <select
                 value={thesisFilter}
-                onChange={(e) => setThesisFilter(e.target.value as "All" | "Yes" | "No")}
+                onChange={(e) => handleThesisChange(e.target.value as "All" | "Yes" | "No")}
                 className="rounded border border-zinc-300 px-2.5 py-1.5 text-sm text-zinc-900 focus:border-blue-500 focus:outline-none dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
               >
                 {["All", "Yes", "No"].map((v) => <option key={v} value={v}>{v}</option>)}
@@ -662,7 +797,7 @@ export default function StocksPage() {
                 </p>
                 <div className="flex gap-2">
                   <button
-                    onClick={() => setPage((p) => Math.max(1, p - 1))}
+                    onClick={() => handlePageChange(Math.max(1, page - 1))}
                     disabled={page <= 1}
                     className="rounded border border-zinc-300 px-3 py-1.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50 disabled:opacity-40 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800"
                   >Previous</button>
@@ -670,7 +805,7 @@ export default function StocksPage() {
                     Page {data.meta.current_page} of {data.meta.last_page}
                   </span>
                   <button
-                    onClick={() => setPage((p) => Math.min(data.meta.last_page, p + 1))}
+                    onClick={() => handlePageChange(Math.min(data.meta.last_page, page + 1))}
                     disabled={page >= data.meta.last_page}
                     className="rounded border border-zinc-300 px-3 py-1.5 text-sm font-medium text-zinc-700 hover:bg-zinc-50 disabled:opacity-40 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800"
                   >Next</button>
