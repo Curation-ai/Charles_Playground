@@ -54,6 +54,16 @@ class Stock extends Model
         $this->update(['metadata' => $metadata]);
     }
 
+    public function originatingMembers(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Member::class, 'member_originated_stocks')->withPivot('note')->withTimestamps();
+    }
+
+    public function commentingMembers(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(Member::class, 'member_commented_stocks')->withPivot('note')->withTimestamps();
+    }
+
     public function getAllFields(): array
     {
         return array_merge(

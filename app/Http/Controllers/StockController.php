@@ -36,7 +36,7 @@ class StockController extends Controller
 
     public function show(Stock $stock): StockResource
     {
-        return new StockResource($stock);
+        return new StockResource($stock->load('originatingMembers', 'commentingMembers'));
     }
 
     public function update(UpdateStockRequest $request, Stock $stock): StockResource
@@ -48,9 +48,29 @@ class StockController extends Controller
             $data['metadata'] = array_merge($stock->metadata ?? [], $data['metadata']);
         }
 
+        // Sync originating member links if provided
+        if (array_key_exists('originating_member_links', $data)) {
+            $syncData = [];
+            foreach ($data['originating_member_links'] ?? [] as $link) {
+                $syncData[$link['member_id']] = ['note' => $link['note'] ?? null];
+            }
+            $stock->originatingMembers()->sync($syncData);
+            unset($data['originating_member_links']);
+        }
+
+        // Sync commenting member links if provided
+        if (array_key_exists('commenting_member_links', $data)) {
+            $syncData = [];
+            foreach ($data['commenting_member_links'] ?? [] as $link) {
+                $syncData[$link['member_id']] = ['note' => $link['note'] ?? null];
+            }
+            $stock->commentingMembers()->sync($syncData);
+            unset($data['commenting_member_links']);
+        }
+
         $stock->update($data);
 
-        return new StockResource($stock->fresh());
+        return new StockResource($stock->fresh()->load('originatingMembers', 'commentingMembers'));
     }
 
     public function destroy(Stock $stock): JsonResponse

@@ -25,6 +25,12 @@ class UpdateStockRequest extends FormRequest
             'market_cap' => ['nullable', 'integer', 'min:0'],
             'metadata' => ['nullable', 'array'],
             'metadata.*' => ['nullable'],
+            'originating_member_links' => ['nullable', 'array'],
+            'originating_member_links.*.member_id' => ['required', 'integer', 'exists:members,id'],
+            'originating_member_links.*.note' => ['nullable', 'string', 'max:255'],
+            'commenting_member_links' => ['nullable', 'array'],
+            'commenting_member_links.*.member_id' => ['required', 'integer', 'exists:members,id'],
+            'commenting_member_links.*.note' => ['nullable', 'string', 'max:255'],
         ];
     }
 }

@@ -45,6 +45,30 @@ class StockResource extends JsonResource
         $data['fields_populated'] = $fieldsPopulated;
         $data['has_embedding']    = !empty($this->embedding);
 
+        // Include originating members when the relation is loaded
+        if ($this->relationLoaded('originatingMembers')) {
+            $data['originating_members'] = $this->originatingMembers->map(fn ($member) => [
+                'id'      => $member->id,
+                'name'    => $member->name,
+                'company' => $member->company,
+                'note'    => $member->pivot->note,
+            ])->values()->all();
+        } else {
+            $data['originating_members'] = [];
+        }
+
+        // Include commenting members when the relation is loaded
+        if ($this->relationLoaded('commentingMembers')) {
+            $data['commenting_members'] = $this->commentingMembers->map(fn ($member) => [
+                'id'      => $member->id,
+                'name'    => $member->name,
+                'company' => $member->company,
+                'note'    => $member->pivot->note,
+            ])->values()->all();
+        } else {
+            $data['commenting_members'] = [];
+        }
+
         // embedding and raw metadata are intentionally excluded
         return $data;
     }
