@@ -1,0 +1,4 @@
+name,ticker,sector,price,market_cap,tags,description,notes,investment_thesis,valuation_view,originated_by,date_added,last_reviewed
+"Apple Inc.",AAPL,Technology,"Consumer electronics, software, and services company.","Strong cash flow and dividend payer.",189.30,2950000000000,"mega-cap,dividend,sp500",NASDAQ,"Tim Cook",164000,https://www.apple.com
+"Microsoft Corporation",MSFT,Technology,"Cloud computing and enterprise software.","Azure growth driving revenue expansion.",415.50,3080000000000,"mega-cap,dividend,sp500",NASDAQ,"Satya Nadella",221000,https://www.microsoft.com
+"ExxonMobil Corporation",XOM,Energy,"Multinational oil and gas corporation.","Consistent dividend history over 40+ years.",112.40,450000000000,"dividend,sp500",NYSE,"Darren Woods",62000,https://corporate.exxonmobil.com
