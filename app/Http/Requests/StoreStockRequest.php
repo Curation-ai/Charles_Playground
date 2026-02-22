@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class UpdateStockRequest extends FormRequest
+class StoreStockRequest extends FormRequest
 {
     public function authorize(): bool
     {
@@ -15,8 +14,8 @@ class UpdateStockRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['sometimes', 'required', 'string', 'max:255'],
-            'ticker' => ['sometimes', 'required', 'string', 'max:10', Rule::unique('stocks', 'ticker')->ignore($this->route('stock'))],
+            'name' => ['required', 'string', 'max:255'],
+            'ticker' => ['required', 'string', 'max:10', 'unique:stocks,ticker'],
             'sector' => ['nullable', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
             'notes' => ['nullable', 'string'],
