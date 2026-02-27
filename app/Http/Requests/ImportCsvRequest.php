@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -19,18 +21,18 @@ class ImportCsvRequest extends FormRequest
         );
 
         return [
-            'file'             => ['required', 'file', 'mimes:csv,txt', 'max:10240'],
-            'column_mapping'   => ['sometimes', 'array'],
-            'column_mapping.*' => ['string', 'in:' . implode(',', $validFields)],
+            'file' => ['required', 'file', 'mimes:csv,txt', 'max:10240'],
+            'column_mapping' => ['sometimes', 'array'],
+            'column_mapping.*' => ['string', 'in:'.implode(',', $validFields)],
         ];
     }
 
     public function messages(): array
     {
         return [
-            'file.required'      => 'A CSV file is required.',
-            'file.mimes'         => 'The file must be a CSV (.csv or .txt).',
-            'file.max'           => 'The file must not exceed 10MB.',
+            'file.required' => 'A CSV file is required.',
+            'file.mimes' => 'The file must be a CSV (.csv or .txt).',
+            'file.max' => 'The file must not exceed 10MB.',
             'column_mapping.*.in' => 'Each column mapping value must be a valid stock field.',
         ];
     }

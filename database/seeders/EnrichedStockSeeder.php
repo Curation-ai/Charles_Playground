@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Seeders;
 
 use App\Models\Stock;
-use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
 
 class EnrichedStockSeeder extends Seeder
 {
@@ -14,8 +16,9 @@ class EnrichedStockSeeder extends Seeder
     {
         $path = base_path('scripts/enriched_stocks.json');
 
-        if (!file_exists($path)) {
+        if (! file_exists($path)) {
             $this->command->error("enriched_stocks.json not found at {$path}");
+
             return;
         }
 
@@ -28,17 +31,17 @@ class EnrichedStockSeeder extends Seeder
 
             if ($existing) {
                 $existing->update([
-                    'name'   => $data['name'],
+                    'name' => $data['name'],
                     'sector' => $data['sector'],
-                    'tags'   => $data['tags'],
+                    'tags' => $data['tags'],
                 ]);
                 $updated++;
             } else {
                 Stock::create([
-                    'name'   => $data['name'],
+                    'name' => $data['name'],
                     'ticker' => $data['ticker'],
                     'sector' => $data['sector'],
-                    'tags'   => $data['tags'],
+                    'tags' => $data['tags'],
                 ]);
                 $created++;
             }

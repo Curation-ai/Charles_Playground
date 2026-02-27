@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
@@ -7,14 +9,15 @@ use Illuminate\Support\Facades\Storage;
 
 class GenerateStockTemplate extends Command
 {
-    protected $signature   = 'stocks:template';
+    protected $signature = 'stocks:template';
+
     protected $description = 'Generate a CSV import template with all core and metadata fields';
 
     public function handle(): int
     {
-        $coreFields     = config('stock_fields.core_fields');
+        $coreFields = config('stock_fields.core_fields');
         $metadataFields = config('stock_fields.metadata_fields');
-        $headers        = array_merge(array_keys($coreFields), array_keys($metadataFields));
+        $headers = array_merge(array_keys($coreFields), array_keys($metadataFields));
 
         $exampleRows = [
             [
@@ -79,9 +82,9 @@ class GenerateStockTemplate extends Command
         $this->line('<fg=cyan>Fields:</>');
 
         foreach ($headers as $field) {
-            $config   = $coreFields[$field] ?? $metadataFields[$field];
+            $config = $coreFields[$field] ?? $metadataFields[$field];
             $required = ($config['required'] ?? false) ? '<fg=red>required</>' : 'optional';
-            $bucket   = array_key_exists($field, $coreFields) ? 'core' : 'metadata';
+            $bucket = array_key_exists($field, $coreFields) ? 'core' : 'metadata';
             $this->line("  {$field} ({$config['type']}, {$required}, {$bucket})");
         }
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Services;
 
 use RuntimeException;
@@ -22,7 +24,7 @@ class OpenAIService
             CURLOPT_POST => true,
             CURLOPT_HTTPHEADER => [
                 'Content-Type: application/json',
-                'Authorization: Bearer ' . $this->apiKey,
+                'Authorization: Bearer '.$this->apiKey,
             ],
             CURLOPT_POSTFIELDS => json_encode([
                 'model' => 'text-embedding-3-small',
@@ -46,7 +48,7 @@ class OpenAIService
 
         $data = json_decode($response, true);
 
-        if (!isset($data['data'][0]['embedding'])) {
+        if (! isset($data['data'][0]['embedding'])) {
             throw new RuntimeException('Unexpected OpenAI API response: missing embedding data');
         }
 

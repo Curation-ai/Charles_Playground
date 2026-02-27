@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Validator;
 
 class BulkUpdateStocksRequest extends FormRequest
 {
@@ -14,14 +17,14 @@ class BulkUpdateStocksRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'stock_ids'   => ['required', 'array', 'min:1'],
+            'stock_ids' => ['required', 'array', 'min:1'],
             'stock_ids.*' => ['required', 'integer', 'exists:stocks,id'],
-            'updates'     => ['required', 'array', 'min:1'],
-            'updates.*'   => ['nullable'],
+            'updates' => ['required', 'array', 'min:1'],
+            'updates.*' => ['nullable'],
         ];
     }
 
-    public function withValidator($validator): void
+    public function withValidator(Validator $validator): void
     {
         $validator->after(function ($validator) {
             $validFields = array_merge(
@@ -30,7 +33,7 @@ class BulkUpdateStocksRequest extends FormRequest
             );
 
             foreach (array_keys($this->input('updates', [])) as $field) {
-                if (!in_array($field, $validFields)) {
+                if (! in_array($field, $validFields)) {
                     $validator->errors()->add('updates', "'{$field}' is not a valid stock field.");
                 }
             }
@@ -40,9 +43,9 @@ class BulkUpdateStocksRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'stock_ids.required'   => 'At least one stock ID is required.',
-            'stock_ids.*.exists'   => 'One or more stock IDs do not exist.',
-            'updates.required'     => 'At least one field to update is required.',
+            'stock_ids.required' => 'At least one stock ID is required.',
+            'stock_ids.*.exists' => 'One or more stock IDs do not exist.',
+            'updates.required' => 'At least one field to update is required.',
         ];
     }
 }

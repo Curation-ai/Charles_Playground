@@ -1,11 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Stock extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'name',
         'ticker',
@@ -58,15 +63,15 @@ class Stock extends Model
     {
         return array_merge(
             [
-                'id'          => $this->id,
-                'name'        => $this->name,
-                'ticker'      => $this->ticker,
-                'sector'      => $this->sector,
+                'id' => $this->id,
+                'name' => $this->name,
+                'ticker' => $this->ticker,
+                'sector' => $this->sector,
                 'description' => $this->description,
-                'notes'       => $this->notes,
-                'tags'        => $this->tags,
-                'price'       => $this->price,
-                'market_cap'  => $this->market_cap,
+                'notes' => $this->notes,
+                'tags' => $this->tags,
+                'price' => $this->price,
+                'market_cap' => $this->market_cap,
             ],
             $this->metadata ?? []
         );

@@ -1,11 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Member extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'name',
         'email',
@@ -28,11 +34,11 @@ class Member extends Model
     protected function casts(): array
     {
         return [
-            'tags'             => 'array',
+            'tags' => 'array',
             'investment_focus' => 'array',
-            'embedding'        => 'array',
+            'embedding' => 'array',
             'last_contact_date' => 'date',
-            'is_active'        => 'boolean',
+            'is_active' => 'boolean',
         ];
     }
 
@@ -49,12 +55,12 @@ class Member extends Model
         ]));
     }
 
-    public function originatedStocks(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function originatedStocks(): BelongsToMany
     {
         return $this->belongsToMany(Stock::class, 'member_originated_stocks')->withPivot('note')->withTimestamps();
     }
 
-    public function commentedStocks(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    public function commentedStocks(): BelongsToMany
     {
         return $this->belongsToMany(Stock::class, 'member_commented_stocks')->withPivot('note')->withTimestamps();
     }

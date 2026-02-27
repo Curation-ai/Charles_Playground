@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Console\Commands;
 
 use App\Models\Stock;
@@ -7,14 +9,15 @@ use Illuminate\Console\Command;
 
 class MigrateStockMetadata extends Command
 {
-    protected $signature   = 'stocks:migrate-metadata';
+    protected $signature = 'stocks:migrate-metadata';
+
     protected $description = 'Migrate old metadata fields to the new investment-focused schema';
 
     // Old fields that map to new fields
     private array $mappings = [
         'first_mentioned_by' => 'originated_by',
-        'date_added'         => 'date_added',   // keep as-is
-        'date_updated'       => 'last_reviewed',
+        'date_added' => 'date_added',   // keep as-is
+        'date_updated' => 'last_reviewed',
     ];
 
     // Old fields with no equivalent — will be dropped
@@ -33,12 +36,13 @@ class MigrateStockMetadata extends Command
 
         if ($stocks->isEmpty()) {
             $this->info('No stocks found. Nothing to migrate.');
+
             return self::SUCCESS;
         }
 
         $migrated = 0;
-        $dropped  = 0;
-        $skipped  = 0;
+        $dropped = 0;
+        $skipped = 0;
 
         $this->info("Migrating metadata for {$stocks->count()} stocks…");
         $this->newLine();
@@ -48,6 +52,7 @@ class MigrateStockMetadata extends Command
 
             if (empty($old)) {
                 $skipped++;
+
                 continue;
             }
 
@@ -57,7 +62,7 @@ class MigrateStockMetadata extends Command
             foreach ($this->mappings as $oldKey => $newKey) {
                 if (array_key_exists($oldKey, $old) && $oldKey !== $newKey) {
                     // Only set new key if it doesn't already exist
-                    if (!array_key_exists($newKey, $new)) {
+                    if (! array_key_exists($newKey, $new)) {
                         $new[$newKey] = $old[$oldKey];
                     }
                     unset($new[$oldKey]);

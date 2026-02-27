@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Console\Commands;
 
 use App\Models\Stock;
@@ -9,6 +11,7 @@ use Illuminate\Console\Command;
 class EmbedStocks extends Command
 {
     protected $signature = 'stocks:embed';
+
     protected $description = 'Generate OpenAI embeddings for all stocks that are missing one';
 
     public function handle(OpenAIService $openAI): int
@@ -17,6 +20,7 @@ class EmbedStocks extends Command
 
         if ($stocks->isEmpty()) {
             $this->info('All stocks already have embeddings.');
+
             return self::SUCCESS;
         }
 

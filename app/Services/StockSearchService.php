@@ -1,12 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Services;
 
 use App\Models\Stock;
+use App\Traits\ComputesCosineSimilarity;
 use Illuminate\Support\Collection;
 
 class StockSearchService
 {
+    use ComputesCosineSimilarity;
+
     public function __construct(private OpenAIService $openAI) {}
 
     public function keywordSearch(string $query): Collection
@@ -26,31 +31,23 @@ class StockSearchService
         return $stocks->map(function (Stock $stock) use ($queryEmbedding) {
             $similarity = $this->cosineSimilarity($queryEmbedding, $stock->embedding);
             $stock->setAttribute('similarity', round($similarity, 4));
+
             return $stock;
         })
-        ->sortByDesc('similarity')
-        ->take(10)
-        ->values();
+            ->sortByDesc('similarity')
+            ->take(10)
+            ->values();
     }
 
-    private function cosineSimilarity(array $a, array $b): float
+    public function hybridSearch(string $query): Collection
     {
-        $dotProduct = 0.0;
-        $normA = 0.0;
-        $normB = 0.0;
+        $semantic = $this->semanticSearch($query);
+        $keyword = $this->keywordSearch($query);
 
-        for ($i = 0, $len = count($a); $i < $len; $i++) {
-            $dotProduct += $a[$i] * $b[$i];
-            $normA += $a[$i] * $a[$i];
-            $normB += $b[$i] * $b[$i];
-        }
+        $seenIds = $semantic->pluck('id')->toArray();
 
-        $denominator = sqrt($normA) * sqrt($normB);
+        $keywordOnly = $keyword->filter(fn (Stock $stock) => ! in_array($stock->id, $seenIds));
 
-        if ($denominator === 0.0) {
-            return 0.0;
-        }
-
-        return $dotProduct / $denominator;
+        return $semantic->concat($keywordOnly)->values();
     }
 }
