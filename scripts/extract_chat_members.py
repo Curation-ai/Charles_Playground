@@ -2,7 +2,7 @@
 """
 extract_chat_members.py
 -----------------------
-Parse a WhatsApp group chat TXT export and use the Claude API to extract
+Parse a WhatsApp group chat TXT export and use the OpenAI API to extract
 structured member profiles + their stock relationships.
 
 Usage:
@@ -12,8 +12,8 @@ Output:
     scripts/members_extracted.json
 
 Requirements:
-    pip install anthropic
-    ANTHROPIC_API_KEY must be set in the environment, or the script will
+    pip install openai
+    OPENAI_API_KEY must be set in the environment, or the script will
     attempt to read it from the backend .env file automatically.
 """
 
@@ -25,7 +25,7 @@ import time
 from collections import defaultdict
 from pathlib import Path
 
-import anthropic
+from openai import OpenAI
 
 # ── Constants ────────────────────────────────────────────────────────────────
 
@@ -75,20 +75,20 @@ INVESTOR_TYPES = [
 # ── Helpers ───────────────────────────────────────────────────────────────────
 
 def load_api_key() -> str:
-    """Return ANTHROPIC_API_KEY from env or .env file."""
-    key = os.environ.get("ANTHROPIC_API_KEY")
+    """Return OPENAI_API_KEY from env or .env file."""
+    key = os.environ.get("OPENAI_API_KEY")
     if key:
         return key
 
     if ENV_PATH.exists():
         for line in ENV_PATH.read_text().splitlines():
             line = line.strip()
-            if line.startswith("ANTHROPIC_API_KEY="):
+            if line.startswith("OPENAI_API_KEY="):
                 key = line.split("=", 1)[1].strip().strip('"').strip("'")
                 if key:
                     return key
 
-    print("ERROR: ANTHROPIC_API_KEY not found in environment or .env file.", file=sys.stderr)
+    print("ERROR: OPENAI_API_KEY not found in environment or .env file.", file=sys.stderr)
     sys.exit(1)
 
 
@@ -199,21 +199,21 @@ Rules:
 
 
 def extract_member(
-    client: anthropic.Anthropic,
+    client: OpenAI,
     name: str,
     messages: list[str],
     ticker_map: dict[str, str],
 ) -> dict:
-    """Call Claude to extract structured profile for one member."""
+    """Call OpenAI to extract structured profile for one member."""
     prompt = build_extraction_prompt(name, messages, ticker_map)
 
     try:
-        response = client.messages.create(
-            model="claude-haiku-4-5-20251001",
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
             max_tokens=1024,
             messages=[{"role": "user", "content": prompt}],
         )
-        raw = response.content[0].text.strip()
+        raw = response.choices[0].message.content.strip()
 
         # Strip markdown code fences if present
         if raw.startswith("```"):
@@ -247,7 +247,7 @@ def extract_member(
             "originated_tickers": [],
             "commented_tickers": [],
         }
-    except anthropic.APIError as e:
+    except Exception as e:
         print(f"  WARNING: API error for {name}: {e}", file=sys.stderr)
         return {
             "name": name,
@@ -273,7 +273,7 @@ def main():
 
     print(f"Loading API key…")
     api_key = load_api_key()
-    client  = anthropic.Anthropic(api_key=api_key)
+    client  = OpenAI(api_key=api_key)
 
     print(f"Parsing {chat_path.name}…")
     member_messages = parse_whatsapp_txt(chat_path)
