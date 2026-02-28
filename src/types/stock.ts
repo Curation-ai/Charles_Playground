@@ -1,3 +1,5 @@
+import type { StockMember } from "./member";
+
 export type ValuationView = "Undervalued" | "Fair Value" | "Overvalued" | "Unknown";
 
 export interface Stock {
@@ -21,6 +23,9 @@ export interface Stock {
   // Field population map (from StockResource)
   fields_populated: Record<string, boolean>;
   has_embedding: boolean;
+  // Linked members (populated on detail view)
+  originating_members: StockMember[];
+  commenting_members: StockMember[];
   created_at: string;
   updated_at: string;
 }
@@ -41,6 +46,8 @@ export interface StockPayload {
     originated_by?: string | null;
     [key: string]: unknown;
   };
+  originating_member_links?: { member_id: number; note?: string }[];
+  commenting_member_links?: { member_id: number; note?: string }[];
 }
 
 export interface PaginatedResponse<T> {

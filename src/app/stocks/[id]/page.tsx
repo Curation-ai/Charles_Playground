@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { Suspense, useEffect, useState } from "react";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Stock, ValuationView } from "@/types/stock";
 import { getStock, deleteStock, generateEmbeddings } from "@/lib/api";
@@ -30,17 +30,36 @@ function formatPrice(price: number | null): string {
   return `$${Number(price).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
-// ── Page ───────────────────────────────────────────────────────────────────
+function describeContext(qs: string): string {
+  if (!qs) return "Stocks";
+  const p = new URLSearchParams(qs);
+  const q = p.get("q");
+  const valuation = p.get("valuation");
+  const hasThesis = p.get("hasThesis");
+  const search = p.get("search");
+  if (q) return `Search: "${q}"`;
+  if (valuation) return `${valuation} stocks`;
+  if (hasThesis === "No") return "Missing thesis";
+  if (hasThesis === "Yes") return "Stocks with thesis";
+  if (search) return `"${search}"`;
+  return "Stocks";
+}
 
-export default function StockDetailPage() {
+// ── Inner content (needs useSearchParams → must be inside Suspense) ────────
+
+function StockDetailContent() {
   const { id } = useParams<{ id: string }>();
   const router  = useRouter();
+  const searchParams = useSearchParams();
+
+  const fromSearch = searchParams.get("from") ?? "";
+  const backHref   = `/stocks${fromSearch}`;
 
   const [stock, setStock]           = useState<Stock | null>(null);
   const [loading, setLoading]       = useState(true);
   const [error, setError]           = useState<string | null>(null);
   const [modalOpen, setModalOpen]   = useState(false);
-  const [modalTab, setModalTab]     = useState<"basics" | "investment" | "details">("basics");
+  const [modalTab, setModalTab]     = useState<"basics" | "investment" | "details" | "members">("basics");
   const [confirming, setConfirming] = useState(false);
   const [regenLoading, setRegenLoading] = useState(false);
   const [regenDone, setRegenDone]       = useState(false);
@@ -60,7 +79,7 @@ export default function StockDetailPage() {
 
   useEffect(() => { load(); }, [id]);
 
-  function openEdit(tab: "basics" | "investment" | "details" = "basics") {
+  function openEdit(tab: "basics" | "investment" | "details" | "members" = "basics") {
     setModalTab(tab);
     setModalOpen(true);
   }
@@ -68,7 +87,7 @@ export default function StockDetailPage() {
   async function handleDelete() {
     if (!confirming) { setConfirming(true); return; }
     await deleteStock(Number(id));
-    router.push("/stocks");
+    router.push(fromSearch ? `/stocks${fromSearch}` : "/stocks");
   }
 
   async function handleRegenEmbedding() {
@@ -94,7 +113,9 @@ export default function StockDetailPage() {
     return (
       <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-zinc-50 dark:bg-zinc-950">
         <p className="text-zinc-500">{error ?? "Stock not found."}</p>
-        <Link href="/stocks" className="text-sm text-blue-600 hover:underline">← Back to Stocks</Link>
+        <Link href={backHref} className="text-sm text-blue-600 hover:underline">
+          ← {describeContext(fromSearch)}
+        </Link>
       </div>
     );
   }
@@ -107,7 +128,9 @@ export default function StockDetailPage() {
 
         {/* Breadcrumb */}
         <nav className="mb-6 flex items-center gap-2 text-sm text-zinc-500">
-          <Link href="/stocks" className="hover:text-zinc-800 dark:hover:text-zinc-200">Stocks</Link>
+          <Link href={backHref} className="hover:text-zinc-800 dark:hover:text-zinc-200">
+            ← {describeContext(fromSearch)}
+          </Link>
           <span>›</span>
           <span className="font-medium text-zinc-900 dark:text-zinc-100">{stock.ticker}</span>
           <span className="text-zinc-400">({stock.name})</span>
@@ -239,6 +262,104 @@ export default function StockDetailPage() {
           </section>
         )}
 
+        {/* ── Originated By ─────────────────────────────────────────────────── */}
+        <section className="mb-6 rounded-lg border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <div className="flex items-center justify-between border-b border-zinc-100 px-6 py-4 dark:border-zinc-800">
+            <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+              Originated By
+              {stock.originating_members && stock.originating_members.length > 0 && (
+                <span className="ml-2 rounded-full bg-zinc-100 px-2 py-0.5 text-xs font-normal text-zinc-500 dark:bg-zinc-800">
+                  {stock.originating_members.length}
+                </span>
+              )}
+            </h2>
+            <button
+              onClick={() => openEdit("members")}
+              className="text-xs text-blue-600 hover:underline dark:text-blue-400"
+            >
+              Manage links →
+            </button>
+          </div>
+          <div className="px-6 py-5">
+            {!stock.originating_members || stock.originating_members.length === 0 ? (
+              <p className="text-sm text-zinc-400">No originators linked yet.</p>
+            ) : (
+              <div className="space-y-2">
+                {stock.originating_members.map((member) => (
+                  <div key={member.id} className="flex items-center gap-3 rounded border border-zinc-100 px-3 py-2 dark:border-zinc-800">
+                    <Link
+                      href={`/members/${member.id}`}
+                      className="flex-1 text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
+                    >
+                      {member.name}
+                    </Link>
+                    {member.company && (
+                      <span className="text-xs text-zinc-400">{member.company}</span>
+                    )}
+                    {member.note && (
+                      <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-500 dark:bg-zinc-800">
+                        {member.note}
+                      </span>
+                    )}
+                    <Link href={`/members/${member.id}`} className="shrink-0 text-xs text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200">
+                      View →
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* ── Community Discussion ──────────────────────────────────────────── */}
+        <section className="mb-6 rounded-lg border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <div className="flex items-center justify-between border-b border-zinc-100 px-6 py-4 dark:border-zinc-800">
+            <h2 className="text-base font-semibold text-zinc-900 dark:text-zinc-100">
+              Community Discussion
+              {stock.commenting_members && stock.commenting_members.length > 0 && (
+                <span className="ml-2 rounded-full bg-zinc-100 px-2 py-0.5 text-xs font-normal text-zinc-500 dark:bg-zinc-800">
+                  {stock.commenting_members.length}
+                </span>
+              )}
+            </h2>
+            <button
+              onClick={() => openEdit("members")}
+              className="text-xs text-blue-600 hover:underline dark:text-blue-400"
+            >
+              Manage links →
+            </button>
+          </div>
+          <div className="px-6 py-5">
+            {!stock.commenting_members || stock.commenting_members.length === 0 ? (
+              <p className="text-sm text-zinc-400">No commenters linked yet.</p>
+            ) : (
+              <div className="space-y-2">
+                {stock.commenting_members.map((member) => (
+                  <div key={member.id} className="flex items-center gap-3 rounded border border-zinc-100 px-3 py-2 dark:border-zinc-800">
+                    <Link
+                      href={`/members/${member.id}`}
+                      className="flex-1 text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
+                    >
+                      {member.name}
+                    </Link>
+                    {member.company && (
+                      <span className="text-xs text-zinc-400">{member.company}</span>
+                    )}
+                    {member.note && (
+                      <span className="rounded-full bg-zinc-100 px-2 py-0.5 text-xs text-zinc-500 dark:bg-zinc-800">
+                        {member.note}
+                      </span>
+                    )}
+                    <Link href={`/members/${member.id}`} className="shrink-0 text-xs text-zinc-400 hover:text-zinc-700 dark:hover:text-zinc-200">
+                      View →
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+
         {/* ── Research Tracking ─────────────────────────────────────────────── */}
         <section className="mb-6 rounded-lg border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
           <div className="border-b border-zinc-100 px-6 py-4 dark:border-zinc-800">
@@ -295,5 +416,21 @@ export default function StockDetailPage() {
         />
       )}
     </div>
+  );
+}
+
+// ── Page (Suspense wrapper required for useSearchParams) ───────────────────
+
+export default function StockDetailPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex min-h-screen items-center justify-center bg-zinc-50 dark:bg-zinc-950">
+          <p className="text-zinc-500">Loading…</p>
+        </div>
+      }
+    >
+      <StockDetailContent />
+    </Suspense>
   );
 }

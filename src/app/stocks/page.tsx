@@ -4,7 +4,7 @@ import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Stock, PaginatedResponse, SearchResult, SearchMode, ValuationView } from "@/types/stock";
-import { getStocks, deleteStock, bulkUpdate, searchStocks, generateEmbeddings } from "@/lib/api";
+import { getStocks, searchStocks } from "@/lib/api";
 import StockModal from "@/components/StockModal";
 
 // ── Helpers ────────────────────────────────────────────────────────────────
@@ -50,9 +50,9 @@ function ValuationPill({ value }: { value: ValuationView | null }) {
 }
 
 const VALUATION_FILTER_OPTIONS: Array<ValuationView | "All"> = ["All", "Undervalued", "Fair Value", "Overvalued", "Unknown"];
+const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
 
 // ── Suspense wrapper ───────────────────────────────────────────────────────
-// useSearchParams() requires a Suspense boundary in Next.js App Router.
 
 export default function StocksPage() {
   return (
@@ -73,8 +73,6 @@ function StocksPageContent() {
   const searchParams = useSearchParams();
 
   // ── Browse state ──────────────────────────────────────────────────────────
-  // All stateful values are initialised directly from URL params so that a
-  // page refresh or shared link restores the exact same view.
   const [data, setData]                 = useState<PaginatedResponse<Stock> | null>(null);
   const [browseSearch, setBrowseSearch] = useState(searchParams.get("search") ?? "");
   const [page, setPage]                 = useState(parseInt(searchParams.get("page") ?? "1", 10));
@@ -89,25 +87,14 @@ function StocksPageContent() {
     (searchParams.get("hasThesis") ?? "All") as "All" | "Yes" | "No"
   );
 
+  // Expandable row
+  const [expandedId, setExpandedId] = useState<number | null>(
+    parseInt(searchParams.get("expanded") ?? "0", 10) || null
+  );
+
   // Modal
   const [modalOpen, setModalOpen]       = useState(false);
   const [editingStock, setEditingStock] = useState<Stock | null>(null);
-
-  // Delete confirmation
-  const [confirmingDelete, setConfirmingDelete] = useState<Record<number, boolean>>({});
-  const deleteTimers = useRef<Record<number, ReturnType<typeof setTimeout>>>({});
-
-  // Multi-select
-  const [selectedIds, setSelectedIds] = useState<Set<number>>(new Set());
-
-  // Bulk edit modal
-  const [bulkEditOpen, setBulkEditOpen]         = useState(false);
-  const [bulkValuation, setBulkValuation]       = useState<string>("");
-  const [bulkOriginatedBy, setBulkOriginatedBy] = useState("");
-  const [bulkEditSaving, setBulkEditSaving]     = useState(false);
-  const [bulkEditError, setBulkEditError]       = useState<string | null>(null);
-  const [bulkRegenLoading, setBulkRegenLoading] = useState(false);
-  const [bulkRegenDone, setBulkRegenDone]       = useState(false);
 
   // ── AI Search state ───────────────────────────────────────────────────────
   const [aiQuery, setAiQuery]         = useState(searchParams.get("q") ?? "");
@@ -123,17 +110,9 @@ function StocksPageContent() {
   } | null>(null);
 
   const searchActive = searchResults !== null || compareResults !== null;
-
-  // Tracks the last query that was actually fetched — prevents a double-fire
-  // when filter changes call updateURL (which updates searchParams) while q
-  // hasn't changed.
   const lastSearchedRef = useRef<string | null>(null);
 
   // ── URL update helper ─────────────────────────────────────────────────────
-  // Reads window.location.search each time it runs so debounced callbacks and
-  // async functions always work with the freshest params (no stale closure).
-  // Uses router.replace — filter changes don't add entries to the history stack,
-  // keeping the browser back button clean for actual page navigations.
   const updateURL = useCallback((updates: {
     search?:   string;
     page?:     number;
@@ -184,9 +163,6 @@ function StocksPageContent() {
   }, [router]);
 
   // ── Sync state from URL (browser back / forward) ──────────────────────────
-  // Next.js updates searchParams whenever the URL changes. We mirror those
-  // changes back into React state so the UI stays in sync. We also re-trigger
-  // search when q changes (e.g. back-button into a previous search).
   useEffect(() => {
     const q       = searchParams.get("q") ?? "";
     const mode    = (searchParams.get("mode") ?? "hybrid") as SearchMode;
@@ -196,24 +172,20 @@ function StocksPageContent() {
     setPage(parseInt(searchParams.get("page") ?? "1", 10));
     setValuationFilter((searchParams.get("valuation") ?? "All") as ValuationView | "All");
     setThesisFilter((searchParams.get("hasThesis") ?? "All") as "All" | "Yes" | "No");
+    setExpandedId(parseInt(searchParams.get("expanded") ?? "0", 10) || null);
     setAiQuery(q);
     setAiMode(mode);
     setCompareMode(compare);
 
-    // q changed (or first load with q in URL) — run the search
     if (q && q !== lastSearchedRef.current) {
-      // Pass updateUrl=false: the URL already has the correct state
       runSearch(q, mode, compare, false);
     }
-
-    // q was removed (e.g. back-button past a Clear action)
     if (!q && lastSearchedRef.current) {
       lastSearchedRef.current = null;
       setSearchResults(null);
       setCompareResults(null);
       setSearchError(null);
     }
-  // runSearch is defined below — stable function ref, safe to omit
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
@@ -239,20 +211,13 @@ function StocksPageContent() {
   function handleBrowseSearchChange(value: string) {
     setBrowseSearch(value);
     if (debounceRef.current) clearTimeout(debounceRef.current);
-    // Debounce both the page reset and the URL write so we don't spam
-    // router.replace on every keystroke
     debounceRef.current = setTimeout(() => {
       setPage(1);
       updateURL({ search: value, page: 1 });
     }, 300);
   }
 
-  useEffect(() => {
-    const timers = deleteTimers.current;
-    return () => { Object.values(timers).forEach(clearTimeout); };
-  }, []);
-
-  // ── Client-side filtering on browse results ───────────────────────────────
+  // ── Client-side filtering ─────────────────────────────────────────────────
   const filteredStocks = (data?.data ?? []).filter((s) => {
     if (valuationFilter !== "All" && s.valuation_view !== valuationFilter) return false;
     if (thesisFilter === "Yes" && !s.investment_thesis) return false;
@@ -260,10 +225,18 @@ function StocksPageContent() {
     return true;
   });
 
-  // ── AI Search ─────────────────────────────────────────────────────────────
+  // ── Stats bar computations (current page, pre-client-filter) ─────────────
+  const pageStocks = data?.data ?? [];
+  const valuationCounts = (["Undervalued", "Fair Value", "Overvalued", "Unknown"] as ValuationView[]).map(
+    (v) => ({ v, count: pageStocks.filter((s) => s.valuation_view === v).length })
+  ).filter(({ count }) => count > 0);
+  const thesisCount  = pageStocks.filter((s) => s.investment_thesis).length;
+  const needsReview  = pageStocks.filter((s) => {
+    if (!s.last_reviewed) return true;
+    return new Date(s.last_reviewed) < new Date(Date.now() - THIRTY_DAYS_MS);
+  }).length;
 
-  // Core executor. Set updateUrl=false when the URL already reflects the
-  // desired state (e.g. triggered by the searchParams effect on back/forward).
+  // ── AI Search ─────────────────────────────────────────────────────────────
   async function runSearch(q: string, mode: SearchMode, compare: boolean, updateUrl = true) {
     lastSearchedRef.current = q;
     setSearchLoading(true);
@@ -311,9 +284,7 @@ function StocksPageContent() {
     if (e.key === "Enter") handleSearch();
   }
 
-  // ── Filter change handlers ─────────────────────────────────────────────────
-  // Each handler keeps React state and URL in sync.
-
+  // ── Filter / page change handlers ─────────────────────────────────────────
   function handleValuationChange(value: ValuationView | "All") {
     setValuationFilter(value);
     setPage(1);
@@ -341,75 +312,11 @@ function StocksPageContent() {
     updateURL({ compare });
   }
 
-  // ── Delete ────────────────────────────────────────────────────────────────
-  function handleDeleteClick(e: React.MouseEvent, stock: Stock) {
-    e.stopPropagation();
-    if (!confirmingDelete[stock.id]) {
-      setConfirmingDelete((prev) => ({ ...prev, [stock.id]: true }));
-      deleteTimers.current[stock.id] = setTimeout(() => {
-        setConfirmingDelete((prev) => { const n = { ...prev }; delete n[stock.id]; return n; });
-      }, 3000);
-    } else {
-      clearTimeout(deleteTimers.current[stock.id]);
-      setConfirmingDelete((prev) => { const n = { ...prev }; delete n[stock.id]; return n; });
-      deleteStock(stock.id).then(() => fetchStocks());
-    }
-  }
-
-  // ── Selection helpers ─────────────────────────────────────────────────────
-  const allIds      = filteredStocks.map((s) => s.id);
-  const allSelected = allIds.length > 0 && allIds.every((id) => selectedIds.has(id));
-
-  function toggleAll(e: React.MouseEvent) {
-    e.stopPropagation();
-    setSelectedIds(allSelected ? new Set() : new Set(allIds));
-  }
-
-  function toggleOne(e: React.MouseEvent, id: number) {
-    e.stopPropagation();
-    setSelectedIds((prev) => {
-      const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
-      return next;
-    });
-  }
-
-  // ── Bulk edit ─────────────────────────────────────────────────────────────
-  function openBulkEdit() {
-    setBulkValuation("");
-    setBulkOriginatedBy("");
-    setBulkEditError(null);
-    setBulkRegenDone(false);
-    setBulkEditOpen(true);
-  }
-
-  async function handleBulkEdit(e: React.FormEvent) {
-    e.preventDefault();
-    setBulkEditError(null);
-    setBulkEditSaving(true);
-    const updates: Record<string, string> = {};
-    if (bulkValuation.trim())    updates.valuation_view = bulkValuation.trim();
-    if (bulkOriginatedBy.trim()) updates.originated_by  = bulkOriginatedBy.trim();
-    try {
-      await bulkUpdate(Array.from(selectedIds), updates);
-      setBulkEditOpen(false);
-      setSelectedIds(new Set());
-      fetchStocks();
-    } catch (err) {
-      setBulkEditError(err instanceof Error ? err.message : "Bulk update failed");
-    } finally {
-      setBulkEditSaving(false);
-    }
-  }
-
-  async function handleBulkRegen() {
-    setBulkRegenLoading(true);
-    try {
-      await generateEmbeddings(Array.from(selectedIds));
-      setBulkRegenDone(true);
-    } finally {
-      setBulkRegenLoading(false);
-    }
+  // ── Expandable row ────────────────────────────────────────────────────────
+  function handleToggleExpand(id: number) {
+    const next = expandedId === id ? null : id;
+    setExpandedId(next);
+    updateURL({ expanded: next });
   }
 
   // ── Compare helpers ───────────────────────────────────────────────────────
@@ -419,7 +326,12 @@ function StocksPageContent() {
       .filter((arr) => arr.some((s) => s.id === id)).length;
   }
 
-  const colSpan = 8; // checkbox + name + ticker + sector + valuation + thesis + price + actions
+  // Navigate to detail page, passing current URL state as `from` context
+  function goToDetail(stockId: number) {
+    router.push(`/stocks/${stockId}?from=${encodeURIComponent(window.location.search)}`);
+  }
+
+  const colSpan = 6; // name + ticker + sector + valuation + thesis + price
 
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950">
@@ -429,14 +341,6 @@ function StocksPageContent() {
         <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-100">Stocks</h1>
           <div className="flex flex-wrap gap-3">
-            {!searchActive && selectedIds.size > 0 && (
-              <button
-                onClick={openBulkEdit}
-                className="whitespace-nowrap rounded border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
-              >
-                Bulk Edit ({selectedIds.size})
-              </button>
-            )}
             <Link
               href="/stocks/import"
               className="whitespace-nowrap rounded border border-zinc-300 bg-white px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-200 dark:hover:bg-zinc-700"
@@ -563,6 +467,53 @@ function StocksPageContent() {
           <div className="mb-4 rounded bg-red-50 p-3 text-sm text-red-700 dark:bg-red-900/30 dark:text-red-400">{error}</div>
         )}
 
+        {/* ── Stats bar ─────────────────────────────────────────────────────── */}
+        {!searchActive && data && pageStocks.length > 0 && (
+          <div className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-2 rounded-md border border-zinc-200 bg-white px-4 py-2.5 text-xs dark:border-zinc-800 dark:bg-zinc-900">
+            {/* Total */}
+            <span className="font-medium text-zinc-500 dark:text-zinc-400">
+              {data.meta.total} stock{data.meta.total !== 1 ? "s" : ""}
+            </span>
+
+            <span className="text-zinc-300 dark:text-zinc-700">|</span>
+
+            {/* Valuation breakdown (clickable) */}
+            <div className="flex flex-wrap items-center gap-1.5">
+              {valuationCounts.map(({ v, count }) => (
+                <button
+                  key={v}
+                  onClick={() => handleValuationChange(valuationFilter === v ? "All" : v)}
+                  className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 font-semibold transition-opacity hover:opacity-80 ${VALUATION_BADGE[v]} ${valuationFilter === v ? "ring-2 ring-offset-1 ring-current" : ""}`}
+                >
+                  {v} <span className="opacity-70">{count}</span>
+                </button>
+              ))}
+            </div>
+
+            <span className="text-zinc-300 dark:text-zinc-700">|</span>
+
+            {/* Thesis coverage */}
+            <button
+              onClick={() => handleThesisChange(thesisFilter === "No" ? "All" : "No")}
+              className={`text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200 ${thesisFilter === "No" ? "font-semibold text-zinc-800 dark:text-zinc-100" : ""}`}
+            >
+              {thesisCount}/{pageStocks.length} with thesis
+            </button>
+
+            {/* Needs review */}
+            {needsReview > 0 && (
+              <>
+                <span className="text-zinc-300 dark:text-zinc-700">|</span>
+                <span className="text-amber-600 dark:text-amber-400">
+                  {needsReview} need{needsReview !== 1 ? "" : "s"} review
+                </span>
+              </>
+            )}
+
+            <span className="ml-auto text-zinc-400 dark:text-zinc-600">this page</span>
+          </div>
+        )}
+
         {/* ── Compare Mode View ─────────────────────────────────────────────── */}
         {compareResults && (
           <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
@@ -588,7 +539,7 @@ function StocksPageContent() {
                         <div
                           key={stock.id}
                           className={`cursor-pointer px-4 py-3 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 ${shared >= 2 ? "bg-amber-50/60 dark:bg-amber-900/10" : ""}`}
-                          onClick={() => router.push(`/stocks/${stock.id}`)}
+                          onClick={() => goToDetail(stock.id)}
                         >
                           <div className="flex items-start justify-between gap-2">
                             <div className="min-w-0">
@@ -662,7 +613,7 @@ function StocksPageContent() {
                       className={`cursor-pointer border-b border-zinc-100 hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-800/50 ${
                         i === 0 && aiMode !== "keyword" ? "bg-blue-50/30 dark:bg-blue-900/5" : ""
                       }`}
-                      onClick={() => router.push(`/stocks/${stock.id}`)}
+                      onClick={() => goToDetail(stock.id)}
                     >
                       <td className="px-4 py-3 font-medium text-zinc-900 dark:text-zinc-100">
                         {aiMode === "keyword" ? highlight(stock.name, aiQuery) : stock.name}
@@ -705,16 +656,12 @@ function StocksPageContent() {
               <table className="w-full text-left text-sm">
                 <thead>
                   <tr className="border-b border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50">
-                    <th className="px-4 py-3" onClick={(e) => e.stopPropagation()}>
-                      <input type="checkbox" checked={allSelected} onChange={() => {}} onClick={toggleAll} className="rounded border-zinc-300" />
-                    </th>
                     <th className="px-4 py-3 font-medium text-zinc-600 dark:text-zinc-400">Name</th>
                     <th className="px-4 py-3 font-medium text-zinc-600 dark:text-zinc-400">Ticker</th>
                     <th className="px-4 py-3 font-medium text-zinc-600 dark:text-zinc-400">Sector</th>
                     <th className="px-4 py-3 font-medium text-zinc-600 dark:text-zinc-400">Valuation</th>
-                    <th className="px-4 py-3 text-center font-medium text-zinc-600 dark:text-zinc-400">Thesis</th>
+                    <th className="px-4 py-3 font-medium text-zinc-600 dark:text-zinc-400">Thesis</th>
                     <th className="px-4 py-3 text-right font-medium text-zinc-600 dark:text-zinc-400">Price</th>
-                    <th className="px-4 py-3 text-right font-medium text-zinc-600 dark:text-zinc-400">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -722,57 +669,80 @@ function StocksPageContent() {
                     <tr><td colSpan={colSpan} className="px-4 py-8 text-center text-zinc-500">Loading…</td></tr>
                   ) : filteredStocks.length > 0 ? (
                     filteredStocks.map((stock) => (
-                      <tr
-                        key={stock.id}
-                        className={`cursor-pointer border-b border-zinc-100 hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-800/50 ${
-                          selectedIds.has(stock.id) ? "bg-blue-50/50 dark:bg-blue-900/10" : ""
-                        }`}
-                        onClick={() => router.push(`/stocks/${stock.id}`)}
-                      >
-                        <td className="px-4 py-3" onClick={(e) => toggleOne(e, stock.id)}>
-                          <input
-                            type="checkbox"
-                            checked={selectedIds.has(stock.id)}
-                            onChange={() => {}}
-                            className="rounded border-zinc-300"
-                          />
-                        </td>
-                        <td className="px-4 py-3 font-medium text-zinc-900 dark:text-zinc-100">{stock.name}</td>
-                        <td className="px-4 py-3">
-                          <span className="inline-block rounded bg-zinc-100 px-2 py-0.5 text-xs font-semibold text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">{stock.ticker}</span>
-                        </td>
-                        <td className="px-4 py-3 text-zinc-600 dark:text-zinc-400">{stock.sector ?? "—"}</td>
-                        <td className="px-4 py-3">
-                          <ValuationPill value={stock.valuation_view} />
-                        </td>
-                        <td className="px-4 py-3 text-center">
-                          {stock.investment_thesis
-                            ? <span className="text-base text-green-500" title="Has thesis">✓</span>
-                            : <span className="text-base text-zinc-300 dark:text-zinc-600" title="No thesis">✗</span>
-                          }
-                        </td>
-                        <td className="px-4 py-3 text-right tabular-nums text-zinc-900 dark:text-zinc-100">{formatPrice(stock.price)}</td>
-                        <td className="px-4 py-3 text-right" onClick={(e) => e.stopPropagation()}>
-                          <div className="flex justify-end gap-2">
-                            <button
-                              onClick={(e) => { e.stopPropagation(); setEditingStock(stock); setModalOpen(true); }}
-                              className="rounded px-2.5 py-1 text-xs font-medium text-blue-600 hover:bg-blue-50 dark:text-blue-400 dark:hover:bg-blue-900/30"
-                            >
-                              Edit
-                            </button>
-                            <button
-                              onClick={(e) => handleDeleteClick(e, stock)}
-                              className={`rounded px-2.5 py-1 text-xs font-medium ${
-                                confirmingDelete[stock.id]
-                                  ? "bg-red-600 text-white hover:bg-red-700"
-                                  : "text-red-600 hover:bg-red-50 dark:text-red-400 dark:hover:bg-red-900/30"
-                              }`}
-                            >
-                              {confirmingDelete[stock.id] ? "Confirm?" : "Delete"}
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
+                      <>
+                        {/* Data row */}
+                        <tr
+                          key={stock.id}
+                          className={`cursor-pointer border-b border-zinc-100 hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-800/50 ${expandedId === stock.id ? "border-b-0" : ""}`}
+                          onClick={() => goToDetail(stock.id)}
+                        >
+                          {/* Name cell with expand toggle */}
+                          <td className="px-4 py-3 font-medium text-zinc-900 dark:text-zinc-100">
+                            <div className="flex items-center gap-2">
+                              <button
+                                onClick={(e) => { e.stopPropagation(); handleToggleExpand(stock.id); }}
+                                className="w-3 shrink-0 text-xs text-zinc-400 transition-colors hover:text-zinc-700 dark:hover:text-zinc-200"
+                                title={expandedId === stock.id ? "Collapse" : "Expand thesis"}
+                              >
+                                {expandedId === stock.id ? "▼" : "▶"}
+                              </button>
+                              {stock.name}
+                            </div>
+                          </td>
+                          <td className="px-4 py-3">
+                            <span className="inline-block rounded bg-zinc-100 px-2 py-0.5 text-xs font-semibold text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">{stock.ticker}</span>
+                          </td>
+                          <td className="px-4 py-3 text-zinc-600 dark:text-zinc-400">{stock.sector ?? "—"}</td>
+                          <td className="px-4 py-3">
+                            <ValuationPill value={stock.valuation_view} />
+                          </td>
+                          {/* Thesis preview (80-char excerpt) */}
+                          <td className="max-w-xs px-4 py-3">
+                            {stock.investment_thesis ? (
+                              <span className="text-xs text-zinc-600 dark:text-zinc-400">
+                                {stock.investment_thesis.length > 80
+                                  ? stock.investment_thesis.slice(0, 80) + "…"
+                                  : stock.investment_thesis}
+                              </span>
+                            ) : (
+                              <span className="text-zinc-300 dark:text-zinc-600">—</span>
+                            )}
+                          </td>
+                          <td className="px-4 py-3 text-right tabular-nums text-zinc-900 dark:text-zinc-100">{formatPrice(stock.price)}</td>
+                        </tr>
+
+                        {/* Expanded thesis card */}
+                        {expandedId === stock.id && (
+                          <tr key={`${stock.id}-exp`}>
+                            <td colSpan={colSpan} className="border-b border-zinc-100 bg-white px-6 pb-4 pt-0 dark:border-zinc-800 dark:bg-zinc-900">
+                              <div className="rounded-md border border-zinc-200 bg-zinc-50 p-4 dark:border-zinc-700 dark:bg-zinc-800/40">
+                                {stock.investment_thesis ? (
+                                  <p className="mb-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+                                    {stock.investment_thesis.length > 200
+                                      ? stock.investment_thesis.slice(0, 200) + "…"
+                                      : stock.investment_thesis}
+                                  </p>
+                                ) : (
+                                  <p className="mb-3 text-sm italic text-zinc-400">No investment thesis added yet.</p>
+                                )}
+                                <div className="flex flex-wrap items-center gap-4 text-xs text-zinc-500">
+                                  <ValuationPill value={stock.valuation_view} />
+                                  {stock.originated_by && <span>By {stock.originated_by}</span>}
+                                  {stock.date_added    && <span>Added {stock.date_added}</span>}
+                                </div>
+                                <div className="mt-3 flex gap-2">
+                                  <button
+                                    onClick={() => goToDetail(stock.id)}
+                                    className="rounded border border-zinc-300 px-3 py-1 text-xs font-medium text-zinc-700 hover:bg-zinc-100 dark:border-zinc-600 dark:text-zinc-300 dark:hover:bg-zinc-700"
+                                  >
+                                    View Full Details →
+                                  </button>
+                                </div>
+                              </div>
+                            </td>
+                          </tr>
+                        )}
+                      </>
                     ))
                   ) : (
                     <tr>
@@ -825,68 +795,6 @@ function StocksPageContent() {
         />
       )}
 
-      {/* Bulk edit modal */}
-      {bulkEditOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4" onClick={() => setBulkEditOpen(false)}>
-          <div className="w-full max-w-sm rounded-lg bg-white p-6 shadow-xl dark:bg-zinc-900" onClick={(e) => e.stopPropagation()}>
-            <h2 className="mb-1 text-lg font-semibold text-zinc-900 dark:text-zinc-100">Bulk Edit</h2>
-            <p className="mb-4 text-sm text-zinc-500">
-              Editing {selectedIds.size} stock{selectedIds.size !== 1 ? "s" : ""}. Only filled fields will be updated.
-            </p>
-            {bulkEditError && (
-              <div className="mb-3 rounded bg-red-50 p-3 text-sm text-red-700 dark:bg-red-900/30 dark:text-red-400">{bulkEditError}</div>
-            )}
-            <form onSubmit={handleBulkEdit} className="space-y-4">
-              <div>
-                <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">Valuation Perspective</label>
-                <select
-                  value={bulkValuation}
-                  onChange={(e) => setBulkValuation(e.target.value)}
-                  className="w-full rounded border border-zinc-300 px-3 py-2 text-sm text-zinc-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
-                >
-                  <option value="">— No change —</option>
-                  {(["Undervalued", "Fair Value", "Overvalued", "Unknown"] as ValuationView[]).map((v) => (
-                    <option key={v} value={v}>{v}</option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label className="mb-1 block text-sm font-medium text-zinc-700 dark:text-zinc-300">Originated By</label>
-                <input
-                  type="text"
-                  value={bulkOriginatedBy}
-                  onChange={(e) => setBulkOriginatedBy(e.target.value)}
-                  placeholder="Team member name"
-                  className="w-full rounded border border-zinc-300 px-3 py-2 text-sm text-zinc-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
-                />
-              </div>
-
-              {/* Regenerate embeddings */}
-              <div className="border-t border-zinc-100 pt-3 dark:border-zinc-800">
-                {bulkRegenDone ? (
-                  <p className="text-sm font-medium text-green-700 dark:text-green-400">Embeddings regenerated for {selectedIds.size} stock{selectedIds.size !== 1 ? "s" : ""}.</p>
-                ) : (
-                  <button
-                    type="button"
-                    onClick={handleBulkRegen}
-                    disabled={bulkRegenLoading}
-                    className="text-sm font-medium text-blue-600 hover:underline disabled:opacity-50 dark:text-blue-400"
-                  >
-                    {bulkRegenLoading ? "Regenerating…" : `Regenerate Embeddings (${selectedIds.size})`}
-                  </button>
-                )}
-              </div>
-
-              <div className="flex justify-end gap-3 pt-1">
-                <button type="button" onClick={() => setBulkEditOpen(false)} className="rounded px-4 py-2 text-sm font-medium text-zinc-600 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-zinc-800">Cancel</button>
-                <button type="submit" disabled={bulkEditSaving} className="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50">
-                  {bulkEditSaving ? "Saving…" : "Apply"}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
