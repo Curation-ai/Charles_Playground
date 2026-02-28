@@ -30,6 +30,23 @@ class MemberController extends Controller
             });
         }
 
+        if ($investorType = $request->query('investor_type')) {
+            $query->where('investor_type', $investorType);
+        }
+
+        if ($request->filled('is_active')) {
+            $query->where('is_active', filter_var($request->query('is_active'), FILTER_VALIDATE_BOOLEAN));
+        }
+
+        if ($request->filled('has_stocks')) {
+            $hasStocks = filter_var($request->query('has_stocks'), FILTER_VALIDATE_BOOLEAN);
+            $hasStocks
+                ? $query->where(function ($q) {
+                    $q->whereHas('originatedStocks')->orWhereHas('commentedStocks');
+                })
+                : $query->whereDoesntHave('originatedStocks')->whereDoesntHave('commentedStocks');
+        }
+
         return MemberResource::collection($query->orderBy('name')->paginate(20));
     }
 

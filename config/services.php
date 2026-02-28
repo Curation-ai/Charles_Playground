@@ -41,4 +41,9 @@ return [
         'api_key' => env('OPENAI_API_KEY'),
     ],
 
+    'extraction' => [
+        'driver' => env('EXTRACTION_DRIVER', 'openai'),
+        'model' => env('EXTRACTION_MODEL', 'gpt-4o'),
+    ],
+
 ];

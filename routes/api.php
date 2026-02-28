@@ -13,6 +13,8 @@ Route::prefix('v1')->group(function () {
     // Stocks
     Route::get('stocks/search', StockSearchController::class);
     Route::patch('stocks/bulk', [StockController::class, 'bulkUpdate']);
+    Route::get('stocks/needs-attention', [StockController::class, 'needsAttention']);
+    Route::post('stocks/{stock}/extract-thesis', [StockController::class, 'extractThesis']);
     Route::apiResource('stocks', StockController::class);
 
     // Members

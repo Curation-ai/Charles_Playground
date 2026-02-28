@@ -22,6 +22,7 @@ class Stock extends Model
         'market_cap',
         'embedding',
         'metadata',
+        'thesis_metadata',
     ];
 
     protected function casts(): array
@@ -32,6 +33,7 @@ class Stock extends Model
             'market_cap' => 'integer',
             'embedding' => 'array',
             'metadata' => 'array',
+            'thesis_metadata' => 'array',
         ];
     }
 

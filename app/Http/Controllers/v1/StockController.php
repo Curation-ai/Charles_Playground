@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\v1;
 
+use App\Contracts\ThesisExtractionServiceInterface;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\BulkUpdateStocksRequest;
 use App\Http\Requests\StoreStockRequest;
@@ -14,10 +15,14 @@ use App\Services\StockService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Support\Facades\Log;
 
 class StockController extends Controller
 {
-    public function __construct(private StockService $stockService) {}
+    public function __construct(
+        private StockService $stockService,
+        private ThesisExtractionServiceInterface $extractor,
+    ) {}
 
     public function index(Request $request): AnonymousResourceCollection
     {
@@ -28,6 +33,30 @@ class StockController extends Controller
                 $q->where('name', 'LIKE', "%{$search}%")
                     ->orWhere('ticker', 'LIKE', "%{$search}%");
             });
+        }
+
+        if ($sector = $request->query('sector')) {
+            $query->where('sector', $sector);
+        }
+
+        if ($ticker = $request->query('ticker')) {
+            $query->whereRaw('LOWER(ticker) = ?', [strtolower($ticker)]);
+        }
+
+        if ($request->filled('has_thesis')) {
+            $hasThesis = filter_var($request->query('has_thesis'), FILTER_VALIDATE_BOOLEAN);
+            $hasThesis
+                ? $query->whereNotNull(\DB::raw("JSON_EXTRACT(metadata, '$.investment_thesis')"))
+                : $query->whereNull(\DB::raw("JSON_EXTRACT(metadata, '$.investment_thesis')"));
+        }
+
+        if ($request->filled('has_embedding')) {
+            $hasEmbedding = filter_var($request->query('has_embedding'), FILTER_VALIDATE_BOOLEAN);
+            $hasEmbedding ? $query->whereNotNull('embedding') : $query->whereNull('embedding');
+        }
+
+        if ($convictionLevel = $request->query('conviction_level')) {
+            $query->whereRaw("JSON_EXTRACT(thesis_metadata, '$.conviction_level') = ?", [$convictionLevel]);
         }
 
         return StockResource::collection($query->paginate(20));
@@ -73,5 +102,40 @@ class StockController extends Controller
         );
 
         return response()->json(['updated_count' => $stocks->count()]);
+    }
+
+    public function extractThesis(Stock $stock): StockResource
+    {
+        $thesis = $stock->getMetadataField('investment_thesis');
+
+        if (! $thesis || ! trim((string) $thesis)) {
+            return new StockResource($stock);
+        }
+
+        try {
+            $extracted = $this->extractor->extract((string) $thesis);
+            $extracted['extracted_at'] = now()->toIso8601String();
+            $extracted['extraction_model'] = config('services.extraction.model', 'gpt-4o');
+
+            $stock->withoutEvents(fn () => $stock->update(['thesis_metadata' => $extracted]));
+        } catch (\Throwable $e) {
+            Log::warning("Manual thesis extraction failed for stock {$stock->id}: {$e->getMessage()}");
+        }
+
+        return new StockResource($stock->fresh());
+    }
+
+    public function needsAttention(): AnonymousResourceCollection
+    {
+        $cutoff = now()->subDays(90)->toDateString();
+
+        $query = Stock::where(function ($q) use ($cutoff) {
+            $q->whereNull(\DB::raw("JSON_EXTRACT(metadata, '$.investment_thesis')"))
+                ->orWhereNull('thesis_metadata')
+                ->orWhereNull('embedding')
+                ->orWhereRaw("JSON_EXTRACT(metadata, '$.last_reviewed') <= ?", [$cutoff]);
+        });
+
+        return StockResource::collection($query->paginate(50));
     }
 }

@@ -46,6 +46,8 @@ class StockResource extends JsonResource
 
         $data['fields_populated'] = $fieldsPopulated;
         $data['has_embedding'] = ! empty($this->embedding);
+        $data['thesis_metadata'] = $this->thesis_metadata;
+        $data['has_thesis_metadata'] = ! empty($this->thesis_metadata);
 
         // embedding and raw metadata are intentionally excluded
         return $data;
