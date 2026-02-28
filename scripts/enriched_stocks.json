@@ -1,0 +1,2487 @@
+[
+  {
+    "name": "Amazon",
+    "ticker": "AMZN",
+    "sector": "Technology",
+    "tags": [
+      "0R1O",
+      "AI chips",
+      "AWS",
+      "Amazon Web Services",
+      "Cloud",
+      "E-commerce",
+      "Prime",
+      "ReInvent",
+      "Retail",
+      "Tranium 2"
+    ]
+  },
+  {
+    "name": "Tesla",
+    "ticker": "TSLA",
+    "sector": "Automotive",
+    "tags": [
+      "Autonomous Driving",
+      "Batteries",
+      "Electric Vehicles",
+      "Elon Musk",
+      "Energy Storage",
+      "Humanoid",
+      "Optimus",
+      "Robotaxi",
+      "Robotics",
+      "xAI"
+    ]
+  },
+  {
+    "name": "Nvidia",
+    "ticker": "NVDA",
+    "sector": "Technology",
+    "tags": [
+      "Blackwell",
+      "Chips",
+      "Data Centers",
+      "GPU",
+      "HBM4",
+      "Jensen Huang",
+      "Semiconductors"
+    ]
+  },
+  {
+    "name": "Microsoft",
+    "ticker": "MSFT",
+    "sector": "Technology",
+    "tags": [
+      "Azure",
+      "Cloud",
+      "Copilot",
+      "Majorana 1",
+      "OpenAI",
+      "Quantum",
+      "Software"
+    ]
+  },
+  {
+    "name": "Alphabet",
+    "ticker": "GOOGL",
+    "sector": "Technology",
+    "tags": [
+      "Cloud",
+      "DeepMind",
+      "GOOG",
+      "Google",
+      "Quantum Computing",
+      "Search",
+      "Waymo",
+      "YouTube"
+    ]
+  },
+  {
+    "name": "Apple",
+    "ticker": "AAPL",
+    "sector": "Technology",
+    "tags": [
+      "Ecosystem",
+      "Hardware",
+      "Services",
+      "Vision Pro",
+      "iPhone"
+    ]
+  },
+  {
+    "name": "Meta",
+    "ticker": "META",
+    "sector": "Technology",
+    "tags": [
+      "Advertising",
+      "Facebook",
+      "Instagram",
+      "Metaverse",
+      "Social Media",
+      "WhatsApp"
+    ]
+  },
+  {
+    "name": "ASP Isotopes",
+    "ticker": "ASPI",
+    "sector": "Energy",
+    "tags": [
+      "Enrichment",
+      "Green Energy",
+      "HALEU",
+      "Industrial Isotopes",
+      "Minor Metals",
+      "Nuclear",
+      "QLE",
+      "TerraPower",
+      "Uranium"
+    ]
+  },
+  {
+    "name": "Lightbridge",
+    "ticker": "LTBR",
+    "sector": "Energy",
+    "tags": [
+      "Advanced Fuel",
+      "Fuel",
+      "Metal Fuel Rods",
+      "Nuclear",
+      "SMR",
+      "Uranium"
+    ]
+  },
+  {
+    "name": "Centrus Energy",
+    "ticker": "LEU",
+    "sector": "Energy",
+    "tags": [
+      "Enrichment",
+      "HALEU",
+      "Nuclear",
+      "Uranium"
+    ]
+  },
+  {
+    "name": "Oklo",
+    "ticker": "OKLO",
+    "sector": "Energy",
+    "tags": [
+      "Clean Energy",
+      "Nuclear",
+      "SMR",
+      "Sam Altman"
+    ]
+  },
+  {
+    "name": "Cameco",
+    "ticker": "CCJ",
+    "sector": "Energy",
+    "tags": [
+      "Canada",
+      "Mining",
+      "Nuclear",
+      "Uranium"
+    ]
+  },
+  {
+    "name": "Yellow Cake",
+    "ticker": "YCA",
+    "sector": "Energy",
+    "tags": [
+      "Commodity",
+      "Physical",
+      "Trust",
+      "Uranium"
+    ]
+  },
+  {
+    "name": "Silex",
+    "ticker": "SLX",
+    "sector": "Energy",
+    "tags": [
+      "Australia",
+      "Enrichment",
+      "Nuclear",
+      "Uranium"
+    ]
+  },
+  {
+    "name": "UEC",
+    "ticker": "UEC",
+    "sector": "Energy",
+    "tags": [
+      "Mining",
+      "Nuclear",
+      "USA",
+      "Uranium"
+    ]
+  },
+  {
+    "name": "Sprott Physical Uranium",
+    "ticker": "SPUT",
+    "sector": "Energy",
+    "tags": [
+      "ETF",
+      "Physical",
+      "Trust",
+      "U.U",
+      "Uranium"
+    ]
+  },
+  {
+    "name": "Ur-Energy",
+    "ticker": "URG",
+    "sector": "Energy",
+    "tags": [
+      "ISR",
+      "Mining",
+      "USA",
+      "Uranium"
+    ]
+  },
+  {
+    "name": "enCore Energy",
+    "ticker": "EU",
+    "sector": "Energy",
+    "tags": [
+      "Mining",
+      "USA",
+      "Uranium"
+    ]
+  },
+  {
+    "name": "Peninsula Energy",
+    "ticker": "PENMF",
+    "sector": "Energy",
+    "tags": [
+      "Mining",
+      "Uranium",
+      "Wyoming"
+    ]
+  },
+  {
+    "name": "Oxford Nanopore",
+    "ticker": "ONT",
+    "sector": "Healthcare",
+    "tags": [
+      "Epigenetics",
+      "Genetics",
+      "Healthcare",
+      "Larry Ellison",
+      "Long-read",
+      "NGS",
+      "NHS",
+      "Roche",
+      "Science",
+      "Sequencing"
+    ]
+  },
+  {
+    "name": "MeiraGTx",
+    "ticker": "MGTX",
+    "sector": "Healthcare",
+    "tags": [
+      "AAV-GAD",
+      "Blindness",
+      "Eli Lilly",
+      "Gene Therapy",
+      "J&J",
+      "Johnson & Johnson",
+      "Ophthalmology",
+      "Parkinson's Disease",
+      "Riboswitch",
+      "Sanofi"
+    ]
+  },
+  {
+    "name": "UnitedHealth",
+    "ticker": "UNH",
+    "sector": "Healthcare",
+    "tags": [
+      "Healthcare",
+      "Insurance",
+      "Medicare Advantage",
+      "Optum",
+      "Value Based Care"
+    ]
+  },
+  {
+    "name": "Novo Nordisk",
+    "ticker": "NVO",
+    "sector": "Healthcare",
+    "tags": [
+      "CagriSema",
+      "Diabetes",
+      "GLP-1",
+      "NOVO",
+      "Obesity",
+      "Ozempic",
+      "Pharma",
+      "Wegovy"
+    ]
+  },
+  {
+    "name": "Eli Lilly",
+    "ticker": "LLY",
+    "sector": "Healthcare",
+    "tags": [
+      "Diabetes",
+      "GLP-1",
+      "Mounjaro",
+      "Obesity",
+      "Pharma",
+      "Zepbound"
+    ]
+  },
+  {
+    "name": "Illumina",
+    "ticker": "ILMN",
+    "sector": "Healthcare",
+    "tags": [
+      "Diagnostics",
+      "Genomics",
+      "Healthcare",
+      "Sequencing"
+    ]
+  },
+  {
+    "name": "Immutep",
+    "ticker": "IMM",
+    "sector": "Healthcare",
+    "tags": [
+      "Biotech",
+      "Cancer",
+      "Immunotherapy",
+      "Keytruda",
+      "LAG-3"
+    ]
+  },
+  {
+    "name": "Implantica",
+    "ticker": "GI",
+    "sector": "Healthcare",
+    "tags": [
+      "IMP-A-SDB",
+      "Medical Devices",
+      "NHS",
+      "RefluxStop"
+    ]
+  },
+  {
+    "name": "Boeing",
+    "ticker": "BA",
+    "sector": "Defence",
+    "tags": [
+      "Aerospace",
+      "Aviation",
+      "Defence",
+      "Manufacturing",
+      "Space & Security",
+      "Travel"
+    ]
+  },
+  {
+    "name": "Evolv",
+    "ticker": "EVLV",
+    "sector": "Defence",
+    "tags": [
+      "AI Screening",
+      "Defence",
+      "SaaS",
+      "Safety",
+      "Security",
+      "Stadium",
+      "Weapons Detection"
+    ]
+  },
+  {
+    "name": "OSI Systems",
+    "ticker": "OSIS",
+    "sector": "Defence",
+    "tags": [
+      "Border",
+      "Defence",
+      "Inspection",
+      "Rapiscan",
+      "Screening",
+      "Security"
+    ]
+  },
+  {
+    "name": "Indra Sistemas",
+    "ticker": "IDR",
+    "sector": "Defence",
+    "tags": [
+      "Defence",
+      "European Defence",
+      "Spain",
+      "Technology"
+    ]
+  },
+  {
+    "name": "Renk",
+    "ticker": "RENK",
+    "sector": "Defence",
+    "tags": [
+      "Defence",
+      "European Defence",
+      "Germany",
+      "Tanks"
+    ]
+  },
+  {
+    "name": "Avio",
+    "ticker": "AVIO",
+    "sector": "Defence",
+    "tags": [
+      "Defence",
+      "European Defence",
+      "Italy",
+      "NATO",
+      "Rockets",
+      "Space",
+      "Vega"
+    ]
+  },
+  {
+    "name": "Palantir",
+    "ticker": "PLTR",
+    "sector": "Technology",
+    "tags": [
+      "Big Data",
+      "Defence Tech",
+      "Edge Computing",
+      "Government",
+      "Ontology",
+      "Peter Thiel",
+      "SaaS"
+    ]
+  },
+  {
+    "name": "Smiths Group",
+    "ticker": "SMIN",
+    "sector": "Industrials",
+    "tags": [
+      "Detection",
+      "Industrial",
+      "Security",
+      "Spin-off"
+    ]
+  },
+  {
+    "name": "Axon",
+    "ticker": "AXON",
+    "sector": "Other",
+    "tags": [
+      "Body Cameras",
+      "Law Enforcement",
+      "Police",
+      "Taser"
+    ]
+  },
+  {
+    "name": "ZenaTech",
+    "ticker": "ZENA",
+    "sector": "Defence",
+    "tags": [
+      "Agriculture",
+      "Defence",
+      "Drones",
+      "Military"
+    ]
+  },
+  {
+    "name": "Peloton",
+    "ticker": "PTON",
+    "sector": "Healthcare",
+    "tags": [
+      "Connected Fitness",
+      "Fitness",
+      "GLP-1",
+      "Healthcare",
+      "Longevity",
+      "Sport",
+      "Subscription"
+    ]
+  },
+  {
+    "name": "Planet Fitness",
+    "ticker": "PLNT",
+    "sector": "Healthcare",
+    "tags": [
+      "Consumer",
+      "Fitness",
+      "GLP-1",
+      "Gym"
+    ]
+  },
+  {
+    "name": "Technogym",
+    "ticker": "TGYM",
+    "sector": "Consumer",
+    "tags": [
+      "Consumer",
+      "Equipment",
+      "Fitness",
+      "Treadmills"
+    ]
+  },
+  {
+    "name": "Nike",
+    "ticker": "NKE",
+    "sector": "Consumer",
+    "tags": [
+      "Apparel",
+      "Consumer",
+      "Footwear",
+      "Retail",
+      "Sportswear"
+    ]
+  },
+  {
+    "name": "On Holding",
+    "ticker": "ONON",
+    "sector": "Other",
+    "tags": [
+      "Federer",
+      "Running",
+      "Shoes",
+      "Sportswear",
+      "Zendaya"
+    ]
+  },
+  {
+    "name": "Starbucks",
+    "ticker": "SBUX",
+    "sector": "Consumer",
+    "tags": [
+      "Brian Niccol",
+      "Coffee",
+      "Consumer",
+      "Footfall",
+      "Retail"
+    ]
+  },
+  {
+    "name": "Lululemon",
+    "ticker": "LULU",
+    "sector": "Consumer",
+    "tags": [
+      "Apparel",
+      "Athleisure",
+      "Consumer"
+    ]
+  },
+  {
+    "name": "Alibaba",
+    "ticker": "BABA",
+    "sector": "Fintech",
+    "tags": [
+      "Ant Group",
+      "China",
+      "Cloud",
+      "E-commerce",
+      "Fintech"
+    ]
+  },
+  {
+    "name": "Baidu",
+    "ticker": "BIDU",
+    "sector": "Technology",
+    "tags": [
+      "Autonomous Driving",
+      "China",
+      "Cloud",
+      "Search"
+    ]
+  },
+  {
+    "name": "JD.com",
+    "ticker": "JD",
+    "sector": "Consumer",
+    "tags": [
+      "China",
+      "E-commerce",
+      "Logistics",
+      "Retail"
+    ]
+  },
+  {
+    "name": "Tencent",
+    "ticker": "TCEHY",
+    "sector": "Fintech",
+    "tags": [
+      "0700",
+      "China",
+      "Fintech",
+      "Gaming",
+      "Social Media",
+      "WeChat"
+    ]
+  },
+  {
+    "name": "BYD",
+    "ticker": "BYDDY",
+    "sector": "Automotive",
+    "tags": [
+      "1211",
+      "Batteries",
+      "China",
+      "Electric Vehicles"
+    ]
+  },
+  {
+    "name": "Newmont",
+    "ticker": "NEM",
+    "sector": "Mining",
+    "tags": [
+      "Gold",
+      "Mining",
+      "Precious Metals"
+    ]
+  },
+  {
+    "name": "Barrick Gold",
+    "ticker": "GOLD",
+    "sector": "Mining",
+    "tags": [
+      "Gold",
+      "Mining",
+      "Precious Metals"
+    ]
+  },
+  {
+    "name": "Allied Gold",
+    "ticker": "AAUC",
+    "sector": "Mining",
+    "tags": [
+      "Africa",
+      "Gold",
+      "Kurmuk",
+      "Mining"
+    ]
+  },
+  {
+    "name": "Coinbase",
+    "ticker": "COIN",
+    "sector": "Crypto",
+    "tags": [
+      "Bitcoin",
+      "Crypto",
+      "Digital Assets",
+      "Exchange"
+    ]
+  },
+  {
+    "name": "MicroStrategy",
+    "ticker": "MSTR",
+    "sector": "Crypto",
+    "tags": [
+      "BTC",
+      "Bitcoin",
+      "Michael Saylor",
+      "Treasury"
+    ]
+  },
+  {
+    "name": "Robinhood",
+    "ticker": "HOOD",
+    "sector": "Crypto",
+    "tags": [
+      "Commission-free",
+      "Crypto",
+      "Retail",
+      "Trading"
+    ]
+  },
+  {
+    "name": "Lemonade",
+    "ticker": "LMND",
+    "sector": "Finance",
+    "tags": [
+      "Disruption",
+      "Insurance",
+      "Insurtech"
+    ]
+  },
+  {
+    "name": "TSMC",
+    "ticker": "TSM",
+    "sector": "Technology",
+    "tags": [
+      "Chips",
+      "Foundry",
+      "Semiconductors",
+      "Taiwan"
+    ]
+  },
+  {
+    "name": "ASML",
+    "ticker": "ASML",
+    "sector": "Technology",
+    "tags": [
+      "EUV",
+      "Equipment",
+      "Lithography",
+      "Monopoly",
+      "Semiconductors"
+    ]
+  },
+  {
+    "name": "Intel",
+    "ticker": "INTC",
+    "sector": "Technology",
+    "tags": [
+      "Chips",
+      "Foundry",
+      "Semiconductors",
+      "USA"
+    ]
+  },
+  {
+    "name": "AMD",
+    "ticker": "AMD",
+    "sector": "Technology",
+    "tags": [
+      "CPU",
+      "GPU",
+      "Semiconductors"
+    ]
+  },
+  {
+    "name": "Samsung",
+    "ticker": "005930",
+    "sector": "Technology",
+    "tags": [
+      "HBM",
+      "Korea",
+      "Memory",
+      "SSNLF",
+      "Semiconductors"
+    ]
+  },
+  {
+    "name": "Micron",
+    "ticker": "MU",
+    "sector": "Technology",
+    "tags": [
+      "DRAM",
+      "Memory",
+      "NAND",
+      "Semiconductors"
+    ]
+  },
+  {
+    "name": "SK Hynix",
+    "ticker": "000660",
+    "sector": "Technology",
+    "tags": [
+      "HBM",
+      "Korea",
+      "Memory",
+      "Semiconductors"
+    ]
+  },
+  {
+    "name": "Astera Labs",
+    "ticker": "ALAB",
+    "sector": "Technology",
+    "tags": [
+      "Connectivity",
+      "Data Centers",
+      "Semiconductors"
+    ]
+  },
+  {
+    "name": "Ouster",
+    "ticker": "OUST",
+    "sector": "Automotive",
+    "tags": [
+      "Autonomous",
+      "LiDAR",
+      "Robotics",
+      "Sensors"
+    ]
+  },
+  {
+    "name": "Vestas",
+    "ticker": "VWS",
+    "sector": "Energy",
+    "tags": [
+      "Green Energy",
+      "Renewables",
+      "Turbines",
+      "Wind"
+    ]
+  },
+  {
+    "name": "Ceres Power",
+    "ticker": "CWR",
+    "sector": "Energy",
+    "tags": [
+      "Bosch",
+      "Clean Energy",
+      "Fuel Cells",
+      "Hydrogen"
+    ]
+  },
+  {
+    "name": "Golar LNG",
+    "ticker": "GLNG",
+    "sector": "Energy",
+    "tags": [
+      "Energy",
+      "LNG",
+      "Natural Gas",
+      "Shipping"
+    ]
+  },
+  {
+    "name": "Flex LNG",
+    "ticker": "FLNG",
+    "sector": "Energy",
+    "tags": [
+      "LNG",
+      "Natural Gas",
+      "Shipping",
+      "Tankers"
+    ]
+  },
+  {
+    "name": "Prysmian",
+    "ticker": "PRY",
+    "sector": "Other",
+    "tags": [
+      "Cables",
+      "Data Centers",
+      "High Voltage",
+      "Offshore Wind"
+    ]
+  },
+  {
+    "name": "Cadiz",
+    "ticker": "CDZI",
+    "sector": "Other",
+    "tags": [
+      "Aquifer",
+      "California",
+      "Infrastructure",
+      "Water"
+    ]
+  },
+  {
+    "name": "IP Group",
+    "ticker": "IPO",
+    "sector": "Other",
+    "tags": [
+      "Spin-outs",
+      "Universities",
+      "Venture Capital"
+    ]
+  },
+  {
+    "name": "Seraphim Space",
+    "ticker": "SSIT",
+    "sector": "Space",
+    "tags": [
+      "Investing",
+      "NAV Discount",
+      "Satellites",
+      "Space"
+    ]
+  },
+  {
+    "name": "Trustpilot",
+    "ticker": "TRST",
+    "sector": "Technology",
+    "tags": [
+      "Consumer",
+      "Reviews",
+      "SaaS"
+    ]
+  },
+  {
+    "name": "Fever-Tree",
+    "ticker": "FEVR",
+    "sector": "Other",
+    "tags": [
+      "Beverages",
+      "Molson Coors",
+      "Premium Mixers",
+      "Tonic"
+    ]
+  },
+  {
+    "name": "Raspberry Pi",
+    "ticker": "RPI",
+    "sector": "Industrials",
+    "tags": [
+      "Hardware",
+      "IoT",
+      "Robotics",
+      "Technology"
+    ]
+  },
+  {
+    "name": "Beazley",
+    "ticker": "BEZ",
+    "sector": "Finance",
+    "tags": [
+      "Insurance",
+      "Lloyd's",
+      "Specialty"
+    ]
+  },
+  {
+    "name": "Admiral",
+    "ticker": "ADM",
+    "sector": "Finance",
+    "tags": [
+      "Insurance",
+      "Motor"
+    ]
+  },
+  {
+    "name": "LSEG",
+    "ticker": "LSEG",
+    "sector": "Technology",
+    "tags": [
+      "Data",
+      "Exchange",
+      "Financial Services",
+      "Microsoft"
+    ]
+  },
+  {
+    "name": "Lloyds Bank",
+    "ticker": "LLOY",
+    "sector": "Finance",
+    "tags": [
+      "Banking",
+      "Financial Services"
+    ]
+  },
+  {
+    "name": "HSBC",
+    "ticker": "HSBA",
+    "sector": "Finance",
+    "tags": [
+      "Asia",
+      "Banking",
+      "Financial Services"
+    ]
+  },
+  {
+    "name": "Direct Line",
+    "ticker": "DLG",
+    "sector": "Finance",
+    "tags": [
+      "Aviva",
+      "Insurance",
+      "M&A",
+      "Motor"
+    ]
+  },
+  {
+    "name": "Aviva",
+    "ticker": "AV",
+    "sector": "Finance",
+    "tags": [
+      "Consolidation",
+      "Insurance"
+    ]
+  },
+  {
+    "name": "Renewi",
+    "ticker": "RWI",
+    "sector": "Other",
+    "tags": [
+      "Netherlands",
+      "Recycling",
+      "Waste"
+    ]
+  },
+  {
+    "name": "Kneat",
+    "ticker": "KSI",
+    "sector": "Technology",
+    "tags": [
+      "Life Sciences",
+      "SaaS",
+      "Software",
+      "Validation"
+    ]
+  },
+  {
+    "name": "Herald Investment Trust",
+    "ticker": "HRI",
+    "sector": "Other",
+    "tags": [
+      "Investment Trust",
+      "Technology"
+    ]
+  },
+  {
+    "name": "SpaceX",
+    "ticker": "SPACE",
+    "sector": "Space",
+    "tags": [
+      "Elon Musk",
+      "Private",
+      "Rockets",
+      "Starlink"
+    ]
+  },
+  {
+    "name": "Spotify",
+    "ticker": "SPOT",
+    "sector": "Technology",
+    "tags": [
+      "Music",
+      "Podcasts",
+      "Streaming",
+      "Subscription"
+    ]
+  },
+  {
+    "name": "Zoom",
+    "ticker": "ZM",
+    "sector": "Technology",
+    "tags": [
+      "Conferencing",
+      "Remote Work",
+      "SaaS",
+      "Video"
+    ]
+  },
+  {
+    "name": "Block",
+    "ticker": "SQ",
+    "sector": "Fintech",
+    "tags": [
+      "Cash App",
+      "Fintech",
+      "Payments",
+      "Square"
+    ]
+  },
+  {
+    "name": "Snowflake",
+    "ticker": "SNOW",
+    "sector": "Technology",
+    "tags": [
+      "Analytics",
+      "Cloud",
+      "Data"
+    ]
+  },
+  {
+    "name": "Rivian",
+    "ticker": "RIVN",
+    "sector": "Automotive",
+    "tags": [
+      "Amazon",
+      "Electric Trucks",
+      "Startup"
+    ]
+  },
+  {
+    "name": "Lucid",
+    "ticker": "LCID",
+    "sector": "Automotive",
+    "tags": [
+      "Luxury",
+      "Saudi",
+      "Startup"
+    ]
+  },
+  {
+    "name": "Ferrari",
+    "ticker": "RACE",
+    "sector": "Consumer",
+    "tags": [
+      "Auto",
+      "F80",
+      "Luxury",
+      "Sports Cars"
+    ]
+  },
+  {
+    "name": "Wayve",
+    "ticker": "WAYVE",
+    "sector": "Automotive",
+    "tags": [
+      "Autonomous",
+      "Private"
+    ]
+  },
+  {
+    "name": "Pioneer Power Solutions",
+    "ticker": "PPSI",
+    "sector": "Other",
+    "tags": [
+      "EV Charging",
+      "Infrastructure",
+      "Micro Cap",
+      "Mobile Chargers"
+    ]
+  },
+  {
+    "name": "GameStop",
+    "ticker": "GME",
+    "sector": "Crypto",
+    "tags": [
+      "Bitcoin",
+      "Meme Stock",
+      "Retail",
+      "Ryan Cohen"
+    ]
+  },
+  {
+    "name": "Soho House",
+    "ticker": "SHCO",
+    "sector": "Other",
+    "tags": [
+      "Hospitality",
+      "Lifestyle",
+      "Membership",
+      "Private Clubs"
+    ]
+  },
+  {
+    "name": "Helium",
+    "ticker": "HNT",
+    "sector": "Crypto",
+    "tags": [
+      "Crypto",
+      "DePIN",
+      "IoT",
+      "Telecom"
+    ]
+  },
+  {
+    "name": "ArcelorMittal",
+    "ticker": "MT",
+    "sector": "Mining",
+    "tags": [
+      "Commodities",
+      "Infrastructure",
+      "Mining",
+      "Steel"
+    ]
+  },
+  {
+    "name": "Turkcell",
+    "ticker": "TKC",
+    "sector": "Technology",
+    "tags": [
+      "Emerging Markets",
+      "Telecom",
+      "Turkey"
+    ]
+  },
+  {
+    "name": "Symbotic",
+    "ticker": "SYM",
+    "sector": "Industrials",
+    "tags": [
+      "Automation",
+      "Robotics",
+      "Walmart",
+      "Warehouse"
+    ]
+  },
+  {
+    "name": "Power Nickel",
+    "ticker": "PNPN",
+    "sector": "Mining",
+    "tags": [
+      "Battery Metals",
+      "Canada",
+      "Mining",
+      "Nickel"
+    ]
+  },
+  {
+    "name": "Schroders",
+    "ticker": "SDR",
+    "sector": "Finance",
+    "tags": [
+      "Asset Management",
+      "Finance"
+    ]
+  },
+  {
+    "name": "Nokia",
+    "ticker": "NOK",
+    "sector": "Technology",
+    "tags": [
+      "Finland",
+      "Networks",
+      "Telecom"
+    ]
+  },
+  {
+    "name": "DBV Technologies",
+    "ticker": "DBVT",
+    "sector": "Healthcare",
+    "tags": [
+      "Allergies",
+      "Biotech",
+      "Peanut",
+      "Viaskin"
+    ]
+  },
+  {
+    "name": "Merck",
+    "ticker": "MRK",
+    "sector": "Healthcare",
+    "tags": [
+      "Immunotherapy",
+      "Keytruda",
+      "Oncology",
+      "Pharma"
+    ]
+  },
+  {
+    "name": "Roche",
+    "ticker": "ROG",
+    "sector": "Healthcare",
+    "tags": [
+      "Diagnostics",
+      "Oncology",
+      "Pharma",
+      "RHHBY",
+      "Sequencing"
+    ]
+  },
+  {
+    "name": "Chipotle",
+    "ticker": "CMG",
+    "sector": "Consumer",
+    "tags": [
+      "Brian Niccol",
+      "Consumer",
+      "Fast Casual",
+      "Restaurants"
+    ]
+  },
+  {
+    "name": "Shake Shack",
+    "ticker": "SHAK",
+    "sector": "Consumer",
+    "tags": [
+      "Burgers",
+      "Consumer",
+      "Fast Casual",
+      "Restaurants"
+    ]
+  },
+  {
+    "name": "Foot Locker",
+    "ticker": "FL",
+    "sector": "Consumer",
+    "tags": [
+      "Consumer",
+      "Footwear",
+      "Retail",
+      "Sneakers"
+    ]
+  },
+  {
+    "name": "Kraft Heinz",
+    "ticker": "KHC",
+    "sector": "Other",
+    "tags": [
+      "CPG",
+      "Consumer Staples",
+      "Food"
+    ]
+  },
+  {
+    "name": "British American Tobacco",
+    "ticker": "BTI",
+    "sector": "Other",
+    "tags": [
+      "BATS",
+      "Consumer Staples",
+      "Dividend",
+      "Tobacco"
+    ]
+  },
+  {
+    "name": "Herbalife",
+    "ticker": "HLF",
+    "sector": "Consumer",
+    "tags": [
+      "Consumer",
+      "Controversy",
+      "MLM",
+      "Nutrition"
+    ]
+  },
+  {
+    "name": "TAL Education",
+    "ticker": "TAL",
+    "sector": "Consumer",
+    "tags": [
+      "China",
+      "Consumer",
+      "Education",
+      "Tutoring"
+    ]
+  },
+  {
+    "name": "KWEB China Internet ETF",
+    "ticker": "KWEB",
+    "sector": "Other",
+    "tags": [
+      "China",
+      "ETF",
+      "Internet",
+      "Tech"
+    ]
+  },
+  {
+    "name": "abrdn",
+    "ticker": "ABDN",
+    "sector": "Finance",
+    "tags": [
+      "Aberdeen",
+      "Asset Management",
+      "Finance"
+    ]
+  },
+  {
+    "name": "St. James's Place",
+    "ticker": "SJP",
+    "sector": "Finance",
+    "tags": [
+      "Finance",
+      "Wealth Management"
+    ]
+  },
+  {
+    "name": "Hargreaves Lansdown",
+    "ticker": "HL",
+    "sector": "Other",
+    "tags": [
+      "Finance",
+      "Platform",
+      "Retail Investing"
+    ]
+  },
+  {
+    "name": "Burford Capital",
+    "ticker": "BUR",
+    "sector": "Other",
+    "tags": [
+      "Legal",
+      "Litigation Finance",
+      "Muddy Waters"
+    ]
+  },
+  {
+    "name": "Kistos",
+    "ticker": "KIST",
+    "sector": "Energy",
+    "tags": [
+      "Energy",
+      "North Sea",
+      "Oil & Gas"
+    ]
+  },
+  {
+    "name": "Rockhopper",
+    "ticker": "RKH",
+    "sector": "Energy",
+    "tags": [
+      "Exploration",
+      "Falklands",
+      "Oil & Gas"
+    ]
+  },
+  {
+    "name": "Jersey Oil & Gas",
+    "ticker": "JOG",
+    "sector": "Energy",
+    "tags": [
+      "Energy",
+      "North Sea",
+      "Oil & Gas"
+    ]
+  },
+  {
+    "name": "Henderson Euro Trust",
+    "ticker": "HNE",
+    "sector": "Other",
+    "tags": [
+      "Europe",
+      "Investment Trust",
+      "Small Caps"
+    ]
+  },
+  {
+    "name": "Intelligent Ultrasound",
+    "ticker": "IUG",
+    "sector": "Healthcare",
+    "tags": [
+      "Healthcare",
+      "Medical Devices"
+    ]
+  },
+  {
+    "name": "Visa",
+    "ticker": "V",
+    "sector": "Fintech",
+    "tags": [
+      "Credit Cards",
+      "Fintech",
+      "Global",
+      "Payments"
+    ]
+  },
+  {
+    "name": "Icahn Enterprises",
+    "ticker": "IEP",
+    "sector": "Other",
+    "tags": [
+      "Activist",
+      "Carl Icahn",
+      "Conglomerate"
+    ]
+  },
+  {
+    "name": "Partners Group",
+    "ticker": "PGHN",
+    "sector": "Finance",
+    "tags": [
+      "Asset Management",
+      "Private Equity",
+      "Switzerland"
+    ]
+  },
+  {
+    "name": "ICG",
+    "ticker": "ICP",
+    "sector": "Finance",
+    "tags": [
+      "Alternative Assets",
+      "Asset Management",
+      "Private Credit"
+    ]
+  },
+  {
+    "name": "Nikola",
+    "ticker": "NKLA",
+    "sector": "Automotive",
+    "tags": [
+      "Hindenburg",
+      "Hydrogen",
+      "Trucks"
+    ]
+  },
+  {
+    "name": "Carvana",
+    "ticker": "CVNA",
+    "sector": "Consumer",
+    "tags": [
+      "Auto",
+      "E-commerce",
+      "Hindenburg",
+      "Used Cars"
+    ]
+  },
+  {
+    "name": "Luckin Coffee",
+    "ticker": "LKNCY",
+    "sector": "Consumer",
+    "tags": [
+      "China",
+      "Coffee",
+      "Consumer",
+      "Muddy Waters"
+    ]
+  },
+  {
+    "name": "Super Micro Computer",
+    "ticker": "SMCI",
+    "sector": "Technology",
+    "tags": [
+      "AI Infrastructure",
+      "Data Centers",
+      "Servers",
+      "Short Attack"
+    ]
+  },
+  {
+    "name": "Netflix",
+    "ticker": "NFLX",
+    "sector": "Technology",
+    "tags": [
+      "Content",
+      "Entertainment",
+      "Streaming",
+      "Subscription"
+    ]
+  },
+  {
+    "name": "Uber",
+    "ticker": "UBER",
+    "sector": "Other",
+    "tags": [
+      "Delivery",
+      "Gig Economy",
+      "Mobility",
+      "Rideshare"
+    ]
+  },
+  {
+    "name": "BlackRock",
+    "ticker": "BLK",
+    "sector": "Finance",
+    "tags": [
+      "Asset Management",
+      "ETF",
+      "Larry Fink",
+      "iShares"
+    ]
+  },
+  {
+    "name": "Goldman Sachs",
+    "ticker": "GS",
+    "sector": "Finance",
+    "tags": [
+      "Asset Management",
+      "Investment Bank",
+      "Trading"
+    ]
+  },
+  {
+    "name": "JPMorgan",
+    "ticker": "JPM",
+    "sector": "Finance",
+    "tags": [
+      "Asset Management",
+      "Banking",
+      "Investment Bank",
+      "Jamie Dimon"
+    ]
+  },
+  {
+    "name": "Morgan Stanley",
+    "ticker": "MS",
+    "sector": "Finance",
+    "tags": [
+      "Investment Bank",
+      "Trading",
+      "Wealth Management"
+    ]
+  },
+  {
+    "name": "T. Rowe Price",
+    "ticker": "TROW",
+    "sector": "Finance",
+    "tags": [
+      "Active Management",
+      "Asset Management",
+      "Mutual Funds"
+    ]
+  },
+  {
+    "name": "Rocket Lab",
+    "ticker": "RKLB",
+    "sector": "Space",
+    "tags": [
+      "Launch Services",
+      "Peter Beck",
+      "Rockets",
+      "Satellites",
+      "Space"
+    ]
+  },
+  {
+    "name": "LVMH",
+    "ticker": "MC",
+    "sector": "Consumer",
+    "tags": [
+      "Bernard Arnault",
+      "Fashion",
+      "LVMUY",
+      "Louis Vuitton",
+      "Luxury"
+    ]
+  },
+  {
+    "name": "Richemont",
+    "ticker": "CFR",
+    "sector": "Consumer",
+    "tags": [
+      "Cartier",
+      "Jewellery",
+      "Luxury",
+      "Watches",
+      "YNAP"
+    ]
+  },
+  {
+    "name": "MyTheresa",
+    "ticker": "MYTE",
+    "sector": "Consumer",
+    "tags": [
+      "E-commerce",
+      "Fashion",
+      "Luxury",
+      "YNAP"
+    ]
+  },
+  {
+    "name": "ASOS",
+    "ticker": "ASC",
+    "sector": "Consumer",
+    "tags": [
+      "E-commerce",
+      "Fashion",
+      "Online Retail"
+    ]
+  },
+  {
+    "name": "Boohoo",
+    "ticker": "BOO",
+    "sector": "Consumer",
+    "tags": [
+      "E-commerce",
+      "Fashion",
+      "Fast Fashion"
+    ]
+  },
+  {
+    "name": "Cybin",
+    "ticker": "CYBN",
+    "sector": "Healthcare",
+    "tags": [
+      "Biotech",
+      "Depression",
+      "Mental Health",
+      "Psychedelics",
+      "RFK"
+    ]
+  },
+  {
+    "name": "Bristol-Myers Squibb",
+    "ticker": "BMY",
+    "sector": "Healthcare",
+    "tags": [
+      "Immunology",
+      "Karuna",
+      "Oncology",
+      "Pharma"
+    ]
+  },
+  {
+    "name": "CRISPR Therapeutics",
+    "ticker": "CRSP",
+    "sector": "Healthcare",
+    "tags": [
+      "Biotech",
+      "CRISPR",
+      "Gene Editing",
+      "RFK"
+    ]
+  },
+  {
+    "name": "INmune Bio",
+    "ticker": "INMB",
+    "sector": "Healthcare",
+    "tags": [
+      "Biotech",
+      "Cancer",
+      "Inflammation",
+      "Neurodegeneration"
+    ]
+  },
+  {
+    "name": "Cardiol Therapeutics",
+    "ticker": "CRDL",
+    "sector": "Healthcare",
+    "tags": [
+      "Biotech",
+      "Cardiology",
+      "Heart Disease"
+    ]
+  },
+  {
+    "name": "Oxford Biomedica",
+    "ticker": "OXB",
+    "sector": "Healthcare",
+    "tags": [
+      "Biotech",
+      "Gene Therapy",
+      "Viral Vectors"
+    ]
+  },
+  {
+    "name": "Tempus AI",
+    "ticker": "TEM",
+    "sector": "Healthcare",
+    "tags": [
+      "Diagnostics",
+      "Healthcare AI",
+      "Pelosi",
+      "Precision Medicine"
+    ]
+  },
+  {
+    "name": "SoFi",
+    "ticker": "SOFI",
+    "sector": "Finance",
+    "tags": [
+      "Banking",
+      "Fintech",
+      "Lending",
+      "Student Loans"
+    ]
+  },
+  {
+    "name": "Coupang",
+    "ticker": "CPNG",
+    "sector": "Consumer",
+    "tags": [
+      "Delivery",
+      "E-commerce",
+      "Farfetch",
+      "Korea"
+    ]
+  },
+  {
+    "name": "Arch Resources",
+    "ticker": "ARCH",
+    "sector": "Mining",
+    "tags": [
+      "Coal",
+      "Energy",
+      "Metallurgical",
+      "Mining"
+    ]
+  },
+  {
+    "name": "CONSOL Energy",
+    "ticker": "CEIX",
+    "sector": "Mining",
+    "tags": [
+      "Coal",
+      "Energy",
+      "Mining",
+      "Pennsylvania"
+    ]
+  },
+  {
+    "name": "Kazatomprom",
+    "ticker": "KAP",
+    "sector": "Energy",
+    "tags": [
+      "Kazakhstan",
+      "Mining",
+      "Nuclear",
+      "Uranium"
+    ]
+  },
+  {
+    "name": "Roku",
+    "ticker": "ROKU",
+    "sector": "Technology",
+    "tags": [
+      "Advertising",
+      "Connected TV",
+      "Platform",
+      "Streaming"
+    ]
+  },
+  {
+    "name": "Berkshire Hathaway",
+    "ticker": "BRK.A",
+    "sector": "Finance",
+    "tags": [
+      "BRK.B",
+      "Conglomerate",
+      "Insurance",
+      "Value",
+      "Warren Buffett"
+    ]
+  },
+  {
+    "name": "Barclays",
+    "ticker": "BARC",
+    "sector": "Finance",
+    "tags": [
+      "Banking",
+      "Credit Cards",
+      "Investment Bank"
+    ]
+  },
+  {
+    "name": "Phoenix Digital Assets",
+    "ticker": "PNIX",
+    "sector": "Crypto",
+    "tags": [
+      "Bitcoin",
+      "Crypto",
+      "Digital Assets"
+    ]
+  },
+  {
+    "name": "Volkswagen",
+    "ticker": "VOW3",
+    "sector": "Automotive",
+    "tags": [
+      "Auto",
+      "Europe",
+      "Germany",
+      "VWAGY"
+    ]
+  },
+  {
+    "name": "SMIC",
+    "ticker": "0981",
+    "sector": "Technology",
+    "tags": [
+      "China",
+      "Chips",
+      "Foundry",
+      "Semiconductors"
+    ]
+  },
+  {
+    "name": "Costco",
+    "ticker": "COST",
+    "sector": "Consumer",
+    "tags": [
+      "Gold Bars",
+      "Membership",
+      "Retail",
+      "Warehouse"
+    ]
+  },
+  {
+    "name": "Motorola Solutions",
+    "ticker": "MSI",
+    "sector": "Other",
+    "tags": [
+      "Communications",
+      "First Responders",
+      "Police",
+      "Security"
+    ]
+  },
+  {
+    "name": "Leonardo",
+    "ticker": "LDO",
+    "sector": "Defence",
+    "tags": [
+      "Aerospace",
+      "Defence",
+      "European Defence",
+      "Helicopters",
+      "Italy"
+    ]
+  },
+  {
+    "name": "Babcock",
+    "ticker": "BAB",
+    "sector": "Defence",
+    "tags": [
+      "Defence",
+      "Engineering",
+      "Marine",
+      "Naval"
+    ]
+  },
+  {
+    "name": "BAE Systems",
+    "ticker": "BA.",
+    "sector": "Defence",
+    "tags": [
+      "Aerospace",
+      "BAESY",
+      "Defence",
+      "Naval"
+    ]
+  },
+  {
+    "name": "Rheinmetall",
+    "ticker": "RHM",
+    "sector": "Defence",
+    "tags": [
+      "Ammunition",
+      "Defence",
+      "European Defence",
+      "Germany",
+      "Tanks"
+    ]
+  },
+  {
+    "name": "Dassault Aviation",
+    "ticker": "AM",
+    "sector": "Defence",
+    "tags": [
+      "Aerospace",
+      "Defence",
+      "Fighter Jets",
+      "France",
+      "Rafale"
+    ]
+  },
+  {
+    "name": "MilDef",
+    "ticker": "MILDEF",
+    "sector": "Defence",
+    "tags": [
+      "Defence",
+      "European Defence",
+      "Rugged IT",
+      "Sweden"
+    ]
+  },
+  {
+    "name": "Anduril",
+    "ticker": "ANDURIL",
+    "sector": "Technology",
+    "tags": [
+      "Defence Tech",
+      "Drones",
+      "Palmer Luckey",
+      "Private"
+    ]
+  },
+  {
+    "name": "Eutelsat",
+    "ticker": "ETL",
+    "sector": "Space",
+    "tags": [
+      "Broadband",
+      "OneWeb",
+      "Satellites",
+      "Space",
+      "Telecom"
+    ]
+  },
+  {
+    "name": "Compass Pathways",
+    "ticker": "CMPS",
+    "sector": "Healthcare",
+    "tags": [
+      "Biotech",
+      "Depression",
+      "Mental Health",
+      "Psilocybin",
+      "Psychedelics"
+    ]
+  },
+  {
+    "name": "Innovent Biologics",
+    "ticker": "1801",
+    "sector": "Healthcare",
+    "tags": [
+      "Biotech",
+      "China",
+      "GLP-1",
+      "Mazdutide",
+      "Obesity"
+    ]
+  },
+  {
+    "name": "Marathon Digital",
+    "ticker": "MARA",
+    "sector": "Crypto",
+    "tags": [
+      "BTC",
+      "Bitcoin",
+      "Crypto",
+      "Mining"
+    ]
+  },
+  {
+    "name": "Riot Platforms",
+    "ticker": "RIOT",
+    "sector": "Crypto",
+    "tags": [
+      "BTC",
+      "Bitcoin",
+      "Crypto",
+      "Mining"
+    ]
+  },
+  {
+    "name": "CoinShares",
+    "ticker": "CS",
+    "sector": "Crypto",
+    "tags": [
+      "Asset Management",
+      "Crypto",
+      "Digital Assets",
+      "ETF"
+    ]
+  },
+  {
+    "name": "Bitcoin Group SE",
+    "ticker": "ADE",
+    "sector": "Crypto",
+    "tags": [
+      "Bank",
+      "Bitcoin",
+      "Crypto",
+      "Germany",
+      "Treasury"
+    ]
+  },
+  {
+    "name": "Northern Data",
+    "ticker": "NB2",
+    "sector": "Technology",
+    "tags": [
+      "Bitcoin Mining",
+      "Data Centers",
+      "Germany"
+    ]
+  },
+  {
+    "name": "Heidelberg Materials",
+    "ticker": "HEI",
+    "sector": "Industrials",
+    "tags": [
+      "Building Materials",
+      "Cement",
+      "Germany",
+      "Infrastructure"
+    ]
+  },
+  {
+    "name": "Holcim",
+    "ticker": "HOLN",
+    "sector": "Industrials",
+    "tags": [
+      "Building Materials",
+      "Cement",
+      "Infrastructure",
+      "Switzerland"
+    ]
+  },
+  {
+    "name": "CRH",
+    "ticker": "CRH",
+    "sector": "Industrials",
+    "tags": [
+      "Building Materials",
+      "Cement",
+      "Infrastructure",
+      "Ireland"
+    ]
+  },
+  {
+    "name": "ThyssenKrupp",
+    "ticker": "TKA",
+    "sector": "Industrials",
+    "tags": [
+      "Engineering",
+      "Germany",
+      "Industrial",
+      "Steel"
+    ]
+  },
+  {
+    "name": "Fresnillo",
+    "ticker": "FRES",
+    "sector": "Mining",
+    "tags": [
+      "Gold",
+      "Mexico",
+      "Mining",
+      "Precious Metals",
+      "Silver"
+    ]
+  },
+  {
+    "name": "MP Materials",
+    "ticker": "MP",
+    "sector": "Mining",
+    "tags": [
+      "Magnets",
+      "Mining",
+      "Rare Earths",
+      "USA"
+    ]
+  },
+  {
+    "name": "Rainbow Rare Earths",
+    "ticker": "RBW",
+    "sector": "Mining",
+    "tags": [
+      "Critical Minerals",
+      "Mining",
+      "Rare Earths",
+      "Recycling"
+    ]
+  },
+  {
+    "name": "Alphamin",
+    "ticker": "AFM",
+    "sector": "Mining",
+    "tags": [
+      "Critical Minerals",
+      "DRC",
+      "Mining",
+      "Tin"
+    ]
+  },
+  {
+    "name": "Tungsten West",
+    "ticker": "TUN",
+    "sector": "Defence",
+    "tags": [
+      "Critical Minerals",
+      "Defence",
+      "Mining",
+      "Tungsten"
+    ]
+  },
+  {
+    "name": "Deep Yellow",
+    "ticker": "DYL",
+    "sector": "Energy",
+    "tags": [
+      "Australia",
+      "Mining",
+      "Namibia",
+      "Uranium"
+    ]
+  },
+  {
+    "name": "Paladin Energy",
+    "ticker": "PDN",
+    "sector": "Energy",
+    "tags": [
+      "Australia",
+      "Mining",
+      "Nuclear",
+      "Uranium"
+    ]
+  },
+  {
+    "name": "Fission Uranium",
+    "ticker": "FCU",
+    "sector": "Energy",
+    "tags": [
+      "Athabasca",
+      "Canada",
+      "Mining",
+      "Uranium"
+    ]
+  },
+  {
+    "name": "Skyharbour Resources",
+    "ticker": "SYH",
+    "sector": "Energy",
+    "tags": [
+      "Athabasca",
+      "Canada",
+      "Junior",
+      "Mining",
+      "Uranium"
+    ]
+  },
+  {
+    "name": "Valterra",
+    "ticker": "VAL",
+    "sector": "Mining",
+    "tags": [
+      "Anglo",
+      "Mining",
+      "PGM",
+      "Platinum",
+      "South Africa"
+    ]
+  },
+  {
+    "name": "Seadrill",
+    "ticker": "SDRL",
+    "sector": "Energy",
+    "tags": [
+      "Deepwater",
+      "Drilling",
+      "Offshore",
+      "Oil Services"
+    ]
+  },
+  {
+    "name": "Noble Corporation",
+    "ticker": "NE",
+    "sector": "Energy",
+    "tags": [
+      "Deepwater",
+      "Drilling",
+      "Offshore",
+      "Oil Services"
+    ]
+  },
+  {
+    "name": "Saipem",
+    "ticker": "SPM",
+    "sector": "Energy",
+    "tags": [
+      "Engineering",
+      "Italy",
+      "Offshore",
+      "Oil Services"
+    ]
+  },
+  {
+    "name": "Viridien",
+    "ticker": "VIRI",
+    "sector": "Energy",
+    "tags": [
+      "Data",
+      "Geoscience",
+      "Oil Services",
+      "Seismic"
+    ]
+  },
+  {
+    "name": "Vertiv",
+    "ticker": "VRT",
+    "sector": "Other",
+    "tags": [
+      "Cooling",
+      "Data Centers",
+      "Infrastructure",
+      "Power"
+    ]
+  },
+  {
+    "name": "Roblox",
+    "ticker": "RBLX",
+    "sector": "Technology",
+    "tags": [
+      "Gaming",
+      "Kids",
+      "Metaverse",
+      "Platform",
+      "UGC"
+    ]
+  },
+  {
+    "name": "Unity Software",
+    "ticker": "U",
+    "sector": "Technology",
+    "tags": [
+      "Developers",
+      "Engine",
+      "Gaming",
+      "Metaverse"
+    ]
+  },
+  {
+    "name": "Sphere Entertainment",
+    "ticker": "SPHR",
+    "sector": "Technology",
+    "tags": [
+      "Entertainment",
+      "Las Vegas",
+      "Live Events",
+      "MSG"
+    ]
+  },
+  {
+    "name": "Live Nation",
+    "ticker": "LYV",
+    "sector": "Technology",
+    "tags": [
+      "Concerts",
+      "Entertainment",
+      "Live Events",
+      "Ticketmaster"
+    ]
+  },
+  {
+    "name": "Eventbrite",
+    "ticker": "EB",
+    "sector": "Technology",
+    "tags": [
+      "Events",
+      "Platform",
+      "SaaS",
+      "Ticketing"
+    ]
+  },
+  {
+    "name": "IMAX",
+    "ticker": "IMAX",
+    "sector": "Technology",
+    "tags": [
+      "Cinema",
+      "Entertainment",
+      "Premium",
+      "Technology"
+    ]
+  },
+  {
+    "name": "Manchester United",
+    "ticker": "MANU",
+    "sector": "Other",
+    "tags": [
+      "Football",
+      "Media",
+      "Sports"
+    ]
+  },
+  {
+    "name": "CTS Eventim",
+    "ticker": "EVD",
+    "sector": "Technology",
+    "tags": [
+      "Entertainment",
+      "Events",
+      "Germany",
+      "Ticketing"
+    ]
+  },
+  {
+    "name": "GEO Group",
+    "ticker": "GEO",
+    "sector": "Other",
+    "tags": [
+      "Corrections",
+      "Immigration",
+      "Prisons",
+      "REIT"
+    ]
+  },
+  {
+    "name": "Marqeta",
+    "ticker": "MQ",
+    "sector": "Fintech",
+    "tags": [
+      "API",
+      "BaaS",
+      "Cards",
+      "Fintech",
+      "Payments"
+    ]
+  },
+  {
+    "name": "BAWAG",
+    "ticker": "BG",
+    "sector": "Finance",
+    "tags": [
+      "Austria",
+      "Banking",
+      "Cerberus",
+      "Europe"
+    ]
+  },
+  {
+    "name": "Fanuc",
+    "ticker": "6954",
+    "sector": "Industrials",
+    "tags": [
+      "Automation",
+      "CNC",
+      "Industrial",
+      "Japan",
+      "Robotics"
+    ]
+  },
+  {
+    "name": "John Deere",
+    "ticker": "DE",
+    "sector": "Industrials",
+    "tags": [
+      "Agriculture",
+      "Automation",
+      "Farming",
+      "Robotics",
+      "Tractors"
+    ]
+  },
+  {
+    "name": "SMC Corporation",
+    "ticker": "6273",
+    "sector": "Industrials",
+    "tags": [
+      "Automation",
+      "Industrial",
+      "Japan",
+      "Pneumatics"
+    ]
+  },
+  {
+    "name": "Schneider Electric",
+    "ticker": "SU",
+    "sector": "Industrials",
+    "tags": [
+      "Automation",
+      "Data Centers",
+      "Energy Management",
+      "Industrial"
+    ]
+  },
+  {
+    "name": "Embraer",
+    "ticker": "ERJ",
+    "sector": "Defence",
+    "tags": [
+      "Aerospace",
+      "Aviation",
+      "Brazil",
+      "Defence",
+      "Regional Jets"
+    ]
+  },
+  {
+    "name": "Archer Aviation",
+    "ticker": "ACHR",
+    "sector": "Other",
+    "tags": [
+      "Anduril",
+      "Flying Taxis",
+      "Urban Air Mobility",
+      "eVTOL"
+    ]
+  },
+  {
+    "name": "Glass House Brands",
+    "ticker": "GLASF",
+    "sector": "Other",
+    "tags": [
+      "California",
+      "Cannabis",
+      "Greenhouse",
+      "USA"
+    ]
+  },
+  {
+    "name": "Pinterest",
+    "ticker": "PINS",
+    "sector": "Consumer",
+    "tags": [
+      "Advertising",
+      "E-commerce",
+      "Social Media",
+      "Visual Search"
+    ]
+  },
+  {
+    "name": "Atome Energy",
+    "ticker": "ATOM",
+    "sector": "Energy",
+    "tags": [
+      "Ammonia",
+      "Green Energy",
+      "Hydrogen",
+      "Iceland",
+      "Paraguay"
+    ]
+  },
+  {
+    "name": "Sprott Inc",
+    "ticker": "SII",
+    "sector": "Energy",
+    "tags": [
+      "Asset Management",
+      "Commodities",
+      "ETF",
+      "Gold",
+      "Uranium"
+    ]
+  },
+  {
+    "name": "Pershing Square Holdings",
+    "ticker": "PSH",
+    "sector": "Other",
+    "tags": [
+      "Activism",
+      "Bill Ackman",
+      "Concentrated",
+      "Hedge Fund"
+    ]
+  }
+]
