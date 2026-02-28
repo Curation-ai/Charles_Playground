@@ -3,13 +3,16 @@
 import { useState, useEffect, FormEvent } from "react";
 import { Stock, StockPayload, ValuationView } from "@/types/stock";
 import { createStock, updateStock } from "@/lib/api";
+import { getMembers } from "@/lib/members-api";
+import { Member } from "@/types/member";
 
-type Tab = "basics" | "investment" | "details";
+type Tab = "basics" | "investment" | "details" | "members";
 
 const TAB_LABELS: Record<Tab, string> = {
   basics:     "Basics",
   investment: "Investment Case",
   details:    "Details",
+  members:    "Members",
 };
 
 const VALUATION_OPTIONS: ValuationView[] = ["Undervalued", "Fair Value", "Overvalued", "Unknown"];
@@ -32,6 +35,7 @@ const TAB_FIELDS: Record<Tab, (keyof FormState)[]> = {
   basics:     ["name", "ticker", "sector", "price", "market_cap"],
   investment: ["investment_thesis", "valuation_view"],
   details:    ["description", "notes", "tags"],
+  members:    [],
 };
 
 const EMPTY: FormState = {
@@ -40,6 +44,8 @@ const EMPTY: FormState = {
   originated_by: "",
   description: "", notes: "", tags: "",
 };
+
+type MemberLink = { member_id: number; name: string; company: string | null; note: string };
 
 export interface StockModalProps {
   stock: Stock | null;
@@ -54,6 +60,18 @@ export default function StockModal({ stock, onClose, onSaved, initialTab }: Stoc
   const [form, setForm]     = useState<FormState>(EMPTY);
   const [error, setError]   = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
+
+  // Originating member links
+  const [originatingLinks, setOriginatingLinks]         = useState<MemberLink[]>([]);
+  const [originatingSearch, setOriginatingSearch]       = useState("");
+  const [originatingResults, setOriginatingResults]     = useState<Member[]>([]);
+  const [searchingOriginating, setSearchingOriginating] = useState(false);
+
+  // Commenting member links
+  const [commentingLinks, setCommentingLinks]           = useState<MemberLink[]>([]);
+  const [commentingSearch, setCommentingSearch]         = useState("");
+  const [commentingResults, setCommentingResults]       = useState<Member[]>([]);
+  const [searchingCommenting, setSearchingCommenting]   = useState(false);
 
   useEffect(() => {
     setTab(initialTab ?? "basics");
@@ -72,16 +90,66 @@ export default function StockModal({ stock, onClose, onSaved, initialTab }: Stoc
         notes:              stock.notes ?? "",
         tags:               stock.tags?.join(", ") ?? "",
       });
+      setOriginatingLinks(
+        (stock.originating_members ?? []).map((m) => ({
+          member_id: m.id, name: m.name, company: m.company, note: m.note ?? "",
+        }))
+      );
+      setCommentingLinks(
+        (stock.commenting_members ?? []).map((m) => ({
+          member_id: m.id, name: m.name, company: m.company, note: m.note ?? "",
+        }))
+      );
     } else {
       setForm(EMPTY);
+      setOriginatingLinks([]);
+      setCommentingLinks([]);
     }
+    setOriginatingSearch(""); setOriginatingResults([]);
+    setCommentingSearch(""); setCommentingResults([]);
   }, [stock, initialTab]);
+
+  // Originating member search debounce
+  useEffect(() => {
+    if (!originatingSearch.trim()) { setOriginatingResults([]); return; }
+    const t = setTimeout(async () => {
+      setSearchingOriginating(true);
+      try {
+        const res = await getMembers(originatingSearch);
+        setOriginatingResults(res.data.filter(
+          (m) => !originatingLinks.some((l) => l.member_id === m.id) && !commentingLinks.some((l) => l.member_id === m.id)
+        ));
+      } finally {
+        setSearchingOriginating(false);
+      }
+    }, 300);
+    return () => clearTimeout(t);
+  }, [originatingSearch, originatingLinks, commentingLinks]);
+
+  // Commenting member search debounce
+  useEffect(() => {
+    if (!commentingSearch.trim()) { setCommentingResults([]); return; }
+    const t = setTimeout(async () => {
+      setSearchingCommenting(true);
+      try {
+        const res = await getMembers(commentingSearch);
+        setCommentingResults(res.data.filter(
+          (m) => !commentingLinks.some((l) => l.member_id === m.id) && !originatingLinks.some((l) => l.member_id === m.id)
+        ));
+      } finally {
+        setSearchingCommenting(false);
+      }
+    }, 300);
+    return () => clearTimeout(t);
+  }, [commentingSearch, commentingLinks, originatingLinks]);
 
   const handle = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
 
-  const filledCount = (t: Tab) =>
-    TAB_FIELDS[t].filter((f) => form[f] !== "").length;
+  const filledCount = (t: Tab) => {
+    if (t === "members") return originatingLinks.length + commentingLinks.length;
+    return TAB_FIELDS[t].filter((f) => form[f] !== "").length;
+  };
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
@@ -101,6 +169,8 @@ export default function StockModal({ stock, onClose, onSaved, initialTab }: Stoc
         valuation_view:    (form.valuation_view as ValuationView) || null,
         originated_by:     form.originated_by || null,
       },
+      originating_member_links: originatingLinks.map((l) => ({ member_id: l.member_id, note: l.note || undefined })),
+      commenting_member_links:  commentingLinks.map((l) => ({ member_id: l.member_id, note: l.note || undefined })),
     };
     try {
       if (isEdit) await updateStock(stock.id, payload);
@@ -217,6 +287,55 @@ export default function StockModal({ stock, onClose, onSaved, initialTab }: Stoc
               </>
             )}
 
+            {/* ── Members ── */}
+            {tab === "members" && (
+              <div className="space-y-6">
+                {/* Originators */}
+                <div>
+                  <h3 className="mb-2 text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+                    Originated By
+                    <span className="ml-1.5 text-xs font-normal text-zinc-400">— members who first raised this stock</span>
+                  </h3>
+                  <MemberSearch
+                    value={originatingSearch}
+                    onChange={setOriginatingSearch}
+                    results={originatingResults}
+                    searching={searchingOriginating}
+                    onAdd={(m) => { setOriginatingLinks((p) => [...p, { member_id: m.id, name: m.name, company: m.company, note: "" }]); setOriginatingSearch(""); setOriginatingResults([]); }}
+                  />
+                  <MemberLinkList
+                    links={originatingLinks}
+                    onRemove={(id) => setOriginatingLinks((p) => p.filter((l) => l.member_id !== id))}
+                    onNoteChange={(id, note) => setOriginatingLinks((p) => p.map((l) => l.member_id === id ? { ...l, note } : l))}
+                    emptyText="No originators linked yet."
+                  />
+                </div>
+
+                <div className="border-t border-zinc-200 pt-4 dark:border-zinc-800" />
+
+                {/* Commenters */}
+                <div>
+                  <h3 className="mb-2 text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+                    Community Discussion
+                    <span className="ml-1.5 text-xs font-normal text-zinc-400">— members who have commented on this stock</span>
+                  </h3>
+                  <MemberSearch
+                    value={commentingSearch}
+                    onChange={setCommentingSearch}
+                    results={commentingResults}
+                    searching={searchingCommenting}
+                    onAdd={(m) => { setCommentingLinks((p) => [...p, { member_id: m.id, name: m.name, company: m.company, note: "" }]); setCommentingSearch(""); setCommentingResults([]); }}
+                  />
+                  <MemberLinkList
+                    links={commentingLinks}
+                    onRemove={(id) => setCommentingLinks((p) => p.filter((l) => l.member_id !== id))}
+                    onNoteChange={(id, note) => setCommentingLinks((p) => p.map((l) => l.member_id === id ? { ...l, note } : l))}
+                    emptyText="No commenters linked yet."
+                  />
+                </div>
+              </div>
+            )}
+
             {/* Read-only tracking strip — edit mode only, always visible */}
             {isEdit && (
               <div className="mt-2 rounded-md bg-zinc-50 px-4 py-3 dark:bg-zinc-800/50">
@@ -266,6 +385,79 @@ export default function StockModal({ stock, onClose, onSaved, initialTab }: Stoc
           </div>
         </form>
       </div>
+    </div>
+  );
+}
+
+// ── Sub-components ─────────────────────────────────────────────────────────────
+
+function MemberSearch({
+  value, onChange, results, searching, onAdd,
+}: {
+  value: string;
+  onChange: (v: string) => void;
+  results: Member[];
+  searching: boolean;
+  onAdd: (m: Member) => void;
+}) {
+  return (
+    <div className="mb-2">
+      <div className="relative">
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          placeholder="Type name or company…"
+          className="w-full rounded border border-zinc-300 px-3 py-2 text-sm text-zinc-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-100"
+        />
+        {searching && <div className="absolute right-3 top-2.5 text-xs text-zinc-400">Searching…</div>}
+      </div>
+      {results.length > 0 && (
+        <div className="mt-1 rounded border border-zinc-200 bg-white shadow-sm dark:border-zinc-700 dark:bg-zinc-800">
+          {results.slice(0, 8).map((m) => (
+            <button
+              key={m.id}
+              type="button"
+              onClick={() => onAdd(m)}
+              className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm hover:bg-zinc-50 dark:hover:bg-zinc-700"
+            >
+              <span className="font-medium text-zinc-700 dark:text-zinc-200">{m.name}</span>
+              {m.company && <span className="text-zinc-400">{m.company}</span>}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function MemberLinkList({
+  links, onRemove, onNoteChange, emptyText,
+}: {
+  links: MemberLink[];
+  onRemove: (id: number) => void;
+  onNoteChange: (id: number, note: string) => void;
+  emptyText: string;
+}) {
+  if (links.length === 0) {
+    return <p className="text-sm text-zinc-400">{emptyText}</p>;
+  }
+  return (
+    <div className="space-y-2">
+      {links.map((link) => (
+        <div key={link.member_id} className="flex items-center gap-2 rounded border border-zinc-200 bg-zinc-50 px-3 py-2 dark:border-zinc-700 dark:bg-zinc-800/50">
+          <span className="flex-1 truncate text-sm font-medium text-zinc-700 dark:text-zinc-200">{link.name}</span>
+          {link.company && <span className="shrink-0 text-xs text-zinc-400">{link.company}</span>}
+          <input
+            type="text"
+            value={link.note}
+            onChange={(e) => onNoteChange(link.member_id, e.target.value)}
+            placeholder="Note (optional)"
+            className="w-36 shrink-0 rounded border border-zinc-300 px-2 py-1 text-xs text-zinc-700 focus:border-blue-500 focus:outline-none dark:border-zinc-600 dark:bg-zinc-700 dark:text-zinc-100"
+          />
+          <button type="button" onClick={() => onRemove(link.member_id)} className="shrink-0 text-zinc-400 hover:text-red-500 dark:hover:text-red-400">✕</button>
+        </div>
+      ))}
     </div>
   );
 }

@@ -8,21 +8,30 @@ import type { UploadResult, PreviewResult, ImportResult } from "@/types/stock";
 // ── Auto-suggest mapping ──────────────────────────────────────────────────────
 
 const ALIASES: Record<string, string> = {
+  // Ticker
   symbol: "ticker", "stock symbol": "ticker", "stock ticker": "ticker",
-  company: "name", "company name": "name", "stock name": "name", "issuer": "name",
+  // Name
+  company: "name", "company name": "name", "stock name": "name", issuer: "name",
+  // Price / market cap
   "share price": "price", "current price": "price", "last price": "price",
   "market cap": "market_cap", "mkt cap": "market_cap", marketcap: "market_cap",
+  // Sector
   industry: "sector",
+  // Description / notes
   about: "description", overview: "description",
-  "num employees": "employees", "number of employees": "employees", headcount: "employees",
-  "stock type": "stock_type", type: "stock_type", category: "stock_type",
+  // Investment thesis
+  "investment thesis": "investment_thesis", thesis: "investment_thesis",
+  "why we like it": "investment_thesis", "investment case": "investment_thesis",
+  // Valuation
+  valuation: "valuation_view", "valuation view": "valuation_view",
+  "valuation perspective": "valuation_view",
+  // Team tracking
+  "originated by": "originated_by", "identified by": "originated_by",
+  "first mentioned by": "originated_by", "mentioned by": "originated_by",
+  "added by": "originated_by",
   "date added": "date_added", added: "date_added",
-  "date updated": "date_updated", updated: "date_updated",
-  "first mentioned by": "first_mentioned_by", "mentioned by": "first_mentioned_by",
-  "commented by": "commented_by",
-  "stock exchange": "exchange",
-  "chief executive": "ceo", "chief executive officer": "ceo",
-  url: "website", homepage: "website",
+  "last reviewed": "last_reviewed", reviewed: "last_reviewed",
+  "date updated": "last_reviewed", updated: "last_reviewed",
 };
 
 function suggest(csvHeader: string, available: string[]): string {
