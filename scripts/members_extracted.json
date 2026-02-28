@@ -1,0 +1,1734 @@
+[
+  {
+    "bio": "Adam Calman appears to be an informed investor with a focus on various sectors, including uranium and technology. He engages in discussions about geopolitical impacts on markets, specifically mentioning how events may affect stock prices and valuations. Adam also shares personal experiences related to finance and insurance, showcasing a practical understanding of financial products.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Uranium",
+      "Technology",
+      "Geopolitical impacts",
+      "Healthcare",
+      "Insurance products"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "ASPI"
+    ],
+    "name": "Adam Calman"
+  },
+  {
+    "bio": "Adam Clib is a knowledgeable and proactive investor who emphasizes structured investment products to mitigate risk while gaining exposure to various markets, including healthcare, technology, gold, and cryptocurrency. He regularly shares insights on investment themes and capital-protected notes, showcasing his focus on income-generating strategies and market conditions.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Healthcare",
+      "Structured Products",
+      "Cryptocurrency",
+      "Gold",
+      "Market Volatility",
+      "Technology"
+    ],
+    "originated_tickers": [
+      "NVO",
+      "PTON",
+      "MT"
+    ],
+    "commented_tickers": [
+      "UNH",
+      "AAPL"
+    ],
+    "name": "Adam Clib"
+  },
+  {
+    "bio": "Alex Fink appears to have a keen interest in technology and deep-tech ventures, particularly in quantum computing and healthcare innovations, as evidenced by his communication about Empirical Ventures and their achievements. He also seems to be well-connected in the investment community, hosting networking events and focusing on UK small- to mid-cap startups. Additionally, he engages in discussions about other investment themes like cryptocurrencies and long-term tech prospects.",
+    "investor_type": "VC / Angel",
+    "investment_focus": [
+      "Deep Tech",
+      "Quantum Computing",
+      "Healthcare Innovations",
+      "UK Startups",
+      "Cryptocurrency"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "TSLA",
+      "MSFT"
+    ],
+    "name": "Alex Fink"
+  },
+  {
+    "bio": "Andrew Cawker shows a strong focus on UK equities and macroeconomic trends, particularly concerning the impact of government policy on housing and investment flows. He emphasizes a top-down view of markets while also exploring specific investment opportunities in both traditional and emerging sectors like technology and infrastructure.",
+    "investor_type": "Portfolio Manager",
+    "investment_focus": [
+      "UK Equities",
+      "Macroeconomics",
+      "Real Estate",
+      "Emerging Technologies",
+      "Data Centers"
+    ],
+    "originated_tickers": [
+      "FRES"
+    ],
+    "commented_tickers": [
+      "BARC",
+      "SSIT"
+    ],
+    "name": "Andrew Cawker"
+  },
+  {
+    "bio": "Andrew Draycott demonstrates a strong focus on emerging markets, particularly India, and has a keen interest in sectors such as healthcare, technology, and renewable energy. His investment style is analytical, pairing macroeconomic insights with specific stock picks, while also evaluating broader geopolitical and economic trends.",
+    "investor_type": "Fund Manager",
+    "investment_focus": [
+      "Indian equities",
+      "Healthcare",
+      "Tech",
+      "Renewable Energy",
+      "Consumer Discretionary"
+    ],
+    "originated_tickers": [
+      "SPOT",
+      "TROW"
+    ],
+    "commented_tickers": [
+      "BYDDY",
+      "AMZN",
+      "MSFT",
+      "AM",
+      "TSLA"
+    ],
+    "name": "Andrew Draycott"
+  },
+  {
+    "bio": "Ant demonstrates a deep understanding of market dynamics and investment strategies, often discussing tax implications, AI's impact on employment in finance, and specific company performance. They show particular interest in healthcare companies and European banks while also demonstrating an analytical approach to stock market trends.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Healthcare",
+      "Financial Services",
+      "Technology",
+      "Market Trends"
+    ],
+    "originated_tickers": [
+      "NVO"
+    ],
+    "commented_tickers": [
+      "UNH",
+      "LLY",
+      "TSLA",
+      "JPM",
+      "MC"
+    ],
+    "name": "Ant"
+  },
+  {
+    "bio": "Ben appears to be an engaged member of the investment community who blends his personal interests with charitable activities, suggesting an enthusiasm for community support. His fundraising focus shows a dedication to social causes, but there's no clear indication of specific investment insights or expertise in financial markets.",
+    "investor_type": "Retail",
+    "investment_focus": [],
+    "originated_tickers": [],
+    "commented_tickers": [],
+    "name": "Ben Ainslie"
+  },
+  {
+    "bio": "Ben Finegold is an investment professional with a keen focus on the uranium and nuclear energy sectors, emphasizing the significance of market dynamics and geopolitical factors. He frequently discusses developments and trends in these areas, providing insights into specific companies and investment opportunities.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Uranium",
+      "Nuclear Energy",
+      "Geothermal",
+      "AI Infrastructure",
+      "Energy Transition"
+    ],
+    "originated_tickers": [
+      "ASPI",
+      "UEC",
+      "CCJ",
+      "LTBR"
+    ],
+    "commented_tickers": [
+      "SPUT",
+      "PDN",
+      "FCU",
+      "YCA"
+    ],
+    "name": "Ben Finegold"
+  },
+  {
+    "bio": "Bram Cornelisse is a fund manager with expertise in European mid and small cap equities. He emphasizes financial metrics such as PE ratios, ROE, and FCF in his investment analyses, focusing on companies with potential for growth and shareholder returns through dividends.",
+    "investor_type": "Fund Manager",
+    "investment_focus": [
+      "European mid and small caps",
+      "Retail",
+      "Dividend stocks",
+      "Short selling strategies",
+      "Alternative assets"
+    ],
+    "originated_tickers": [
+      "BOO"
+    ],
+    "commented_tickers": [
+      "TSLA",
+      "GOOGL",
+      "AAPL"
+    ],
+    "name": "Bram Cornelisse"
+  },
+  {
+    "bio": "Calum Curation is an active investor focused on technology, renewable energy, and cryptocurrencies. He shares insights on market movements and stocks, providing updates on client companies and highlighting growth potential in emerging sectors such as rare earth elements and lab-grown materials.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Tech",
+      "Renewable Energy",
+      "Rare Earth Elements",
+      "Cryptocurrency"
+    ],
+    "originated_tickers": [
+      "ATOM"
+    ],
+    "commented_tickers": [
+      "RBW",
+      "GOLD"
+    ],
+    "name": "Calum Curation"
+  },
+  {
+    "bio": "Charles Bendon has a strong focus on uranium investments, showcasing a deep understanding of market dynamics and inventory issues, particularly those involving Kazakhstan. He promotes collaboration and learning within the investment community, highlighting opportunities for education from industry experts.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Uranium",
+      "Energy",
+      "Market Analysis"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "CCJ",
+      "FCU",
+      "KAP",
+      "SPUT"
+    ],
+    "name": "Charles Bendon"
+  },
+  {
+    "bio": "Charlie Morris is a seasoned investment professional with a focus on global equity momentum, crypto, and gold markets. He emphasizes innovative investment strategies, including Bitcoin and gold ETFs, and engages with a broad range of asset classes, particularly as they relate to market trends. His insights highlight the interplay between traditional and digital assets.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Crypto",
+      "Equities",
+      "Gold",
+      "Energy",
+      "Financials"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "GOLD",
+      "MSTR"
+    ],
+    "name": "Charlie Morris"
+  },
+  {
+    "bio": "Chris Dale is a professional fund manager with extensive experience in running a Pan-European equity fund. He has a strong focus on the European defense sector and European banks, as well as positions in the aviation and commodities space. His strategies include identifying undervalued companies and capitalizing on macroeconomic themes.",
+    "investor_type": "Fund Manager",
+    "investment_focus": [
+      "European Defense",
+      "European Banks",
+      "Aviation",
+      "Commodities",
+      "Tech Transformation"
+    ],
+    "originated_tickers": [
+      "RHM",
+      "IDR",
+      "FRES",
+      "BG"
+    ],
+    "commented_tickers": [
+      "VWS",
+      "VOW3"
+    ],
+    "name": "Chris Dale"
+  },
+  {
+    "bio": "Chris Huggins demonstrates a sophisticated understanding of market dynamics, with a particular focus on leveraged investments, crypto-related equities, and the implications of macroeconomic policies. He critically evaluates company strategies, including the significance of capital structure and value creation, often highlighting risks associated with speculative market behavior.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Crypto",
+      "Leveraged Investments",
+      "Gold",
+      "Energy",
+      "Market Dynamics"
+    ],
+    "originated_tickers": [
+      "GOLD",
+      "MSTR",
+      "ASPI",
+      "RPI"
+    ],
+    "commented_tickers": [
+      "SPUT"
+    ],
+    "name": "Chris Huggins"
+  },
+  {
+    "bio": "Chris Nyers actively engages in discussions about various investment opportunities, particularly in the cryptocurrency and tech sectors. He shows a strong interest in stocks like Robinhood and Pioneer Power Solutions, reflecting a focus on growth potential and market predictions. His messages indicate a readiness to act upon investment insights shared within the community.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Crypto",
+      "Technology",
+      "EV Infrastructure"
+    ],
+    "originated_tickers": [
+      "HOOD",
+      "PPSI",
+      "CRDL"
+    ],
+    "commented_tickers": [
+      "COIN"
+    ],
+    "name": "Chris Nyers"
+  },
+  {
+    "bio": "Claire appears to focus on gold and central bank activities related to precious metals, sharing recent statistics and analyses. She is also interested in emerging trends, such as the trial of digital gold in London's bullion market.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Gold",
+      "Central Bank Activity",
+      "Digital Assets"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "GOLD"
+    ],
+    "name": "Claire"
+  },
+  {
+    "bio": "Conor Moylan appears to have a keen interest in technology and macroeconomic trends, frequently sharing insights on prominent figures in finance and developments in major companies like Meta and Berkshire Hathaway. His discussions indicate a focus on fiscal policy implications and valuations in the tech sector.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Tech",
+      "Inflation",
+      "Macro Economy",
+      "AI",
+      "Value Investing"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "MSTR",
+      "BRK.A",
+      "META"
+    ],
+    "name": "Conor Moylan"
+  },
+  {
+    "bio": "Craig Fenton has a background in technology, specifically as a former employee at Google, and showcases a keen understanding of AI developments and their impact on established companies. He tends to focus on tech innovation and potential business models within high-user-base platforms, while also exploring investment opportunities in cryptocurrency amid a portfolio adjustment.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Tech",
+      "Cryptocurrency",
+      "AI",
+      "Biotech"
+    ],
+    "originated_tickers": [
+      "ADE"
+    ],
+    "commented_tickers": [
+      "RKLB",
+      "GOOGL"
+    ],
+    "name": "Craig Fenton"
+  },
+  {
+    "bio": "Danny Solomon appears to have a focus on analyzing commodities like gold and silver, and also expresses interest in shorting stocks, specifically mentioning potential candidates. His engagement in discussions about market dynamics, political factors affecting the market, and implications of supply and demand reflect a strategic and somewhat contrarian investment approach.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Commodities",
+      "Precious Metals",
+      "Market Analysis",
+      "Short Selling"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "GOLD",
+      "PLNT",
+      "PLTR"
+    ],
+    "name": "Danny Solomon"
+  },
+  {
+    "bio": "David Haysey engages deeply with macroeconomic themes and investments across various sectors, focusing on both traditional assets like gold and alternative investments such as cryptocurrencies. He emphasizes due diligence in specific stocks, particularly in mining and consumer goods, and displays a critical view of market trends and government policies.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Gold",
+      "Cryptocurrency",
+      "Mining",
+      "Consumer Goods",
+      "Market Trends"
+    ],
+    "originated_tickers": [
+      "NEM"
+    ],
+    "commented_tickers": [
+      "HL",
+      "PLTR",
+      "TSLA",
+      "GOLD",
+      "MSTR"
+    ],
+    "name": "David Haysey"
+  },
+  {
+    "bio": "David M. Ryan appears to be an informed investor with a keen interest in emerging tech companies, particularly in the autonomous vehicle sector. He demonstrates a focus on data-driven algorithms and efficiencies within the automotive market, specifically referencing Wayve and Tesla. Additionally, he shows awareness of macroeconomic factors affecting real estate and investment in tech-focused firms like Lynas Rare Earths.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Autonomous Vehicles",
+      "Tech Innovations",
+      "Rare Earth Materials",
+      "Real Estate",
+      "Data Centers"
+    ],
+    "originated_tickers": [
+      "WAYVE",
+      "AAPL"
+    ],
+    "commented_tickers": [
+      "TSLA",
+      "UBER",
+      "NVDA"
+    ],
+    "name": "David M. Ryan"
+  },
+  {
+    "bio": "Dipesh Patel shows a deep understanding of macroeconomic factors and is keenly focused on sectors like uranium, technology, and healthcare. He balances original investment ideas with rigorous analysis of broader market trends, particularly in energy and commodities.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Uranium",
+      "Healthcare",
+      "Technology",
+      "Commodities",
+      "Market Trends"
+    ],
+    "originated_tickers": [
+      "ASPI",
+      "YCA",
+      "BABA",
+      "SBUX",
+      "BARC"
+    ],
+    "commented_tickers": [
+      "TSLA",
+      "NVDA",
+      "UNH",
+      "SMCI",
+      "JD",
+      "CMG"
+    ],
+    "name": "Dipesh Patel"
+  },
+  {
+    "bio": "Dominic Collins appears to be a somewhat impulsive investor who acknowledges a lack of deep understanding in his investment decisions. He expresses enthusiasm and a willingness to contribute significant capital, suggesting a focus on high-risk opportunities without extensive research.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Crypto",
+      "Tech"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [],
+    "name": "Dominic Collins"
+  },
+  {
+    "bio": "Dominic Vail presents himself as a thoughtful investor with a focus on less glamorous opportunities, such as water management and established food manufacturers. He shows a keen interest in fundamental value investing, emphasizing solid financial metrics and long-term potential. His approach balances between traditional sectors and the emerging demands of technology.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Desalination",
+      "Food Manufacturing",
+      "Value Investing",
+      "Energy",
+      "FX Alternatives"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "AAPL",
+      "TSLA"
+    ],
+    "name": "Dominic Vail"
+  },
+  {
+    "bio": "Ed Farquhar appears to focus on identifying undervalued investment opportunities, particularly within the UK small cap sector. He actively engages in discussions about specific companies, shares insights on market conditions, and provides updates on notable stock movements, suggesting a hands-on approach to investment.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "UK Small Cap",
+      "Cyber Security",
+      "Utilities",
+      "Uranium Sector",
+      "Water Resources"
+    ],
+    "originated_tickers": [
+      "CDZI"
+    ],
+    "commented_tickers": [
+      "CCJ"
+    ],
+    "name": "Ed Farquhar"
+  },
+  {
+    "bio": "Eddie Benson exhibits a casual but insightful investment style, showing particular interest in various sectors including gold, equities, gambling, and technology. He often combines personal anecdotes with market analysis, reflecting an understanding of both traditional and alternative investment avenues.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Gold",
+      "Equities",
+      "Gambling",
+      "Technology",
+      "Market Sentiment"
+    ],
+    "originated_tickers": [
+      "ASPI"
+    ],
+    "commented_tickers": [
+      "TSLA",
+      "AAPL",
+      "GOLD"
+    ],
+    "name": "Eddie Benson"
+  },
+  {
+    "bio": "Eddie Sugar appears to focus on mining and materials sectors, particularly expressing interest in uranium and fertilizer stocks. He shares relevant news and data points, showing a tendency towards exploring unique investment opportunities and market trends.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Uranium",
+      "Fertilizer",
+      "Mining",
+      "Gold",
+      "Carbon Trading"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "CCJ",
+      "KAP",
+      "PTON",
+      "GOLD",
+      "FCU"
+    ],
+    "name": "Eddie Sugar"
+  },
+  {
+    "bio": "Gaurav appears to have a strong interest in joint ventures, particularly within the Indian market, as indicated by his mention of existing partnerships. His inquiry about Warburton Parker suggests he is actively seeking investment opportunities and analyzing potential stocks.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "India Market",
+      "Joint Ventures",
+      "Tech Investments"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "AV"
+    ],
+    "name": "Gaurav"
+  },
+  {
+    "bio": "Giles Fitzpatrick appears to focus on analyzing macroeconomic trends and their impact on various markets, particularly in relation to the dollar and commodities such as silver and copper. He discusses central bank policies and their effects on investment strategies, indicating a strong understanding of market dynamics and liquidity issues, especially in the cryptocurrency space.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Macro Economics",
+      "Commodities",
+      "Cryptocurrency",
+      "Tech",
+      "Market Dynamics"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "MSFT",
+      "TSLA",
+      "AAPL",
+      "MS",
+      "JPM",
+      "BLK"
+    ],
+    "name": "Giles Fitzpatrick"
+  },
+  {
+    "bio": "Gustavo M appears to have a thoughtful and analytical investment style, showing interest in both traditional equities and alternative investment vehicles like ETFs and trusts. He discusses investments in technology, particularly those correlating with broader market behavior, and actively engages with others for insights and further information.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Tech",
+      "Gold",
+      "Banking",
+      "Equities"
+    ],
+    "originated_tickers": [
+      "ROKU"
+    ],
+    "commented_tickers": [],
+    "name": "Gustavo M"
+  },
+  {
+    "bio": "Guy Lawrence seems to have an interest in high-growth companies and initiatives related to innovative technologies and investment trusts. They are currently involved in the Seraphim accelerator, indicating a focus on startups or ventures in the tech or space sectors. Their inquiry about EBIT margins suggests a keen analytical approach to understanding company finances.",
+    "investor_type": "VC / Angel",
+    "investment_focus": [
+      "Tech",
+      "Startups",
+      "Investment Trusts"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [],
+    "name": "Guy Lawrence"
+  },
+  {
+    "bio": "Hope Finegold is actively engaged in promoting investment opportunities within the gold and deep-sea mining sectors. Their focus is on innovative technologies and emerging trends, particularly the digitization of gold and defense technology. Hope also demonstrates an interest in the growth potential of specific companies through organized webinars and calls.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Gold",
+      "Mining",
+      "Defense Technology",
+      "Blockchain",
+      "Emerging Markets"
+    ],
+    "originated_tickers": [
+      "GOLD",
+      "MILDEF",
+      "ATOM"
+    ],
+    "commented_tickers": [],
+    "name": "Hope Finegold"
+  },
+  {
+    "bio": "Jacco Reijtenbagh expresses a belief in transformative political impacts on the investment landscape, particularly relating to deregulation and nationalism, particularly in the context of the UK and the US. He seems to favor market dynamics that promote growth and job creation while challenging the status quo of economic and monetary policies. His insights suggest a focus on traditional sectors and strategic shifts in government policies affecting the market.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Deregulation",
+      "US Financial Policy",
+      "UK Market Dynamics"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "PTON"
+    ],
+    "name": "Jacco Reijtenbagh"
+  },
+  {
+    "bio": "James is actively engaged in promoting new investment opportunities, particularly in the IPO space. He emphasizes the value of retail access to public market deals, indicating a focus on democratizing investment opportunities for a broader audience. His content suggests an interest in sectors like technology and commodities, specifically cobalt and beauty tech.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "IPO",
+      "Retail Investments",
+      "Cobalt",
+      "Beauty Tech"
+    ],
+    "originated_tickers": [
+      "YCA"
+    ],
+    "commented_tickers": [],
+    "name": "James"
+  },
+  {
+    "bio": "Jamie Moyes appears to be an engaged member of the investment community who values insights from peers, contributing to discussions on various stocks. They have a good sense of humor and express appreciation for valuable stock suggestions made by others in the group. Their messages imply a holistic investment approach that leverages collective knowledge.",
+    "investor_type": "Retail",
+    "investment_focus": [],
+    "originated_tickers": [],
+    "commented_tickers": [],
+    "name": "Jamie Moyes"
+  },
+  {
+    "bio": "Jason M is a long-term investor with a strong belief in nuclear energy and is currently focused on companies in the construction and engineering sectors. He discusses various commodities including uranium, silver, and lithium, expressing caution regarding their current valuations while also advocating for long-term holds in emerging markets like India. He has a critical view on AI-related investments, suggesting they may be overvalued.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Nuclear Energy",
+      "Commodities",
+      "Construction",
+      "Emerging Markets",
+      "Technology"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "LSEG",
+      "FCU"
+    ],
+    "name": "Jason M"
+  },
+  {
+    "bio": "Jerry de Leeuw demonstrates a keen interest in thorough market analysis and investment opportunities, particularly in undervalued stocks such as Atos SE. He shares valuable resources from major financial institutions and engages critically with broader market trends, including the implications of social media on investment strategies.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Tech",
+      "Digital Transformation",
+      "Market Outlooks",
+      "Value Investing",
+      "Commodity Trading"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [],
+    "name": "Jerry de Leeuw"
+  },
+  {
+    "bio": "Jim appears to have a strong focus on the defense sector, particularly companies involved in digital solutions and military contracts, with a keen interest in technology and cryptocurrencies. He actively engages in discussions about market trends, economic conditions, and specific company performances, showcasing a blend of analytical skills and practical investment insights.",
+    "investor_type": "Portfolio Manager",
+    "investment_focus": [
+      "Defense",
+      "Technology",
+      "Cryptocurrency",
+      "Energy",
+      "European Markets"
+    ],
+    "originated_tickers": [
+      "MILDEF"
+    ],
+    "commented_tickers": [
+      "COIN",
+      "TSLA",
+      "GME",
+      "AAPL",
+      "AMD",
+      "META",
+      "AMZN"
+    ],
+    "name": "Jim"
+  },
+  {
+    "bio": "John Drinkwater appears to have a focus on companies with strong cash management and governance structures, often discussing company control dynamics, insider buying, and acquisition strategies. He demonstrates an analytical approach towards investment opportunities, evaluating operational sustainability and returns on capital.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Cash management",
+      "Corporate governance",
+      "Acquisitions",
+      "Tech investments"
+    ],
+    "originated_tickers": [
+      "COIN"
+    ],
+    "commented_tickers": [
+      "COST",
+      "AAUC",
+      "ADM"
+    ],
+    "name": "John Drinkwater"
+  },
+  {
+    "bio": "Jonny appears to be an active member of the investment community with a diverse interest in various sectors, including technology and venture capital. He acknowledges others' successes and seems engaged with the performance of specific companies, indicating a collaborative approach to investment discussions.",
+    "investor_type": "VC / Angel",
+    "investment_focus": [
+      "Venture Capital",
+      "Technology",
+      "Healthcare"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [],
+    "name": "Jonny Creagh Coen"
+  },
+  {
+    "bio": "Jonny Haycock is an investment professional with a particular focus on precious metals, especially gold and silver. He advocates for physical gold ownership, reflects on broader monetary trends, and analyses the implications of financial policies on asset prices. His insights often include macroeconomic factors and market sentiment as they relate to gold and silver investments.",
+    "investor_type": "Portfolio Manager",
+    "investment_focus": [
+      "Precious Metals",
+      "Gold",
+      "Silver",
+      "Monetary Policy",
+      "Market Trends"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "GOLD",
+      "NEM"
+    ],
+    "name": "Jonny Haycock"
+  },
+  {
+    "bio": "Julie is an informed member of the investment community who provides insights on various companies and sectors, particularly in technology, healthcare, and insurance. She shares earnings reports, trading updates, and insights from financial news, displaying a focus on both individual stocks and broader market trends.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Technology",
+      "Healthcare",
+      "Insurance",
+      "Consumer Goods",
+      "Biotechnology"
+    ],
+    "originated_tickers": [
+      "EVLV",
+      "SBUX"
+    ],
+    "commented_tickers": [
+      "SPOT",
+      "AV",
+      "MSTR",
+      "LSEG",
+      "TRST",
+      "NE",
+      "NEM",
+      "UNH",
+      "ONT"
+    ],
+    "name": "Julie"
+  },
+  {
+    "bio": "Julius shows a keen interest in macroeconomic factors affecting investments, especially concerning political events and their impacts on market dynamics. His focus appears to be on commodities like uranium and broader investment sentiments driven by policy and market analysis.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Uranium",
+      "Political impact on markets",
+      "Macroeconomic trends",
+      "Emerging markets"
+    ],
+    "originated_tickers": [
+      "SPUT",
+      "YCA"
+    ],
+    "commented_tickers": [
+      "FCU",
+      "AMD"
+    ],
+    "name": "Julius"
+  },
+  {
+    "bio": "KC Shetty appears to be a cyclical investor who believes in the importance of timing within various market cycles. They emphasize the necessity of understanding the broader implications of news events on long-term investments and show a keen interest in thematic discussions on growth and market dynamics.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Cyclical Markets",
+      "Growth Stocks",
+      "Tech",
+      "Healthcare",
+      "Consumer Goods"
+    ],
+    "originated_tickers": [
+      "ONON",
+      "FRES",
+      "COIN",
+      "KWEB"
+    ],
+    "commented_tickers": [
+      "AAPL",
+      "AMZN",
+      "NVO",
+      "SPOT",
+      "FL"
+    ],
+    "name": "KC Shetty"
+  },
+  {
+    "bio": "Katie Jackson is a proactive member of the investment community with a focus on macro trends and thematic investing. She actively engages in discussions about electrification, defense technology, and cryptocurrency, frequently sharing insights and seeking opinions from the group. Her investment style appears to be collaborative, drawing on collective intelligence to explore diverse investment opportunities.",
+    "investor_type": "Portfolio Manager",
+    "investment_focus": [
+      "Electrification",
+      "Defense Technology",
+      "Cryptocurrency",
+      "India Growth",
+      "AI Infrastructure"
+    ],
+    "originated_tickers": [
+      "IDR",
+      "CS",
+      "AVIO",
+      "MILDEF",
+      "TUN"
+    ],
+    "commented_tickers": [
+      "CCJ",
+      "NVDA",
+      "TSLA",
+      "AAPL",
+      "GOLD"
+    ],
+    "name": "Katie Jackson"
+  },
+  {
+    "bio": "Lisa Gordon appears to focus on technology and UK investments, citing specific companies and notable actions by significant figures in the industry. She seems to analyze market trends while also engaging in light commentary.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "UK Investments",
+      "Technology",
+      "Biotechnology"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "ONT"
+    ],
+    "name": "Lisa Gordon"
+  },
+  {
+    "bio": "Luke Dyas is a keen observer of the cryptocurrency market, particularly focusing on Bitcoin treasury stocks with substantial NAV discounts. He demonstrates a strong interest in technology-driven sectors, including EVs, drones, and AI, highlighting companies that leverage these technologies for competitive advantage. He combines strategic investment analysis with a critical view of market trends and disruptors.",
+    "investor_type": "Portfolio Manager",
+    "investment_focus": [
+      "Crypto",
+      "Technology",
+      "Electric Vehicles",
+      "AI",
+      "Drones"
+    ],
+    "originated_tickers": [
+      "ADE",
+      "COIN",
+      "ACHR"
+    ],
+    "commented_tickers": [
+      "SPHR",
+      "BYDDY",
+      "TSLA"
+    ],
+    "name": "Luke Dyas"
+  },
+  {
+    "bio": "M B exhibits a strong focus on healthcare investments and demonstrates critical insights into management effectiveness within the companies they discuss. They advocate for stronger leadership in technology-driven health companies and show a keen interest in metrics related to healthcare expenditures. Their investment style suggests a critical awareness of market dynamics and management practices.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Healthcare",
+      "Pharmaceuticals",
+      "Tech Management",
+      "Market Analysis"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "BMY",
+      "BA"
+    ],
+    "name": "M B"
+  },
+  {
+    "bio": "Mark exhibits a strong interest in technology and growth companies, particularly in sectors like healthcare and cryptocurrencies. He actively shares analysis on various companies, highlights investment trends, and engages in discussions about market movements, showcasing a focused yet diverse investment perspective.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Tech",
+      "Healthcare",
+      "Crypto",
+      "Water Resources",
+      "Growth Stocks"
+    ],
+    "originated_tickers": [
+      "KSI",
+      "CDZI",
+      "PNIX"
+    ],
+    "commented_tickers": [
+      "ASPI",
+      "CWR",
+      "AMD",
+      "INTC",
+      "NVDA"
+    ],
+    "name": "Mark"
+  },
+  {
+    "bio": "Mark Astley appears to be a knowledgeable investor focused on precious metals, particularly silver and gold, as well as macroeconomic trends affecting currency and stock markets. He expresses concerns over currency debasement, the impact of deglobalization, and has a keen interest in uranium investments.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Precious Metals",
+      "Macro-Economic Trends",
+      "Uranium",
+      "Digital Assets"
+    ],
+    "originated_tickers": [
+      "FCU",
+      "YCA"
+    ],
+    "commented_tickers": [
+      "GOLD",
+      "NEM",
+      "CCJ"
+    ],
+    "name": "Mark Astley"
+  },
+  {
+    "bio": "Mark Lewis exhibits a critical and analytical investment style focused on macroeconomic trends, climate change, and geopolitical events. He emphasizes the interconnectedness of global markets and the long-term implications of policy decisions, particularly in relation to commodities, environmental issues, and emerging technologies.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Climate Change",
+      "Commodities",
+      "Geopolitics",
+      "Energy",
+      "Technology"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "AAPL",
+      "CCJ",
+      "TSLA"
+    ],
+    "name": "Mark Lewis"
+  },
+  {
+    "bio": "Mark Wharrier is an investment professional focused on long-term strategic insights from leadership in successful UK companies. He emphasizes sectors with potential for value through strategic management, particularly in property and infrastructure-related investments.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "UK Companies",
+      "Property",
+      "Investment Trusts",
+      "Capital Expenditure"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "HRI",
+      "LSEG"
+    ],
+    "name": "Mark Wharrier"
+  },
+  {
+    "bio": "Matt H demonstrates a strong focus on precious metals, particularly gold, and is skeptical of certain tech investments like Tesla amidst competition from China. He emphasizes the importance of traditional investments and expresses caution regarding the implications of government policies on market dynamics. His discussions suggest a critical view towards speculative investments and a leaning towards valuing tangible assets.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Precious Metals",
+      "Energy",
+      "Mining",
+      "Technology",
+      "Uranium"
+    ],
+    "originated_tickers": [
+      "AAUC",
+      "PNPN"
+    ],
+    "commented_tickers": [
+      "GOLD",
+      "NVDA",
+      "BYDDY",
+      "ZENA",
+      "GME",
+      "CCJ",
+      "CFR",
+      "FRES"
+    ],
+    "name": "Matt H"
+  },
+  {
+    "bio": "Matt Jonns demonstrates a keen interest in technology-driven investment opportunities, particularly in the context of AI and software development. He reflects on historical market patterns and emphasizes the transformative potential of new technologies. His messages suggest an analytical approach, balancing the potential of innovation with skepticism about implementation challenges in traditional enterprise environments.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "AI",
+      "Software Development",
+      "Tech Innovation",
+      "Market Trends",
+      "Investment Bubbles"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "COIN"
+    ],
+    "name": "Matt Jonns"
+  },
+  {
+    "bio": "Matthew Cyzer appears to be an experienced investor with a strong focus on technology and its impacts on various sectors, including automotive and cryptocurrency. He emphasizes the importance of data and tech advancements in transforming traditional businesses, particularly in financial services and clearing operations.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Tech",
+      "Automotive",
+      "Cryptocurrency",
+      "Financial Services"
+    ],
+    "originated_tickers": [
+      "GOOGL",
+      "COIN"
+    ],
+    "commented_tickers": [
+      "NVO",
+      "VOW3"
+    ],
+    "name": "Matthew Cyzer"
+  },
+  {
+    "bio": "Matthew Tuttle demonstrates a strategic trading approach, focusing on short-selling opportunities and market timing. He exhibits an interest in market trends around consumer health, particularly in the fitness and weight loss sectors, which reflects his analytical perspective.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Health & Fitness",
+      "Short Selling",
+      "Market Timing"
+    ],
+    "originated_tickers": [
+      "PLNT"
+    ],
+    "commented_tickers": [],
+    "name": "Matthew Tuttle"
+  },
+  {
+    "bio": "Max Casini appears to have a dynamic investment style with a focus on emerging healthcare trends and fitness-related sectors. He demonstrates a keen interest in the interplay between pharmaceuticals and fitness equipment, suggesting a strategic consideration of market impacts and investment implications. His messages indicate a strong analytical approach to dissecting market movements and sector performances.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Healthcare",
+      "Fitness",
+      "UK Small Cap",
+      "Trade Impacts"
+    ],
+    "originated_tickers": [
+      "TGYM"
+    ],
+    "commented_tickers": [
+      "BA",
+      "LLY",
+      "HNE"
+    ],
+    "name": "Max Casini"
+  },
+  {
+    "bio": "Mehdi appears to have a strong analytical approach to investments, with insights into sectors like technology, healthcare, and cryptocurrency. He assesses the performance of companies critically, looking at both positive and negative aspects while engaging with others to discuss investment opportunities and strategies.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Technology",
+      "Healthcare",
+      "Cryptocurrency",
+      "Automotive"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "TSLA",
+      "COIN",
+      "NVO"
+    ],
+    "name": "Mehdi"
+  },
+  {
+    "bio": "Michael Burchell appears to have a keen interest in the economic implications of tariffs and trade, as evidenced by his discussions around Trump’s announcements and the impact on the markets. He seems to have a particular focus on nuclear energy and related stocks, and he also engages with themes surrounding significant market events and stock sales by prominent figures like Bezos.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Nuclear energy",
+      "Economic policy",
+      "Trade",
+      "Technology",
+      "Market trends"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "AMZN"
+    ],
+    "name": "Michael Burchell"
+  },
+  {
+    "bio": "Mike is focused on launching investment opportunities in the cryptocurrency space, particularly involving Ethereum and Bitcoin. He has experience in orchestrating listings on UK exchanges, with a background in both gold and crypto assets.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Crypto",
+      "Ethereum",
+      "Bitcoin",
+      "Gold"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [],
+    "name": "Mike"
+  },
+  {
+    "bio": "Mike Townend appears to focus on the healthcare and pharmaceutical sectors, showing a keen interest in market dynamics and stock evaluations. He demonstrates an analytical approach to investment, drawing parallels between different companies and sectors while highlighting undervalued brands and potential activist opportunities.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Healthcare",
+      "Pharmaceuticals",
+      "UK Stocks",
+      "Market Analysis"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "BMY",
+      "LLOY",
+      "MRK"
+    ],
+    "name": "Mike Townend"
+  },
+  {
+    "bio": "Morgan engages actively in discussions on various investment topics, with a particular interest in cryptocurrency and tech stocks. They seek insights from members regarding market trends and analysis, showing a focus on understanding broader economic impacts on investments.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Crypto",
+      "Tech",
+      "Equities",
+      "Market Trends"
+    ],
+    "originated_tickers": [
+      "MSTR",
+      "COIN"
+    ],
+    "commented_tickers": [
+      "ASPI",
+      "LTBR",
+      "MILDEF"
+    ],
+    "name": "Morgan"
+  },
+  {
+    "bio": "Mossy demonstrates a strategic understanding of market dynamics and investment implications, particularly with respect to capital structures and regulations. They show interest in both traditional assets like banks and emerging sectors like stablecoins.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Finance",
+      "Stablecoins",
+      "Technology",
+      "Banking"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [],
+    "name": "Mossy"
+  },
+  {
+    "bio": "Neil G appears to have a focus on understanding market dynamics and the implications of corporate strategies on stock valuations. He seems particularly interested in analyzing the effects of financial decisions on both short-term and long-term performance, alongside currency considerations in international markets.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Automotive",
+      "Technology",
+      "Dividends",
+      "Margin Analysis"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "BYDDY",
+      "TSLA",
+      "SYM"
+    ],
+    "name": "Neil G"
+  },
+  {
+    "bio": "Neil Shah appears to have a keen interest in commodities, particularly gold, and is well-connected within the investment community, as evidenced by his offer to introduce professional analysts and share insights from webinars. He has a strong analytical approach, discussing specific financial metrics and potential upside for investments like VEON.",
+    "investor_type": "Fund Manager",
+    "investment_focus": [
+      "Commodities",
+      "Gold",
+      "Telecommunications"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "GOLD"
+    ],
+    "name": "Neil Shah"
+  },
+  {
+    "bio": "Nick Finegold is an engaged investor focused on the energy and technology sectors, particularly interested in uranium enrichment and cryptocurrencies. He emphasizes the importance of due diligence and credible partnerships, often citing regulatory implications and market dynamics in his analyses of investments.",
+    "investor_type": "Portfolio Manager",
+    "investment_focus": [
+      "Uranium",
+      "Energy Transition",
+      "Cryptocurrency",
+      "Healthcare",
+      "Biotech"
+    ],
+    "originated_tickers": [
+      "ASPI",
+      "EVLV",
+      "CYBN"
+    ],
+    "commented_tickers": [
+      "COIN",
+      "GME",
+      "TSLA"
+    ],
+    "name": "Nick finegold"
+  },
+  {
+    "bio": "Nirav Chum has a keen focus on innovative biotech companies and their advancements, particularly in gene therapy, as seen with MeiraGTx. They also show an interest in emerging technologies related to AI, energy consumption, and the implications of water resource management. Additionally, they engage with the community by organizing events and encouraging participation in stock picks, indicating a collaborative investment approach.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Biotech",
+      "Gene Therapy",
+      "AI",
+      "Energy",
+      "Water Management"
+    ],
+    "originated_tickers": [
+      "MGTX"
+    ],
+    "commented_tickers": [
+      "TRST",
+      "LULU",
+      "SMIN"
+    ],
+    "name": "Nirav Chum"
+  },
+  {
+    "bio": "Noam Gottesman appears to have a cautious yet analytical investment approach, showing a preference for thorough analysis of companies and market conditions. He is particularly observant about specific sectors such as coffee, technology, and speculative assets, often weighing the operational efficiency and market trends of businesses.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Coffee",
+      "Technology",
+      "Speculative assets",
+      "Market trends",
+      "Consumer goods"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "SBUX"
+    ],
+    "name": "Noam Gottesman"
+  },
+  {
+    "bio": "Paddy Burrowes is focused on emerging investment opportunities within the music industry and fitness sector. He emphasizes meeting management teams and fostering direct relationships, showcasing a commitment to thorough research and analysis of companies like ATC and The Gym Group.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Music Industry",
+      "Fitness",
+      "Emerging Markets"
+    ],
+    "originated_tickers": [
+      "LYV"
+    ],
+    "commented_tickers": [],
+    "name": "Paddy Burrowes"
+  },
+  {
+    "bio": "Paul Leff displays a keen interest in complex investment scenarios, touching on varied topics from market manipulation to geopolitical tides. He exhibits skepticism towards mainstream narratives and seems to analyze investments across various sectors, especially in technology and commodities. His commentary reveals a strategic mindset focused on maximizing opportunities in market volatility.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Market Trends",
+      "Geopolitical Impact",
+      "Tech Stocks",
+      "Commodities",
+      "Investment Strategy"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "GME",
+      "GOLD"
+    ],
+    "name": "Paul Leff"
+  },
+  {
+    "bio": "Pearsy demonstrates a strong belief in resilience and long-term investment strategies, often emphasizing the potential of innovative companies over traditional industries. Their comments suggest a focus on tech-driven investments and a bullish outlook on established American companies. They are also socially engaged, connecting with others around investment discussions.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Technology",
+      "U.S. Blue Chips",
+      "Innovation",
+      "Market Dynamics"
+    ],
+    "originated_tickers": [
+      "TSLA"
+    ],
+    "commented_tickers": [],
+    "name": "Pearsy"
+  },
+  {
+    "bio": "Philip Donald has a focused and analytical investment style, emphasizing stocks with potential for robust returns, particularly in technology and innovative sectors. He shows a keen interest in market dynamics, the influence of geopolitical events, and alternative assets like gold and cryptocurrencies.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Tech",
+      "Cryptocurrencies",
+      "Gold",
+      "Healthcare",
+      "Energy Transition"
+    ],
+    "originated_tickers": [
+      "AV",
+      "BYDDY"
+    ],
+    "commented_tickers": [
+      "AMZN",
+      "TSLA",
+      "COIN",
+      "GOLD",
+      "MANU"
+    ],
+    "name": "Philip Donald"
+  },
+  {
+    "bio": "Rachid appears to have a keen interest in innovative investment strategies within the cryptocurrency space, particularly regarding MicroStrategy's approach to Bitcoin and convertible debt. His remarks also reflect an awareness of emerging technologies and sectors, evident through discussions about electric vehicles and tech strategy podcasts.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Crypto",
+      "Technology",
+      "Electric Vehicles",
+      "Derivatives"
+    ],
+    "originated_tickers": [
+      "MSTR"
+    ],
+    "commented_tickers": [
+      "BYDDY",
+      "TSLA"
+    ],
+    "name": "Rachid"
+  },
+  {
+    "bio": "Raj Shah appears to actively engage in discussions about luxury retail and specific companies in that sector, showing an interest in strategic transactions and the potential for upside amidst challenges. He is analytical, often providing detailed financial insights and comparisons with industry peers, particularly in the context of e-commerce and retail. His interests also extend to healthcare technology with a focus on innovative solutions.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Luxury Retail",
+      "E-commerce",
+      "Healthcare Technology",
+      "Robotics"
+    ],
+    "originated_tickers": [
+      "MYTE",
+      "EVLV"
+    ],
+    "commented_tickers": [
+      "CFR",
+      "ACHR",
+      "AXON"
+    ],
+    "name": "Raj Shah"
+  },
+  {
+    "bio": "Rich McDonald is an active investor with a focus on technology and cryptocurrency, closely tracking market movements and often discussing the implications of geopolitical events on stock prices. He has a strong interest in innovative companies and traders that leverage unique strategies for growth, particularly in the crypto space.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Technology",
+      "Cryptocurrency",
+      "Market Strategy",
+      "UK Small Cap"
+    ],
+    "originated_tickers": [
+      "TSLA"
+    ],
+    "commented_tickers": [
+      "AAPL",
+      "COIN",
+      "PLTR",
+      "CMG",
+      "LLOY"
+    ],
+    "name": "Rich McDonald"
+  },
+  {
+    "bio": "Richard OConnor appears to be an informed and analytical investor with a focus on macroeconomic factors and valuations within the financial sector. He shows an interest in regulatory impacts on stock performance and the fundamental metrics used to assess banks. He engages in discussions about individual companies but seems to take a cautious approach regarding short-term market movements.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Financials",
+      "Regulatory impacts",
+      "Valuation metrics",
+      "Macro trends"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "ONT"
+    ],
+    "name": "Richard OConnor"
+  },
+  {
+    "bio": "Richard Windsor adopts a venture capitalist approach to his investment strategy, focusing on high-potential stocks and analyzing their underlying fundamentals critically. He expresses a keen interest in technology and AI, and he is cautious about market sentiment and stock valuations, often basing his decisions on performance data and broader economic trends.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Tech",
+      "AI",
+      "Semiconductors",
+      "Gold",
+      "Healthcare",
+      "Data Centers"
+    ],
+    "originated_tickers": [
+      "BUR",
+      "OUST"
+    ],
+    "commented_tickers": [
+      "INTC",
+      "AAPL",
+      "BABA",
+      "AMD",
+      "TSLA",
+      "MU",
+      "005930",
+      "KIST",
+      "FCU"
+    ],
+    "name": "Richard Windsor"
+  },
+  {
+    "bio": "Robert is focused on investigating financial crime, particularly in relation to the use of cryptocurrencies for money laundering. He expresses concern about the implications of illicit financial activities linked to high-value assets and stablecoins, while also tracking geopolitical elements and their potential impact on markets.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Crypto",
+      "Financial Crime",
+      "Geopolitics",
+      "High-value Assets",
+      "Emerging Technologies"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "MSFT",
+      "GOLD"
+    ],
+    "name": "Robert"
+  },
+  {
+    "bio": "Robin Maxwell displays a comprehensive approach to investing, focusing on small to mid-cap stocks and emerging themes such as technology, energy transition, and healthcare. He actively shares insights, data, and analyses while seeking investment opportunities in diverse sectors, particularly in European markets.",
+    "investor_type": "Portfolio Manager",
+    "investment_focus": [
+      "Tech",
+      "Energy Transition",
+      "Healthcare",
+      "Semiconductors",
+      "European Markets"
+    ],
+    "originated_tickers": [
+      "RPI",
+      "VIRI",
+      "SPOT"
+    ],
+    "commented_tickers": [
+      "ASPI",
+      "ONT",
+      "SYH",
+      "MT"
+    ],
+    "name": "Robin Maxwell"
+  },
+  {
+    "bio": "SSCOOK demonstrates a strong understanding of specific sectors, particularly in aviation, property, and banking, with a focus on analyzing financial metrics and market trends. They articulate investment opportunities in undervalued stocks, emphasizing both macroeconomic factors and company-specific developments.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Aviation",
+      "European Banking",
+      "UK Real Estate",
+      "Defense Technology"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "IDR"
+    ],
+    "name": "SSCOOK"
+  },
+  {
+    "bio": "Sadiq appears to be focused on identifying undervalued stocks and engaging with company executives through club calls. He emphasizes companies with strong financials and opportunities for growth, particularly in sectors like energy and water management.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Small Cap",
+      "Energy",
+      "Water Management",
+      "Nuclear Sector"
+    ],
+    "originated_tickers": [
+      "PPSI",
+      "CDZI",
+      "LTBR"
+    ],
+    "commented_tickers": [],
+    "name": "Sadiq"
+  },
+  {
+    "bio": "Seth appears to have a strong focus on the rare earth materials sector, particularly through companies involved in the production of permanent magnets. They discuss the impact of government initiatives on the sector and show an interest in the potential for significant revenue increases in the future. Additionally, Seth exhibits knowledge in quantum networking and its implications for security in drone technology.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Rare Earth Materials",
+      "Quantum Technology",
+      "Energy Sector",
+      "SPACs",
+      "AI and Robotics"
+    ],
+    "originated_tickers": [
+      "MP"
+    ],
+    "commented_tickers": [],
+    "name": "Seth"
+  },
+  {
+    "bio": "Simon Brewer is a seasoned investor with a focus on commodities, particularly gold and energy. His investment strategy includes a blend of long-term holdings, opportunistic entries, and thorough market analysis, with an emphasis on capital allocation and macroeconomic trends.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Commodities",
+      "Gold",
+      "Energy",
+      "Mining",
+      "Tech"
+    ],
+    "originated_tickers": [
+      "SII",
+      "FLNG",
+      "NEM"
+    ],
+    "commented_tickers": [
+      "LSEG",
+      "GOLD"
+    ],
+    "name": "Simon Brewer"
+  },
+  {
+    "bio": "Stretch appears to be a forward-thinking investor focused on innovative technologies and their applications in various sectors, particularly in automotive and energy. They demonstrate a strong belief in the growth potential of companies like Tesla, emphasizing manufacturing processes and political positioning as key drivers. Stretch also shows an interest in emerging markets and technological advancements, alongside a connected network in the finance and investment space.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Electric Vehicles",
+      "Energy",
+      "Tech Innovation",
+      "Agritech",
+      "Emerging Markets"
+    ],
+    "originated_tickers": [
+      "TSLA"
+    ],
+    "commented_tickers": [],
+    "name": "Stretch"
+  },
+  {
+    "bio": "TFG Personal has not mentioned specific investment strategies, stock preferences, or sectors in their messages. The content primarily consists of administrative actions regarding chat privacy and the addition of members to the group, indicating a focus on community engagement rather than investment discussions.",
+    "investor_type": "Retail",
+    "investment_focus": [],
+    "originated_tickers": [],
+    "commented_tickers": [],
+    "name": "TFG Personal"
+  },
+  {
+    "bio": "Tagg McGurrin appears to be an active participant in investment discussions with a focus on emerging technologies and cryptocurrencies. He expresses interest in specific companies and trends, particularly in tech and digital assets, while also commenting on broader market dynamics and political influences that may affect investments.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Tech",
+      "Cryptocurrency",
+      "Emerging Technologies"
+    ],
+    "originated_tickers": [
+      "OUST",
+      "ASPI"
+    ],
+    "commented_tickers": [
+      "AMZN",
+      "EVLV",
+      "INMB",
+      "LTBR",
+      "ZENA"
+    ],
+    "name": "Tagg McGurrin"
+  },
+  {
+    "bio": "Tim demonstrates a strong expertise in renewable energy and industrial sectors, particularly focusing on wind energy economics and shipping markets. He has a critical perspective on contract structures, inflation impacts, and the complex dynamics of cash flow in various sectors, reflecting a nuanced understanding of market mechanics.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Renewable Energy",
+      "Shipping",
+      "Semiconductors",
+      "Healthcare",
+      "Forestry and Paper"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "VWS",
+      "ASML",
+      "AMD"
+    ],
+    "name": "Tim"
+  },
+  {
+    "bio": "Tim Sykes exhibits a nuanced understanding of market dynamics, focusing on macroeconomic factors such as tariffs and their inflationary impacts. He evaluates investment opportunities in tech and automotive sectors and often reflects on broader economic trends and their implications for public markets.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Macro Trends",
+      "Automotive",
+      "Technology",
+      "Public Markets"
+    ],
+    "originated_tickers": [
+      "EVLV"
+    ],
+    "commented_tickers": [
+      "MT",
+      "RHM",
+      "RBW",
+      "TSLA",
+      "COIN"
+    ],
+    "name": "Tim Sykes"
+  },
+  {
+    "bio": "Tom Wiggin appears to have a nuanced understanding of market dynamics and the impact of tariffs on inflation and consumer prices. He expresses skepticism about the immediate effects of economic policies while also reflecting on personal investment experiences, particularly in rare earths. His discussions indicate an interest in broader geopolitical issues and their implications for market performance.",
+    "investor_type": "Retail",
+    "investment_focus": [
+      "Tariffs and inflation",
+      "Geopolitical impacts",
+      "Commodity markets",
+      "Rare earths"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [],
+    "name": "Tom Wiggin"
+  },
+  {
+    "bio": "Will Meadon appears to be a knowledgeable and engaged investor focused on family businesses and their long-term impact on the UK economy. He also shows an awareness of macroeconomic factors and trends affecting investments, particularly in relation to US markets and trade. Will frequently discusses individual stocks and broader market themes, suggesting a proactive investment approach with a focus on growth and strategic opportunities.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "UK Small Cap",
+      "US-UK Trade",
+      "Consumer Goods",
+      "Growth Stocks",
+      "Family Businesses"
+    ],
+    "originated_tickers": [
+      "FEVR"
+    ],
+    "commented_tickers": [
+      "AMZN",
+      "JD"
+    ],
+    "name": "Will Meadon"
+  },
+  {
+    "bio": "William Johnston is a seasoned portfolio manager and analyst with over three decades of experience, specializing in Global Financial equities and cryptocurrency, particularly Bitcoin. He is critical of Ethereum and other altcoins, emphasizing the importance of Bitcoin's proof of work and self-custody. His investment philosophy focuses on transformative technologies and seeks to avoid traditional asset management pitfalls.",
+    "investor_type": "Portfolio Manager",
+    "investment_focus": [
+      "Crypto",
+      "Global Financials",
+      "Technology",
+      "Gold"
+    ],
+    "originated_tickers": [
+      "MSTR"
+    ],
+    "commented_tickers": [
+      "META",
+      "NVDA",
+      "GOLD"
+    ],
+    "name": "William Johnston"
+  },
+  {
+    "bio": "William Nutting is a professional investor with a focus on digital assets, energy transition, and emerging tech trends. He actively discusses cryptocurrency investments, innovative companies, and market dynamics, often advocating for high-growth stocks and sectors like uranium and AI-driven solutions.",
+    "investor_type": "Professional",
+    "investment_focus": [
+      "Digital Assets",
+      "Crypto",
+      "Energy",
+      "Uranium",
+      "Emerging Technologies"
+    ],
+    "originated_tickers": [
+      "HNT",
+      "LTBR",
+      "ASPI",
+      "JOG",
+      "CDZI"
+    ],
+    "commented_tickers": [
+      "GOOGL",
+      "NVDA",
+      "MSTR",
+      "COIN",
+      "BABA"
+    ],
+    "name": "William Nutting"
+  },
+  {
+    "bio": "Yakov Schleider demonstrates a keen interest in the healthcare sector, particularly medical technology and innovative treatments for chronic conditions. He engages in detailed comparisons between firms in this space and shares comprehensive financial analyses and updates on regulatory processes. His communication style indicates a strategic mindset focused on identifying investment opportunities with significant market potential.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Healthcare",
+      "Medical Technology",
+      "Surgical Innovations",
+      "Market Analysis"
+    ],
+    "originated_tickers": [
+      "GI"
+    ],
+    "commented_tickers": [],
+    "name": "Yakov Schleider"
+  },
+  {
+    "bio": "Zac Bobolakis has a nuanced approach to investing, emphasizing the complexities of market reactions, particularly at open trades. He demonstrates an analytical mindset, discussing semiconductor companies, AI, and the geopolitical factors affecting markets, while also delving into company fundamentals and potential future scenarios.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Semiconductors",
+      "AI",
+      "Geopolitical Risks",
+      "Market Behavior",
+      "Technology"
+    ],
+    "originated_tickers": [
+      "AMD",
+      "NVDA"
+    ],
+    "commented_tickers": [
+      "PLTR",
+      "MU",
+      "BIDU",
+      "UNH",
+      "MSTR",
+      "META",
+      "GOOGL"
+    ],
+    "name": "Zac Bobolakis"
+  },
+  {
+    "bio": "Gerhard appears to have a critical perspective on stocks like Tesla, highlighting concerns about political bias and competition in the EV sector. They express an interest in AI, big data, and military defense technology, indicating a view that innovation is essential for stock valuation. Gerhard also considers macroeconomic factors like USD trust and government debt when evaluating investment risks.",
+    "investor_type": "Analyst",
+    "investment_focus": [
+      "Electric Vehicles",
+      "Artificial Intelligence",
+      "Big Data",
+      "Defense Technology",
+      "Macroeconomic Trends"
+    ],
+    "originated_tickers": [],
+    "commented_tickers": [
+      "TSLA",
+      "NFLX",
+      "PLTR",
+      "RBLX"
+    ],
+    "name": "gerhard"
+  }
+]
